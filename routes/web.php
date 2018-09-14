@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/datosjordan', 'JordanController@index')->name('datos');
+Route::get('/datosjordan', 'Datos\JordanController@index')->name('datos');
 Route::get('/homeadm', 'HomeController@index')->name('admin');
 Route::get('/homeusu', 'HomeController@index')->name('usu');
 

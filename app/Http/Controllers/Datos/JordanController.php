@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Datos;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class DatosGeneralesController extends Controller
+class JordanController extends Controller
 {
     /**
      * Display a listing of the resource.
