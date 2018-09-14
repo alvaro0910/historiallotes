@@ -3,38 +3,7 @@
 @section('title', 'Usuario')
 
 @section('content')
-<!--
-        <div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1>Dashboard</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <ol class="breadcrumb text-right">
-                            <li class="active">Dashboard</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>-->
-
         <div class="content mt-4">
-
-            <!--<div class="col-sm-12">
-                <div class="alert  alert-success alert-dismissible fade show" role="alert">
-                  <span class="badge badge-pill badge-success">Success</span> You successfully read this important alert message.
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            </div>-->
-
-
            <div class="col-sm-6 col-lg-4">
                 <div class="card text-white bg-flat-color-1">
                     <div class="card-body pb-0">
@@ -43,10 +12,8 @@
                         -->
 
                     </div>
-
                 </div>
             </div>
-            <!--/.col-->
 
             <div class="col-sm-6 col-lg-4">
                 <div class="card text-white bg-flat-color-2">
@@ -56,7 +23,6 @@
                     </div>
                 </div>
             </div>
-            <!--/.col-->
 
             <div class="col-sm-6 col-lg-4">
                 <div class="card text-white bg-flat-color-3">
@@ -65,7 +31,6 @@
                     </div>
                 </div>
             </div>
-            <!--/.col-->
 
             <div class="col-sm-6 col-lg-4">
                 <div class="card text-white bg-flat-color-4">
@@ -75,7 +40,6 @@
                     </div>
                 </div>
             </div>
-            <!--/.col-->
 
             <div class="col-sm-6 col-lg-4">
                 <div class="card text-white bg-flat-color-4">
@@ -85,7 +49,6 @@
                     </div>
                 </div>
             </div>
-            <!--/.col-->
 
             <div class="col-sm-6 col-lg-4">
                 <div class="card text-white bg-flat-color-4">
@@ -95,7 +58,6 @@
                     </div>
                 </div>
             </div>
-            <!--/.col-->
 
             <div class="col-lg-3 col-md-6">
                 <div class="social-box facebook">
@@ -111,8 +73,7 @@
                         </li>
                     </ul>-->
                 </div>
-                <!--/social-box-->
-            </div><!--/.col-->
+            </div>
 
 
             <div class="col-lg-3 col-md-6">
@@ -129,8 +90,7 @@
                         </li>
                     </ul>-->
                 </div>
-                <!--/social-box-->
-            </div><!--/.col-->
+            </div>
 
 
             <div class="col-lg-3 col-md-6">
@@ -147,8 +107,7 @@
                         </li>
                     </ul>-->
                 </div>
-                <!--/social-box-->
-            </div><!--/.col-->
+            </div>
 
 
             <div class="col-lg-3 col-md-6">
@@ -165,10 +124,6 @@
                         </li>
                     </ul>-->
                 </div>
-                <!--/social-box-->
-            </div><!--/.col-->
             </div>
-        </div> <!-- .content -->
-    </div><!-- /#right-panel -->
-    <!-- Right Panel -->
+        </div>
 @endsection
