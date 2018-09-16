@@ -1,9 +1,9 @@
 @extends('layouts.templateusu')
 
-@section('title', 'Usuario')
+@section('title', 'Info')
 
 @section('content')
-estamos aca con este locale_filter_matches casi que no 
+estamos en info
 @endsection
 
     

@@ -62,16 +62,11 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Datos generales</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-bars"></i><a href="{{ route('datos') }}">Jordan</a></li>
-                            <li><i class="fa fa-bars"></i><a href="">Morelia</a></li>
-                            <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Filo</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="ui-social-buttons.html">Emilia</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Gaviota</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="ui-alerts.html">Cataluña</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="ui-progressbar.html">Ciruelo</a></li>
-                            <li><i class="fa fa-fire"></i><a href="ui-modals.html">Poveda</a></li>
-                            <li><i class="fa fa-book"></i><a href="ui-switches.html">Primavera</a></li>
-                            <li><i class="fa fa-th"></i><a href="ui-grids.html">Otros</a></li>    
+                            <li><i class="fa fa-bars"></i><a href="{{ route('info') }}">Datos lotes</a></li>
+                            <li><i class="fa fa-bars"></i><a href="{{ route('costolabores') }}">Costo labores</a></li>
+                            <li><i class="fa fa-bars"></i><a href="{{ route('costoinsumos') }}">Costo insumos</a></li>
+                            <li><i class="fa fa-bars"></i><a href="{{ route('producciones') }}">Producciones</a></li>
+                            <li><i class="fa fa-bars"></i><a href="{{ route('rendimientos') }}">Rendimientos</a></li>
                         </ul>
                     </li>
 

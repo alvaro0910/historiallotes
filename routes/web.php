@@ -17,7 +17,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/datosjordan', 'Datos\JordanController@index')->name('datos');
 Route::get('/homeadm', 'HomeController@index')->name('admin');
 Route::get('/homeusu', 'HomeController@index')->name('usu');
 
+Route::get('/info', 'Datos\InfoController@index')->name('info');
+Route::get('/costolabores', 'Datos\CostoLaboresController@index')->name('costolabores');
+Route::get('/costoinsumos', 'Datos\CostoInsumosController@index')->name('costoinsumos');
+Route::get('/producciones', 'Datos\ProduccionesController@index')->name('producciones');
+Route::get('/rendimientos', 'Datos\RendimientosController@index')->name('rendimientos');

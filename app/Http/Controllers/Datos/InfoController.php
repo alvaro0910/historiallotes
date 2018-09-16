@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Datos;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class JordanController extends Controller
+class InfoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class JordanController extends Controller
      */
     public function index()
     {
-        return view('usu.datosusu.jordan');
+        return view('usu.datosusu.info');
+    
     }
 
     /**
