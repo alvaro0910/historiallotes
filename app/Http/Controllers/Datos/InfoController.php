@@ -44,9 +44,9 @@ class InfoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()//NO OLVIDAR ESTA FUNCION RECIBE COMO PARAMETRO EL ID DEL LOTE EL CUAL SE VA A DETALLAR
     {
-        //
+        return view('usu.datoslotes.detalle');
     }
 
     /**

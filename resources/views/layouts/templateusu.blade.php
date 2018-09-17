@@ -46,8 +46,8 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand"><img src="images/logoHV.png" alt="Logo"></a>
-                <a class="navbar-brand hidden"><img src="images/logo2.png" alt="Logo"></a>
+                <a class="navbar-brand"><img src="{{ asset('images/logoHV.png') }}" alt="Logo"></a>
+                <a class="navbar-brand hidden"><img src="{{ asset('images/logo2.png') }}" alt="Logo"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -220,7 +220,7 @@
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           {{ Auth::user()->name }}<img class="user-avatar rounded-circle" src="images/admin.png" alt="User Avatar">
+                           {{ Auth::user()->name }}<img class="user-avatar rounded-circle" src="{{ asset('images/admin.png') }}" alt="User Avatar">
                         </a>
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
