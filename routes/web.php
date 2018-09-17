@@ -15,13 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(
+    
+);
 
 Route::get('/homeadm', 'HomeController@index')->name('admin');
 Route::get('/homeusu', 'HomeController@index')->name('usu');
 
-Route::get('/info', 'Datos\InfoController@index')->name('info');
-Route::get('/costolabores', 'Datos\CostoLaboresController@index')->name('costolabores');
-Route::get('/costoinsumos', 'Datos\CostoInsumosController@index')->name('costoinsumos');
-Route::get('/producciones', 'Datos\ProduccionesController@index')->name('producciones');
-Route::get('/rendimientos', 'Datos\RendimientosController@index')->name('rendimientos');
+
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/info', 'Datos\InfoController@index')->name('info');
+    Route::get('/costolabores', 'Datos\CostoLaboresController@index')->name('costolabores');
+    Route::get('/costoinsumos', 'Datos\CostoInsumosController@index')->name('costoinsumos');
+    Route::get('/producciones', 'Datos\ProduccionController@index')->name('producciones');
+    Route::get('/rendimientos', 'Datos\RendimientoController@index')->name('rendimientos');
+});
