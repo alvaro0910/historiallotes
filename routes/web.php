@@ -27,9 +27,8 @@ Route::get('/homeusu', 'HomeController@index')->name('usu');
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/info', 'Datos\InfoController@index')->name('info');
     Route::get('/info/detalle', 'Datos\InfoController@show')->name('detalle');
-    Route::get('/costolabores', 'Datos\CostoLaboresController@index')->name('costolabores');
-    Route::get('/costoinsumos', 'Datos\CostoInsumosController@index')->name('costoinsumos');
-    Route::get('/producciones', 'Datos\ProduccionController@index')->name('producciones');
-    Route::get('/rendimientos', 'Datos\RendimientoController@index')->name('rendimientos');
-    Route::get('/detalle', 'Datos\RendimientoController@show')->name('rendimientos');
+    Route::get('/info/costoinsumos', 'Datos\CostoInsumosController@index')->name('costoinsumos');
+    Route::get('/info/costolabores', 'Datos\CostoLaboresController@index')->name('costolabores');
+    Route::get('/info/producciones', 'Datos\ProduccionController@index')->name('producciones');
+    Route::get('/info/rendimientos', 'Datos\RendimientoController@index')->name('rendimientos');
 });

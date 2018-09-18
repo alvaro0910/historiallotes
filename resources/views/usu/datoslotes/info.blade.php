@@ -19,17 +19,25 @@
                     <th>Codigo</th>
                     <th>Nombre</th>
                     <th>Finca</th>
-                    <th>Detallar</th>
+                    <th>Detalle Lote</th>
+                    <th>Costo labores</th>
+                    <th>Costo insumos</th>
+                    <th>Producciones</th>
+                    <th>Rendimientos</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php $list = array(1,2,3,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,); ?>
                 @foreach ($list as &$e)
                 <tr>
-                    <td>Codigo Lote</td>
+                    <td>250</td>
                     <td>Torre</td>
                     <td>Jordan</td>
-                    <td><a title="Detallar" href="{{ route('detalle') }}"><div class="icon-container"><span class="ti-search"></span><span class="icon-name"> Visualizar</span></div></a></td>
+                    <td><a title="Detallar" href="{{ route('detalle') }}"><div class="icon-container"><span class="ti-search"></span></a> </td>
+                    <td><a title="Detallar" href="{{ route('costolabores') }}"><div class="icon-container"><span class="ti-search"></span></div></a> </td>
+                    <td><a title="Detallar" href="{{ route('costoinsumos') }}"><div class="icon-container"><span class="ti-search"></span></div></a> </td>
+                    <td><a title="Detallar" href="{{ route('producciones') }}"><div class="icon-container"><span class="ti-search"></span></div></a> </td>
+                    <td><a title="Detallar" href="{{ route('rendimientos') }}"><div class="icon-container"><span class="ti-search"></span></div></a> </td>
                 </tr>
                 @endforeach
                 </tbody>

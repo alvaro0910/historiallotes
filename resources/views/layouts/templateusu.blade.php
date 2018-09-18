@@ -262,7 +262,7 @@
         </header><!-- /header -->
         <!-- Header-->
     @yield('content')
-    
+
     <script src="{{ asset('assets/js/vendor/jquery-2.1.4.min.js') }}"></script>
     <script src="{{ asset('assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins.js') }}"></script>
