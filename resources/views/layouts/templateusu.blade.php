@@ -31,8 +31,25 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+
+    <!-- Style requerido para el contenedor de graficos -->
+    <style type="text/css">
+        #container {
+            max-width: 800px;
+            height: 400px;
+            margin: 1em auto;
+        }
+    </style>
 </head>
 <body class="bg-dark">
+    <!-- Scripts requeridos para los graficos -->
+    <script src="{{ asset('highcharts/code/highcharts.js') }}"></script>
+    <script src="{{ asset('highcharts/code/modules/pareto.js') }}"></script>
+    <script src="{{ asset('highcharts/code/highcharts-more.js') }}"></script>
+    <script src="{{ asset('highcharts/code/modules/exporting.js') }}"></script>
+    <script src="{{ asset('highcharts/code/modules/export-data.js') }}"></script>
+    
+
     <!-- Left Panel -->
     @if (session('status'))
         <div class="alert alert-success" role="alert">
@@ -258,6 +275,7 @@
     <script src="{{ asset('assets/js/lib/vector-map/jquery.vmap.min.js') }}"></script>
     <script src="{{ asset('assets/js/lib/vector-map/jquery.vmap.sampledata.js') }}"></script>
     <script src="{{ asset('assets/js/lib/vector-map/country/jquery.vmap.world.js') }}"></script>
+
     <script>
         ( function ( $ ) {
             "use strict";
