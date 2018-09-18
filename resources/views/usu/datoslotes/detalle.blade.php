@@ -207,7 +207,7 @@
                                 min: 0,
                                 opposite: true,
                                 labels: {
-                                format: "{value}%"
+                                    format: "{value}%"
                                 }
                             }],
                             
