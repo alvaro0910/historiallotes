@@ -33,11 +33,11 @@
                     <td>250</td>
                     <td>Torre</td>
                     <td>Jordan</td>
-                    <td><a title="Detallar" href="{{ route('detalle') }}"><div class="icon-container"><span class="ti-search"></span></a> </td>
-                    <td><a title="Detallar" href="{{ route('costolabores') }}"><div class="icon-container"><span class="ti-search"></span></div></a> </td>
-                    <td><a title="Detallar" href="{{ route('costoinsumos') }}"><div class="icon-container"><span class="ti-search"></span></div></a> </td>
-                    <td><a title="Detallar" href="{{ route('producciones') }}"><div class="icon-container"><span class="ti-search"></span></div></a> </td>
-                    <td><a title="Detallar" href="{{ route('rendimientos') }}"><div class="icon-container"><span class="ti-search"></span></div></a> </td>
+                    <td><a title="Detallar" href="{{ route('detalle') }}">de</a></td>
+                    <td><a title="Detallar" href="{{ route('costolabores') }}">cl</a></td>
+                    <td><a title="Detallar" href="{{ route('costoinsumos') }}">ci</a></td>
+                    <td><a title="Detallar" href="{{ route('producciones') }}">pr</a></td>
+                    <td><a title="Detallar" href="{{ route('rendimientos') }}">re</a></td>
                 </tr>
                 @endforeach
                 </tbody>

@@ -40,6 +40,17 @@
             margin: 1em auto;
         }
     </style>
+
+    <style type="text/css">
+        #container3d, #sliders {
+            min-width: 310px; 
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        #container3d {
+            height: 400px; 
+        }
+    </style>
 </head>
 <body class="bg-dark">
     <!-- Scripts requeridos para los graficos -->
@@ -48,7 +59,11 @@
     <script src="{{ asset('highcharts/code/highcharts-more.js') }}"></script>
     <script src="{{ asset('highcharts/code/modules/exporting.js') }}"></script>
     <script src="{{ asset('highcharts/code/modules/export-data.js') }}"></script>
+    <script src="{{ asset('highcharts/code/modules/heatmap.js') }}"></script>
+    <script src="{{ asset('highcharts/code/highcharts-3d.js') }}""></script>
     
+    
+
 
     <!-- Left Panel -->
     @if (session('status'))
