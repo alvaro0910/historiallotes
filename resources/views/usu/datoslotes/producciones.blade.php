@@ -1,4 +1,4 @@
-@extends('layouts.templateusu')
+    @extends('layouts.templateusu')
 
 @section('title', 'Info')
 
@@ -16,93 +16,440 @@
                         <div class="card-body">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mensual</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Menu 1</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Menu 2</a>
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Anual</a>
                                 </li>
                             </ul>
                             
+                            
                             <div class="tab-content pl-3 p-1" id="myTabContent">
-                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                    <h3>Home</h3>
-                                    <p>
-                                    <div id="container3d"></div>
-                                    <div id="sliders">
-                                        <table>
-                                            <tr>
-                                                <td>Alpha Angle</td>
-                                                <td><input id="alpha" type="range" min="0" max="45" value="15"/> <span id="alpha-value" class="value"></span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Beta Angle</td>
-                                                <td><input id="beta" type="range" min="-45" max="45" value="15"/> <span id="beta-value" class="value"></span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Depth</td>
-                                                <td><input id="depth" type="range" min="20" max="100" value="50"/> <span id="depth-value" class="value"></span></td>
-                                            </tr>
-                                        </table>
+                                <div class="col-lg-4">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <h3>2018</h3>
+                                        <p>
+                                        <div id="container3d1"></div>
+                                        <script type="text/javascript">
+                                            var chart = new Highcharts.Chart({
+                                                chart: {
+                                                    renderTo: 'container3d1',
+                                                    type: 'column',
+                                                    options3d: {
+                                                        enabled: true,
+                                                        alpha: 15,
+                                                        beta: 15,
+                                                        depth: 50,
+                                                        viewDistance: 25
+                                                    }
+                                                },
+                                                title: {
+                                                    text: 'Chart rotation demo'
+                                                },
+                                                subtitle: {
+                                                    text: 'Test options by dragging the sliders below'
+                                                },
+                                                plotOptions: {
+                                                    column: {
+                                                        depth: 25
+                                                    }
+                                                },
+                                                series: [{
+                                                    data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+                                                }]
+                                            });
+                                        </script>
+                                        </p>
                                     </div>
-                                    
-                                    <script type="text/javascript">
-                                        var chart = new Highcharts.Chart({
-                                            chart: {
-                                                renderTo: 'container3d',
-                                                type: 'column',
-                                                options3d: {
-                                                    enabled: true,
-                                                    alpha: 15,
-                                                    beta: 15,
-                                                    depth: 50,
-                                                    viewDistance: 25
-                                                }
-                                            },
-                                            title: {
-                                                text: 'Chart rotation demo'
-                                            },
-                                            subtitle: {
-                                                text: 'Test options by dragging the sliders below'
-                                            },
-                                            plotOptions: {
-                                                column: {
-                                                    depth: 25
-                                                }
-                                            },
-                                            series: [{
-                                                data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
-                                            }]
-                                        });
-                                        
-                                        function showValues() {
-                                            $('#alpha-value').html(chart.options.chart.options3d.alpha);
-                                            $('#beta-value').html(chart.options.chart.options3d.beta);
-                                            $('#depth-value').html(chart.options.chart.options3d.depth);
-                                        }
-                                        
-                                        $('#sliders input').on('input change', function () {
-                                            chart.options.chart.options3d[this.id] = parseFloat(this.value);
-                                            showValues();
-                                            chart.redraw(false);
-                                        });
-                                        
-                                        showValues();
-                                    </script>
-                                    </p>
+                                </div>
+                                
+                                <div class="col-lg-4">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <h3>2017</h3>
+                                        <p>
+                                        <div id="container3d2"></div>
+                                        <script type="text/javascript">
+                                            var chart = new Highcharts.Chart({
+                                                chart: {
+                                                    renderTo: 'container3d2',
+                                                    type: 'column',
+                                                    options3d: {
+                                                        enabled: true,
+                                                        alpha: 15,
+                                                        beta: 15,
+                                                        depth: 50,
+                                                        viewDistance: 25
+                                                    }
+                                                },
+                                                title: {
+                                                    text: 'Chart rotation demo'
+                                                },
+                                                subtitle: {
+                                                    text: 'Test options by dragging the sliders below'
+                                                },
+                                                plotOptions: {
+                                                    column: {
+                                                        depth: 25
+                                                    }
+                                                },
+                                                series: [{
+                                                    data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+                                                }]
+                                            });
+                                            
+                                        </script>
+                                        </p>
+                                    </div>
+                                </div>    
+                                
+                                <div class="col-lg-4">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <h3>2016</h3>
+                                        <p>
+                                        <div id="container3d3"></div>
+                                        <script type="text/javascript">
+                                            var chart = new Highcharts.Chart({
+                                                chart: {
+                                                    renderTo: 'container3d3',
+                                                    type: 'column',
+                                                    options3d: {
+                                                        enabled: true,
+                                                        alpha: 15,
+                                                        beta: 15,
+                                                        depth: 50,
+                                                        viewDistance: 25
+                                                    }
+                                                },
+                                                title: {
+                                                    text: 'Chart rotation demo'
+                                                },
+                                                subtitle: {
+                                                    text: 'Test options by dragging the sliders below'
+                                                },
+                                                plotOptions: {
+                                                    column: {
+                                                        depth: 25
+                                                    }
+                                                },
+                                                series: [{
+                                                    data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+                                                }]
+                                            });       
+                                        </script>
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-4">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <h3>2015</h3>
+                                        <p>
+                                        <div id="container3d4"></div>
+                                        <script type="text/javascript">
+                                            var chart = new Highcharts.Chart({
+                                                chart: {
+                                                    renderTo: 'container3d4',
+                                                    type: 'column',
+                                                    options3d: {
+                                                        enabled: true,
+                                                        alpha: 15,
+                                                        beta: 15,
+                                                        depth: 50,
+                                                        viewDistance: 25
+                                                    }
+                                                },
+                                                title: {
+                                                    text: 'Chart rotation demo'
+                                                },
+                                                subtitle: {
+                                                    text: 'Test options by dragging the sliders below'
+                                                },
+                                                plotOptions: {
+                                                    column: {
+                                                        depth: 25
+                                                    }
+                                                },
+                                                series: [{
+                                                    data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+                                                }]
+                                            });  
+                                        </script>
+                                        </p>
+                                    </div>
                                 </div>
 
-                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                    <h3>Menu 1</h3>
-                                    <p>Some content here.</p>
+                                <div class="col-lg-4">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <h3>2014</h3>
+                                        <p>
+                                        <div id="container3d5"></div>
+                                        <script type="text/javascript">
+                                            var chart = new Highcharts.Chart({
+                                                chart: {
+                                                    renderTo: 'container3d5',
+                                                    type: 'column',
+                                                    options3d: {
+                                                        enabled: true,
+                                                        alpha: 15,
+                                                        beta: 15,
+                                                        depth: 50,
+                                                        viewDistance: 25
+                                                    }
+                                                },
+                                                title: {
+                                                    text: 'Chart rotation demo'
+                                                },
+                                                subtitle: {
+                                                    text: 'Test options by dragging the sliders below'
+                                                },
+                                                plotOptions: {
+                                                    column: {
+                                                        depth: 25
+                                                    }
+                                                },
+                                                series: [{
+                                                    data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+                                                }]
+                                            });
+                                        </script>
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                                    <h3>Menu 2</h3>
-                                    <p>Some content here.</p>
+                                
+                                <div class="col-lg-4">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <h3>2013</h3>
+                                        <p>
+                                        <div id="container3d6"></div>
+                                        <script type="text/javascript">
+                                            var chart = new Highcharts.Chart({
+                                                chart: {
+                                                    renderTo: 'container3d6',
+                                                    type: 'column',
+                                                    options3d: {
+                                                        enabled: true,
+                                                        alpha: 15,
+                                                        beta: 15,
+                                                        depth: 50,
+                                                        viewDistance: 25
+                                                    }
+                                                },
+                                                title: {
+                                                    text: 'Chart rotation demo'
+                                                },
+                                                subtitle: {
+                                                    text: 'Test options by dragging the sliders below'
+                                                },
+                                                plotOptions: {
+                                                    column: {
+                                                        depth: 25
+                                                    }
+                                                },
+                                                series: [{
+                                                    data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+                                                }]
+                                            });
+                                        </script>
+                                        </p>
+                                    </div>
                                 </div>
+                                
+                                <div class="col-lg-4">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <h3>2012</h3>
+                                        <p>
+                                        <div id="container3d7"></div>
+                                        <script type="text/javascript">
+                                            var chart = new Highcharts.Chart({
+                                                chart: {
+                                                    renderTo: 'container3d7',
+                                                    type: 'column',
+                                                    options3d: {
+                                                        enabled: true,
+                                                        alpha: 15,
+                                                        beta: 15,
+                                                        depth: 50,
+                                                        viewDistance: 25
+                                                    }
+                                                },
+                                                title: {
+                                                    text: 'Chart rotation demo'
+                                                },
+                                                subtitle: {
+                                                    text: 'Test options by dragging the sliders below'
+                                                },
+                                                plotOptions: {
+                                                    column: {
+                                                        depth: 25
+                                                    }
+                                                },
+                                                series: [{
+                                                    data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+                                                }]
+                                            });
+                                            
+                                        </script>
+                                        </p>
+                                    </div>
+                                </div>    
+                                
+                                <div class="col-lg-4">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <h3>2011</h3>
+                                        <p>
+                                        <div id="container3d8"></div>
+                                        <script type="text/javascript">
+                                            var chart = new Highcharts.Chart({
+                                                chart: {
+                                                    renderTo: 'container3d8',
+                                                    type: 'column',
+                                                    options3d: {
+                                                        enabled: true,
+                                                        alpha: 15,
+                                                        beta: 15,
+                                                        depth: 50,
+                                                        viewDistance: 25
+                                                    }
+                                                },
+                                                title: {
+                                                    text: 'Chart rotation demo'
+                                                },
+                                                subtitle: {
+                                                    text: 'Test options by dragging the sliders below'
+                                                },
+                                                plotOptions: {
+                                                    column: {
+                                                        depth: 25
+                                                    }
+                                                },
+                                                series: [{
+                                                    data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+                                                }]
+                                            });       
+                                        </script>
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-4">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <h3>2010</h3>
+                                        <p>
+                                        <div id="container3d9"></div>
+                                        <script type="text/javascript">
+                                            var chart = new Highcharts.Chart({
+                                                chart: {
+                                                    renderTo: 'container3d9',
+                                                    type: 'column',
+                                                    options3d: {
+                                                        enabled: true,
+                                                        alpha: 15,
+                                                        beta: 15,
+                                                        depth: 50,
+                                                        viewDistance: 25
+                                                    }
+                                                },
+                                                title: {
+                                                    text: 'Chart rotation demo'
+                                                },
+                                                subtitle: {
+                                                    text: 'Test options by dragging the sliders below'
+                                                },
+                                                plotOptions: {
+                                                    column: {
+                                                        depth: 25
+                                                    }
+                                                },
+                                                series: [{
+                                                    data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+                                                }]
+                                            });  
+                                        </script>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <h3>2009</h3>
+                                        <p>
+                                        <div id="container3d10"></div>
+                                        <script type="text/javascript">
+                                            var chart = new Highcharts.Chart({
+                                                chart: {
+                                                    renderTo: 'container3d10',
+                                                    type: 'column',
+                                                    options3d: {
+                                                        enabled: true,
+                                                        alpha: 15,
+                                                        beta: 15,
+                                                        depth: 50,
+                                                        viewDistance: 25
+                                                    }
+                                                },
+                                                title: {
+                                                    text: 'Chart rotation demo'
+                                                },
+                                                subtitle: {
+                                                    text: 'Test options by dragging the sliders below'
+                                                },
+                                                plotOptions: {
+                                                    column: {
+                                                        depth: 25
+                                                    }
+                                                },
+                                                series: [{
+                                                    data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+                                                }]
+                                            });
+                                        </script>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <h3>2008</h3>
+                                        <p>
+                                        <div id="container3d11"></div>
+                                        <script type="text/javascript">
+                                            var chart = new Highcharts.Chart({
+                                                chart: {
+                                                    renderTo: 'container3d11',
+                                                    type: 'column',
+                                                    options3d: {
+                                                        enabled: true,
+                                                        alpha: 15,
+                                                        beta: 15,
+                                                        depth: 50,
+                                                        viewDistance: 25
+                                                    }
+                                                },
+                                                title: {
+                                                    text: 'Chart rotation demo'
+                                                },
+                                                subtitle: {
+                                                    text: 'Test options by dragging the sliders below'
+                                                },
+                                                plotOptions: {
+                                                    column: {
+                                                        depth: 25
+                                                    }
+                                                },
+                                                series: [{
+                                                    data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+                                                }]
+                                            });
+                                        </script>
+                                        </p>
+                                    </div>
+                                </div>
+                                
                             </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <h3>Anual</h3>
+                                    <p>aca estamos </p>
+                                </div>
                         </div>
                     </div>
                 </div>
