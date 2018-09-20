@@ -1,6 +1,6 @@
 @extends('layouts.templateusu')
 
-@section('title', 'Info')
+@section('title', 'Costo Insumos')
 
 @section('content')
 estamos en costoinsumos

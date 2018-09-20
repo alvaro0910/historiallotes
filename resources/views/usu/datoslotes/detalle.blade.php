@@ -1,6 +1,6 @@
 @extends('layouts.templateusu')
 
-@section('title', 'Info')
+@section('title', 'Detalle')
 
 @section('content')
     <div class="content mt-2">

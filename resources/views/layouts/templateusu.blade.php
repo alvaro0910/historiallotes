@@ -42,13 +42,13 @@
     </style>
 
     <style type="text/css">
-        #container3d1,#container3d2,#container3d3,#container3d4,#container3d5,#container3d6,#container3d7,#container3d8,#container3d9,#container3d10,#container3d11,
+        #container3d1,#container3d2,#container3d3,#container3d4,#container3d5,#container3d6,#container3d7,#container3d8,#container3d9,#container3d10,#container3d11,#container3d12,
         #sliders {
             min-width: 310px; 
             max-width: 800px;
             margin: 0 auto;
         }
-        #container3d1,#container3d2,#container3d3,#container3d4,#container3d5,#container3d6,#container3d7,#container3d8,#container3d9,#container3d10,#container3d11 {
+        #container3d1,#container3d2,#container3d3,#container3d4,#container3d5,#container3d6,#container3d7,#container3d8,#container3d9,#container3d10,#container3d11,#container3d12 {
             height: 400px; 
         }
     </style>
