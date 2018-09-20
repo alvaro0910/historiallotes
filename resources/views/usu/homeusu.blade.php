@@ -8,8 +8,7 @@
                 <div class="card text-white bg-flat-color-1">
                     <div class="card-body pb-0">
                     Calendario
-                    <!--<iframe src="https://calendar.google.com/calendar/b/1/embed?title=Calendario%20Congales%20Echeverri&amp;showNav=0&amp;showPrint=0&amp;showTz=0&amp;height=400&amp;wkst=1&amp;bgcolor=%2333ccff&amp;src=haciendaveneciaoficina%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FBogota" style="border-width:0" width="450" height="400" frameborder="0" scrolling="no"></iframe>                        
-                        -->
+                    <!--<iframe src="https://calendar.google.com/calendar/b/1/embed?title=Calendario%20Congales%20Echeverri&amp;showNav=0&amp;showPrint=0&amp;showTz=0&amp;height=400&amp;wkst=1&amp;bgcolor=%2333ccff&amp;src=haciendaveneciaoficina%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FBogota" style="border-width:0" width="450" height="400" frameborder="0" scrolling="no"></iframe>-->
 
                     </div>
                 </div>
@@ -95,7 +94,7 @@
 
             <div class="col-lg-3 col-md-6">
                 <div class="social-box linkedin">
-                    <i class="fa fa-linkedin"></i>
+                    {{-- <i class="fa fa-linkedin"></i> --}}
                     <!--<ul>
                         <li>
                             <strong><span class="count">40</span> +</strong>
@@ -112,7 +111,7 @@
 
             <div class="col-lg-3 col-md-6">
                 <div class="social-box google-plus">
-                    <i class="fa fa-google-plus"></i>
+                    {{-- <i class="fa fa-google-plus"></i> --}}
                     <!--<ul>
                         <li>
                             <strong><span class="count">94</span> k</strong>
