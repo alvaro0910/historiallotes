@@ -31,4 +31,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/info/costolabores', 'Datos\CostoLaboresController@index')->name('costolabores');
     Route::get('/info/producciones', 'Datos\ProduccionController@index')->name('producciones');
     Route::get('/info/rendimientos', 'Datos\RendimientoController@index')->name('rendimientos');
+
+    Route::get('/lote', 'Admin\LoteController@index')->name('lote');
 });

@@ -72,7 +72,7 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Lotes</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="#">Datos generales</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('lote') }}">Datos generales</a></li>
                             <li><i class="menu-icon fa fa-fort-awesome"></i><a href="#">Estado del cultivo</a></li>
                             <li><i class="menu-icon fa fa-fort-awesome"></i><a href="#">Suelos</a></li>
                         </ul>

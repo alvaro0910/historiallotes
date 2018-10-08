@@ -14,7 +14,7 @@
                             <div class="corner-ribon black-ribon">
                                 <i class=""></i>
                             </div>
-                            <div class="fa fa-twitter wtt-mark"></div>
+                            {{-- <div class="fa fa-twitter wtt-mark"></div> --}}
 
                             <div class="media">
                                 <a href="#">
@@ -236,7 +236,7 @@
                             },
                                 
                             title: {
-                                text: 'Highcharts Polar Chart'
+                                text: 'Polar Chart'
                             },
                         
                             pane: {
