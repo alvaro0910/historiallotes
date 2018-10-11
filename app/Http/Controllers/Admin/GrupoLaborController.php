@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Lote;
+use App\GrupoLabor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class LoteController extends Controller
+class GrupoLaborController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class LoteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Lote  $lote
+     * @param  \App\GrupoLabor  $grupoLabor
      * @return \Illuminate\Http\Response
      */
-    public function show(Lote $lote)
+    public function show(GrupoLabor $grupoLabor)
     {
         //
     }
@@ -53,10 +53,10 @@ class LoteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Lote  $lote
+     * @param  \App\GrupoLabor  $grupoLabor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Lote $lote)
+    public function edit(GrupoLabor $grupoLabor)
     {
         //
     }
@@ -65,10 +65,10 @@ class LoteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Lote  $lote
+     * @param  \App\GrupoLabor  $grupoLabor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Lote $lote)
+    public function update(Request $request, GrupoLabor $grupoLabor)
     {
         //
     }
@@ -76,10 +76,10 @@ class LoteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Lote  $lote
+     * @param  \App\GrupoLabor  $grupoLabor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Lote $lote)
+    public function destroy(GrupoLabor $grupoLabor)
     {
         //
     }

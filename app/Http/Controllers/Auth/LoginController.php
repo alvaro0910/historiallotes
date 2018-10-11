@@ -32,7 +32,7 @@ class LoginController extends Controller
     {
         $tipo = Auth::user()->tipo;
         if ($tipo == "adm") {
-          return 'homeadm';    
+          return 'homeadm';   
         }
         else{
             return 'homeusu';
