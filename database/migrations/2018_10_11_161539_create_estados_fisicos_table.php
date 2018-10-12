@@ -15,6 +15,7 @@ class CreateEstadosFisicosTable extends Migration
     {
         Schema::create('estados_fisicos', function (Blueprint $table) {
             $table->increments('id');
+            
             $table->timestamps();
         });
     }

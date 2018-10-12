@@ -16,12 +16,9 @@ class CreateFincasTable extends Migration
         Schema::create('fincas', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->increments('id');
-            $table->integer('idUsuario')->unsigned();
-            $table->string('nombre');
+            $table->string('nombre', 50);
             $table->string('ubicacion');
             $table->string('direccion');
-
-            $table->foreign('idUsuario')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

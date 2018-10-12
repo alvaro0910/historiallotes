@@ -14,7 +14,7 @@ class Finca extends Model
         'idUsuario',
     ];
 
-    public function usuario(){
-        return $this->belongsTo('App\User');
+    public function users(){
+        return $this->belongsToMany('App\User');
     }
 }
