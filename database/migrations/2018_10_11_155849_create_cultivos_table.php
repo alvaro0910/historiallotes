@@ -17,9 +17,10 @@ class CreateCultivosTable extends Migration
             $table->engine='InnoDB';
             $table->increments('id');
             $table->string('cultivo', 50);
+            
             $table->string('finca_id')->unsigned();
-
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('finca_id')->references('id')->on('fincas')->onUpdate('cascade')->onDelete('cascade');
+            
             $table->timestamps();
         });
     }

@@ -11,10 +11,10 @@ class Finca extends Model
     ];
   
     protected $hidden = [
-        'idUsuario',
+        'user_id',
     ];
 
-    public function users(){
-        return $this->belongsToMany('App\User');
+    public function cultivos(){
+        return $this->hasMany('App\Cultivo');
     }
 }

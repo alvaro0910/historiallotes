@@ -21,6 +21,7 @@ class CreateFincaUserTable extends Migration
 
             $table->integer('finca_id')->unsigned();
             $table->foreign('finca_id')->references('id')->on('fincas')->onUpdate('cascade')->onDelete('cascade');
+            
             $table->timestamps();
         });
     }
