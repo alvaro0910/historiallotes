@@ -15,6 +15,12 @@ class CreateProduccionesTable extends Migration
     {
         Schema::create('producciones', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('cantidad');
+            $table->date('periodo');
+
+            $table->integer('lote_id')->unsigned();
+            $table->foreign('lote_id')->references('id')->on('lotes')->onUpdate('CASCADE')->onDelete('CASCADE');
+
             $table->timestamps();
         });
     }

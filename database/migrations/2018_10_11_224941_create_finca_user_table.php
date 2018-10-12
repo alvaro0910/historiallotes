@@ -17,10 +17,10 @@ class CreateFincaUserTable extends Migration
             $table->increments('id');
 
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
 
             $table->integer('finca_id')->unsigned();
-            $table->foreign('finca_id')->references('id')->on('fincas')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('finca_id')->references('id')->on('fincas')->onUpdate('CASCADE')->onDelete('CASCADE');
             
             $table->timestamps();
         });

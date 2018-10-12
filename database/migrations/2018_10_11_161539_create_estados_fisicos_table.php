@@ -15,7 +15,12 @@ class CreateEstadosFisicosTable extends Migration
     {
         Schema::create('estados_fisicos', function (Blueprint $table) {
             $table->increments('id');
-            
+            $table->increments('descripcion');
+            $table->increments('periodo');
+
+            $table->string('lote_id')->unsigned();
+            $table->foreign('lote_id')->references('id')->on('lotes')->onUpdate('CASCADE')->onDelete('CASCADE');
+
             $table->timestamps();
         });
     }

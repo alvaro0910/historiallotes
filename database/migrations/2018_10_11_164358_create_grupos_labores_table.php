@@ -15,6 +15,8 @@ class CreateGruposLaboresTable extends Migration
     {
         Schema::create('grupos_labores', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre', 50);
+            $table->text('descripcion');
             $table->timestamps();
         });
     }

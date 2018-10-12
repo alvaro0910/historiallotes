@@ -14,7 +14,7 @@ class Cultivo extends Model
         'idUsuario',
     ];
 
-    public function users(){
+    public function finca(){
         return $this->belongsTo('App\Finca');
     }
 }
