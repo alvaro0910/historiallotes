@@ -7,14 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 class Cultivo extends Model
 {
     protected $fillable = [
-        'nombre','descripcion','ubicacion','direccion',
+        'cultivo', 'descripcion',
     ];
   
     protected $hidden = [
-        'idUsuario',
+        
     ];
 
-    public function finca(){
-        return $this->belongsTo('App\Finca');
+    public function fincas(){
+        return $this->belongToMany('App\Finca')->withTimestamps();
+    }
+
+    public function lotes(){
+        return $this->hasMany('App\Lote');
     }
 }

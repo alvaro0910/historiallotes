@@ -14,6 +14,7 @@ class CreateLotesTable extends Migration
     public function up()
     {
         Schema::create('lotes', function (Blueprint $table) {
+            $table->engine='InnoDB';
             $table->increments('id');
             $table->string('codigo', 10)->unique();
             $table->string('nombre', 50);

@@ -14,6 +14,7 @@ class CreateVariedadesTable extends Migration
     public function up()
     {
         Schema::create('variedades', function (Blueprint $table) {
+            $table->engine='InnoDB';
             $table->increments('id');
             $table->string('variedad', 100)->unique();
             $table->timestamps();

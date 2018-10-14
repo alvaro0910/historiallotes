@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProduccionesTable extends Migration
+class CreateGrupoLoteTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateProduccionesTable extends Migration
      */
     public function up()
     {
-        Schema::create('producciones', function (Blueprint $table) {
+        Schema::create('grupo_lote', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->increments('id');
-            $table->integer('cantidad');
+            $table->decimal('costo', 10, 2);
+            $table->integer('cantidadmo');
             $table->date('periodo');
+            
+            $table->integer('grupo_labor_id')->unsigned();
+            $table->foreign('grupo_labor_id')->references('id')->on('grupos_labores')->onUpdate('CASCADE')->onDelete('CASCADE');
 
             $table->integer('lote_id')->unsigned();
             $table->foreign('lote_id')->references('id')->on('lotes')->onUpdate('CASCADE')->onDelete('CASCADE');
@@ -33,6 +37,6 @@ class CreateProduccionesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('producciones');
+        Schema::dropIfExists('grupo_lote');
     }
 }

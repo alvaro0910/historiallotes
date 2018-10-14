@@ -14,6 +14,7 @@ class CreateLaboresTable extends Migration
     public function up()
     {
         Schema::create('labores', function (Blueprint $table) {
+            $table->engine='InnoDB';
             $table->increments('id');
             $table->string('nombre', 50);
             $table->text('descripcion');

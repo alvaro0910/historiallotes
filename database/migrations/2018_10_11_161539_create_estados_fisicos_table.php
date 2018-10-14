@@ -14,6 +14,7 @@ class CreateEstadosFisicosTable extends Migration
     public function up()
     {
         Schema::create('estados_fisicos', function (Blueprint $table) {
+            $table->engine='InnoDB';
             $table->increments('id');
             $table->increments('descripcion');
             $table->increments('periodo');

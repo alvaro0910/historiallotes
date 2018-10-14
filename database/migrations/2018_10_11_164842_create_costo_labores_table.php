@@ -14,6 +14,7 @@ class CreateCostoLaboresTable extends Migration
     public function up()
     {
         Schema::create('costo_labores', function (Blueprint $table) {
+            $table->engine='InnoDB';
             $table->increments('id');
 
 

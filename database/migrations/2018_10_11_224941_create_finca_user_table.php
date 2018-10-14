@@ -14,6 +14,7 @@ class CreateFincaUserTable extends Migration
     public function up()
     {
         Schema::create('finca_user', function (Blueprint $table) {
+            $table->engine='InnoDB';
             $table->increments('id');
 
             $table->integer('user_id')->unsigned();

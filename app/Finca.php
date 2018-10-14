@@ -7,14 +7,18 @@ use Illuminate\Notifications\Notifiable;
 class Finca extends Model
 {
     protected $fillable = [
-        'nombre','descripcion','ubicacion','direccion',
+        'nombre', 'ciudad', 'departamento', 'direccion',
     ];
   
     protected $hidden = [
-        'user_id',
+        
     ];
 
+    public function users(){
+        return $this->belongToMany('App\User')->withTimestamps();
+    }
+
     public function cultivos(){
-        return $this->hasMany('App\Cultivo');
+        return $this->belongToMany('App\Cultivo')->withTimestamps();
     }
 }

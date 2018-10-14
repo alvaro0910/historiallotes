@@ -29,6 +29,6 @@ class User extends Authenticatable
     ];
 
     public function fincas(){
-        return $this->belongToMany('App\Finca');
+        return $this->belongToMany('App\Finca')->withTimestamps();
     }
 }
