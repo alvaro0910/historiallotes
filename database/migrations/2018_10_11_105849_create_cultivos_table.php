@@ -15,11 +15,11 @@ class CreateCultivosTable extends Migration
     {
         Schema::create('cultivos', function (Blueprint $table) {
             $table->engine='InnoDB';
-            $table->increments('id');
-            $table->string('cultivo', 50);
+            $table->increments('id')->unsigned();
+            $table->string('cultivo', 50)->unique();
             $table->text('descripcion');
             
-            $table->string('finca_id')->unsigned();
+            $table->integer('finca_id')->unsigned();
             $table->foreign('finca_id')->references('id')->on('fincas')->onUpdate('CASCADE')->onDelete('RESTRICT');
             
             $table->timestamps();

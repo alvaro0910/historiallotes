@@ -15,17 +15,17 @@ class CreateLotesTable extends Migration
     {
         Schema::create('lotes', function (Blueprint $table) {
             $table->engine='InnoDB';
-            $table->increments('id');
+            $table->increments('id')->unsigned();
             $table->string('codigo', 10)->unique();
             $table->string('nombre', 50);
-            $table->decimal('area', 5, 3);
+            $table->decimal('area', 5, 2);
             $table->integer('poblacion');
-            $table->integer('edad')->nulleable();
-            $table->float('alturasnm')->nulleable();
+            $table->integer('edad')->nullable();
+            $table->integer('alturasnm')->nullable();
 
-            $table->integer('cultivo_id')->unsigned()->nulleable();
+            $table->integer('cultivo_id')->unsigned()->nullable();
             $table->foreign('cultivo_id')->references('id')->on('cultivos')->onUpdate('SET NULL')->onDelete('RESTRICT');
-            $table->integer('variedad_id')->unsigned()->nulleable();
+            $table->integer('variedad_id')->unsigned()->nullable();
             $table->foreign('variedad_id')->references('id')->on('variedades')->onUpdate('SET NULL')->onDelete('SET NULL');
 
             $table->timestamps();

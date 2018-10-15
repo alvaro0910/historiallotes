@@ -15,11 +15,11 @@ class CreateLaboresTable extends Migration
     {
         Schema::create('labores', function (Blueprint $table) {
             $table->engine='InnoDB';
-            $table->increments('id');
-            $table->string('nombre', 50);
+            $table->increments('id')->unsigned();
+            $table->string('nombre', 50)->unique();
             $table->text('descripcion');
 
-            $table->integer('grupos_labores_id')->unsigned()->nulleable();
+            $table->integer('grupos_labores_id')->unsigned()->nullable();
             $table->foreign('grupos_labores_id')->references('id')->on('grupos_labores')->onUpdate('SET NULL')->onDelete('RESTRICT');
             $table->timestamps();
         });

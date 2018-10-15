@@ -15,13 +15,13 @@ class CreatePropiedadesTable extends Migration
     {
         Schema::create('propiedades', function (Blueprint $table) {
             $table->engine='InnoDB';
-            $table->increments('id');
+            $table->increments('id')->unsigned();
             $table->string('material');
             $table->string('unidad');
             $table->string('cantidad');
             $table->date('periodo');
             
-            $table->integer('lote_id')->unsigned()->nulleable();
+            $table->integer('lote_id')->unsigned()->nullable();
             $table->foreign('lote_id')->references('id')->on('lotes')->onUpdate('CASCADE')->onDelete('CASCADE');
 
             $table->timestamps();

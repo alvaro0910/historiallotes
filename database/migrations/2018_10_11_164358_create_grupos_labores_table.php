@@ -15,8 +15,8 @@ class CreateGruposLaboresTable extends Migration
     {
         Schema::create('grupos_labores', function (Blueprint $table) {
             $table->engine='InnoDB';
-            $table->increments('id');
-            $table->string('nombre', 50);
+            $table->increments('id')->unsigned();
+            $table->string('nombre', 50)->unique();
             $table->text('descripcion');
             $table->timestamps();
         });

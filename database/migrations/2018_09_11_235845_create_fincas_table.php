@@ -15,11 +15,11 @@ class CreateFincasTable extends Migration
     {
         Schema::create('fincas', function (Blueprint $table) {
             $table->engine='InnoDB';
-            $table->increments('id');
+            $table->increments('id')->unsigned();
             $table->string('nombre', 50);
-            $table->string('ciudad', 50)->nulleable();
-            $table->string('departamento', 50)->nulleable();
-            $table->string('direccion', 50)->nulleable();
+            $table->string('ciudad', 50)->nullable();
+            $table->string('departamento', 50)->nullable();
+            $table->string('direccion', 50)->nullable();
             $table->timestamps();
         });
     }

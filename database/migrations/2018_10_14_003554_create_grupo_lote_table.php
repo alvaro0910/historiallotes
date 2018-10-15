@@ -15,7 +15,7 @@ class CreateGrupoLoteTable extends Migration
     {
         Schema::create('grupo_lote', function (Blueprint $table) {
             $table->engine='InnoDB';
-            $table->increments('id');
+            $table->increments('id')->unsigned();
             $table->decimal('costo', 10, 2);
             $table->integer('cantidadmo');
             $table->date('periodo');
