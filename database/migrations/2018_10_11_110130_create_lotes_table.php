@@ -25,6 +25,7 @@ class CreateLotesTable extends Migration
 
             $table->integer('cultivo_id')->unsigned()->nullable();
             $table->foreign('cultivo_id')->references('id')->on('cultivos')->onUpdate('SET NULL')->onDelete('RESTRICT');
+            
             $table->integer('variedad_id')->unsigned()->nullable();
             $table->foreign('variedad_id')->references('id')->on('variedades')->onUpdate('SET NULL')->onDelete('SET NULL');
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEstadosFisicosTable extends Migration
+class CreateLotePropiedadTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,17 @@ class CreateEstadosFisicosTable extends Migration
      */
     public function up()
     {
-        Schema::create('estados_fisicos', function (Blueprint $table) {
+        Schema::create('lote_propiedad', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->increments('id')->unsigned();
-            $table->string('descripcion', 50)->nullable();
+            $table->decimal('cantidad', 5, 2);
             $table->date('periodo');
-
-            $table->integer('lote_id')->unsigned();
+            
+            $table->integer('lote_id')->unsigned()->nullable();
             $table->foreign('lote_id')->references('id')->on('lotes')->onUpdate('CASCADE')->onDelete('CASCADE');
+            
+            $table->integer('propiedad_id')->unsigned()->nullable();
+            $table->foreign('propiedad_id')->references('id')->on('propiedades')->onUpdate('CASCADE')->onDelete('CASCADE');
 
             $table->timestamps();
         });
@@ -33,6 +36,6 @@ class CreateEstadosFisicosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estados_fisicos');
+        Schema::dropIfExists('lote_propiedad');
     }
 }

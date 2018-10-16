@@ -14,7 +14,7 @@ class Propiedad extends Model
         'idUsuario',
     ];
     
-    public function lote(){
-        return $this->belongTo('App\Lote');
+    public function lotes(){
+        return $this->belongToMany('App\Lote')->withPivot('cantidad', 'periodo')->withTimestamps();
     }
 }

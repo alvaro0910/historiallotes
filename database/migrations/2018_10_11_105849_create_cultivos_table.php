@@ -19,9 +19,6 @@ class CreateCultivosTable extends Migration
             $table->string('cultivo', 50)->unique();
             $table->text('descripcion');
             
-            $table->integer('finca_id')->unsigned();
-            $table->foreign('finca_id')->references('id')->on('fincas')->onUpdate('CASCADE')->onDelete('RESTRICT');
-            
             $table->timestamps();
         });
     }

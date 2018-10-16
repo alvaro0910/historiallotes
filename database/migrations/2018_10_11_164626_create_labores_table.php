@@ -21,6 +21,7 @@ class CreateLaboresTable extends Migration
 
             $table->integer('grupos_labores_id')->unsigned()->nullable();
             $table->foreign('grupos_labores_id')->references('id')->on('grupos_labores')->onUpdate('SET NULL')->onDelete('RESTRICT');
+            
             $table->timestamps();
         });
     }

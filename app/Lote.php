@@ -30,15 +30,15 @@ class Lote extends Model
         return $this->hasMany('App\Produccion');
     }
 
-    public function propiedades(){
-        return $this->hasMany('App\Propiedad');
-    }
-
     public function insumos(){
         return $this->belongToMany('App\Insumo')->withPivot('costo', 'periodo')->withTimestamps();
     }
 
     public function gruposLabores(){
         return $this->belongToMany('App\GrupoLabor')->withPivot('costo', 'periodo', 'cantidadmo')->withTimestamps();
+    }
+
+    public function propiedades(){
+        return $this->belongToMany('App\Propiedad')->withPivot('cantidad', 'periodo')->withTimestamps();
     }
 }

@@ -107,6 +107,19 @@ class LoteSeeder extends Seeder
         )]);
 
         DB::table('lotes')->insert([array(
+            'codigo' => '114',
+            'nombre' => 'Guanabano Torre',
+            'area' => 2.92,
+            'poblacion' => 16020,
+            'edad' => null,
+            'alturasnm' => null,
+            'cultivo_id' => 1,
+            'variedad_id' => 3,
+            'created_at' => date('Y-m-d H:m:s'),
+            'updated_at' => date('Y-m-d H:m:s')
+        )]);
+
+        DB::table('lotes')->insert([array(
             'codigo' => '116',
             'nombre' => 'Metro de Morelia',
             'area' => 1.65,
