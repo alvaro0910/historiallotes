@@ -17,7 +17,7 @@ class CreateGruposLaboresTable extends Migration
             $table->engine='InnoDB';
             $table->increments('id')->unsigned();
             $table->string('nombre', 50)->unique();
-            $table->text('descripcion');
+            $table->text('descripcion')->nullable();
             $table->timestamps();
         });
     }

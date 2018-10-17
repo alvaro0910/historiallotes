@@ -11,16 +11,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call('UserSeeder');
-        $this->call('FincaSeeder');
-        $this->call('FincaUserSeeder');
-        $this->call('CultivoSeeder');
-        $this->call('CultivoFincaSeeder');
-        $this->call('VariedadSeeder');
-        $this->call('LoteSeeder');
-        $this->call('EstadoFisicoSeeder');
-        $this->call('PropiedadSeeder');
-        $this->call('LotePropiedadSeeder');
+        //$this->call('UserSeeder');
+        //$this->call('FincaSeeder');
+        //$this->call('FincaUserSeeder');
+        //$this->call('CultivoSeeder');
+        //$this->call('CultivoFincaSeeder');
+        //$this->call('VariedadSeeder');
+        //$this->call('LoteSeeder');
+        //$this->call('EstadoFisicoSeeder');
+        //$this->call('PropiedadSeeder');
+        //$this->call('LotePropiedadSeeder');
+        $this->call('GrupoLaborSeeder');
         //$this->call('ProduccionSeeder');
         //$this->call('GrupoLaborSeeder');
         //$this->call('LaborSeeder');

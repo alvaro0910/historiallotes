@@ -16,7 +16,7 @@ class CreateProduccionesTable extends Migration
         Schema::create('producciones', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->increments('id')->unsigned();
-            $table->integer('cantidad');
+            $table->integer('cantidad')->unsigned();
             $table->date('periodo');
 
             $table->integer('lote_id')->unsigned();
