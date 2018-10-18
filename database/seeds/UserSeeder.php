@@ -14,6 +14,28 @@ class UserSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
+
+        DB::table('users')->insert([array(
+            'name' => 'Alvaro Castaño',
+            'email' => 'alvarocastano6@gmail.com',
+            'email_verified_at' => null,
+            'password' => bcrypt('123456'),
+            'tipo' => 'adm',
+            'remember_token' => str_random(10),
+            'created_at' => date('Y-m-d H:m:s'),
+            'updated_at' => date('Y-m-d H:m:s')
+        )]);
+
+        DB::table('users')->insert([array(
+            'name' => 'Alvaro Castaño',
+            'email' => 'alvaro.castanol@autonoma.edu.co',
+            'email_verified_at' => null,
+            'password' => bcrypt('123456'),
+            'tipo' => 'usu',
+            'remember_token' => str_random(10),
+            'created_at' => date('Y-m-d H:m:s'),
+            'updated_at' => date('Y-m-d H:m:s')
+        )]);
         
         for ($i=0; $i < 5; $i++) {
             DB::table('users')->insert([array(
