@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
 
-class GrupoLaborSeeder extends Seeder
+class GrupoInsumoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,14 +15,7 @@ class GrupoLaborSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        DB::table('grupos_labores')->insert([array(
-            'nombre' => "Recoleccion",
-            'descripcion' => null,
-            'created_at' => date('Y-m-d H:m:s'),
-            'updated_at' => date('Y-m-d H:m:s')
-        )]);
-
-        DB::table('grupos_labores')->insert([array(
+        DB::table('grupos_insumos')->insert([array(
             'nombre' => "Control Malezas",
             'descripcion' => null,
             'created_at' => date('Y-m-d H:m:s'),
@@ -31,6 +24,13 @@ class GrupoLaborSeeder extends Seeder
 
         DB::table('grupos_labores')->insert([array(
             'nombre' => "Control Sanitario",
+            'descripcion' => null,
+            'created_at' => date('Y-m-d H:m:s'),
+            'updated_at' => date('Y-m-d H:m:s')
+        )]);
+
+        DB::table('grupos_labores')->insert([array(
+            'nombre' => "Fertilizacion",
             'descripcion' => null,
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')

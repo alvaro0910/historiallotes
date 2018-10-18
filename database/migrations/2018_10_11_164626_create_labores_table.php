@@ -17,10 +17,10 @@ class CreateLaboresTable extends Migration
             $table->engine='InnoDB';
             $table->increments('id')->unsigned();
             $table->string('nombre', 50)->unique();
-            $table->text('descripcion');
+            $table->text('descripcion')->nullable();
 
-            $table->integer('grupos_labores_id')->unsigned()->nullable();
-            $table->foreign('grupos_labores_id')->references('id')->on('grupos_labores')->onUpdate('SET NULL')->onDelete('RESTRICT');
+            $table->integer('grupo_labor_id')->unsigned()->nullable();
+            $table->foreign('grupo_labor_id')->references('id')->on('grupos_labores')->onUpdate('SET NULL')->onDelete('RESTRICT');
             
             $table->timestamps();
         });

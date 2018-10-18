@@ -17,24 +17,28 @@ class VariedadSeeder extends Seeder
 
         DB::table('variedades')->insert([array(
             'variedad' => 'Robusta',
+            'descripcion' => null,
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         )]);
 
         DB::table('variedades')->insert([array(
             'variedad' => 'Arabica',
+            'descripcion' => null,
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         )]);
 
         DB::table('variedades')->insert([array(
             'variedad' => 'Colombia',
+            'descripcion' => null,
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         )]);
 
         DB::table('variedades')->insert([array(
             'variedad' => 'Castillo',
+            'descripcion' => null,
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         )]);

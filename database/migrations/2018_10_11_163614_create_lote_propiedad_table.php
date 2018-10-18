@@ -16,7 +16,7 @@ class CreateLotePropiedadTable extends Migration
         Schema::create('lote_propiedad', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->increments('id')->unsigned();
-            $table->decimal('cantidad', 5, 2);
+            $table->decimal('cantidad', 7, 2);
             $table->date('periodo');
             
             $table->integer('lote_id')->unsigned()->nullable();

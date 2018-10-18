@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInsumosTable extends Migration
+class CreateGruposInsumosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,11 @@ class CreateInsumosTable extends Migration
      */
     public function up()
     {
-        Schema::create('insumos', function (Blueprint $table) {
+        Schema::create('grupos_insumos', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->increments('id')->unsigned();
             $table->string('nombre', 50)->unique();
             $table->text('descripcion')->nullable();
-
-            $table->integer('grupo_insumo_id')->unsigned()->nullable();
-            $table->foreign('grupo_insumo_id')->references('id')->on('grupos_insumos')->onUpdate('SET NULL')->onDelete('RESTRICT');
-
             $table->timestamps();
         });
     }
@@ -33,6 +29,6 @@ class CreateInsumosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('insumos');
+        Schema::dropIfExists('grupos_insumos');
     }
 }

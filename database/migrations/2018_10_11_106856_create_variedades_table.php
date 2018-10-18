@@ -17,6 +17,7 @@ class CreateVariedadesTable extends Migration
             $table->engine='InnoDB';
             $table->increments('id')->unsigned();
             $table->string('variedad', 100)->unique();
+            $table->text('descripcion')->nullable();
             $table->timestamps();
         });
     }
