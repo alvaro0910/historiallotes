@@ -27,6 +27,7 @@
                             <tr>
                             <th>Usuario ID</th>
                             <th>Nombre</th>
+                            <th>Tipo</th>
                             <th>Ver</th>
                             <th>Editar</th>
                             </tr>
@@ -36,7 +37,8 @@
                             <tr>
                                 <td>{{ $item->id }}</td>
                                 <td>{{ $item->name }}</td>
-                                
+                                <td>{{ $item->tipo }}</td>
+                                <td><a href="{{ route('users.show', $item->id) }}">Ver</a></td>
                             </tr>
                             @endforeach
                         </tbody>

@@ -56,7 +56,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::where('id')->find($id);
+        $user = User::where('id', $id)->findOrFail($id);
         return view('adm.user.show')->withData($user);
     }
 
