@@ -62,8 +62,7 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Usuarios</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-bars"></i><a href="#">Administradores</a></li>
-                            <li><i class="fa fa-bars"></i><a href="#">Visitantes</a></li>
+                            <li><i class="fa fa-bars"></i><a href=" {{ route('index') }}">Lista de usuarios</a></li>
                         </ul>
                     </li>
 
