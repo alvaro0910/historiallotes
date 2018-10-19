@@ -36,13 +36,7 @@
                             <tr>
                                 <td>{{ $item->id }}</td>
                                 <td>{{ $item->name }}</td>
-                                <td><a title="Ver" href="{{ route('show', $item) }}"><img src="{{ asset('imgs/ver.png') }}" alt="ver" style="width:25px;"/></a></td>
-                                <td><a title="Editar" href="{{ route('edit', $item->id) }}"><img src="{{ asset('imgs/editar.png') }}" alt="editar" style="width:25px;"/></a></td>            
-                                <td>
-                                    {!! Form::open(['method' => 'DELETE','route' => ['destroy', $item->id]]) !!}
-                                    {!! Form::submit('Borrar Usuario', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que deseas eliminarlo?')"])!!}
-                                    {!! Form::close() !!}
-                                </td>
+                                
                             </tr>
                             @endforeach
                         </tbody>
