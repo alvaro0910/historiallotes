@@ -29,10 +29,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/info/rendimientos', 'Datos\RendimientoController@index')->name('rendimientos');
 
     Route::resource('users','Admin\UserController');
-    //Route::get('/listusu', 'Admin\UserController@index')->name('list');
-    //Route::get('/show/', 'Admin\UserController@show')->name('show');
-    //Route::get('/edit', 'Admin\UserController@edit')->name('edit');
-    //Route::get('/create', 'Admin\UserController@create')->name('create');    
-    
-    Route::get('/lote', 'Admin\LoteController@index')->name('lote');
+    Route::resource('fincasycultivos','Admin\FincaCultivoUserController');
+    Route::resource('fincas','Admin\FincaController');
+    Route::resource('cultivos','Admin\CultivoController');
 });

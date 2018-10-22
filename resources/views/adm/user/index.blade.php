@@ -40,7 +40,7 @@
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->tipo }}</td>
                                 <td><a href="{{ route('users.show', $item->id) }}">Ver</a></td>
-                                <td><a href="{{ route('users.edit', $item->id) }}">Ver</a></td>
+                                <td><a href="{{ route('users.edit', $item->id) }}">Editar</a></td>
                                 <td>
                                 {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $item->id]]) !!}
                                     {!! Form::submit('Borrar este usuario?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que deseas eliminarlo?')"])!!}
@@ -50,11 +50,30 @@
                         </tbody>
                         </table>
                         </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
 </div>
+
+<script src="assets/js/lib/data-table/datatables.min.js"></script>
+<script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+<script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+<script src="assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+<script src="assets/js/lib/data-table/jszip.min.js"></script>
+<script src="assets/js/lib/data-table/pdfmake.min.js"></script>
+<script src="assets/js/lib/data-table/vfs_fonts.js"></script>
+<script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
+<script src="assets/js/lib/data-table/buttons.print.min.js"></script>
+<script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
+<script src="assets/js/lib/data-table/datatables-init.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#bootstrap-data-table-export').DataTable();
+    } );
+</script>
 @endsection

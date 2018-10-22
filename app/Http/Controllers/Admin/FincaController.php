@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\cultivo;
+use App\Finca;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
 
-class CultivoController extends Controller
+class FincaController extends Controller
 {
     /**
      * Show the form for creating a new resource.
@@ -33,10 +33,10 @@ class CultivoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\cultivo  $cultivo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(cultivo $cultivo)
+    public function show($id)
     {
         //
     }
@@ -44,10 +44,10 @@ class CultivoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\cultivo  $cultivo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(cultivo $cultivo)
+    public function edit($id)
     {
         //
     }
@@ -56,10 +56,10 @@ class CultivoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\cultivo  $cultivo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, cultivo $cultivo)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -67,10 +67,10 @@ class CultivoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\cultivo  $cultivo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(cultivo $cultivo)
+    public function destroy($id)
     {
         //
     }
