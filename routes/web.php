@@ -32,8 +32,7 @@ Route::group(['middleware' => 'auth'], function() {
     //Route::get('/listusu', 'Admin\UserController@index')->name('list');
     //Route::get('/show/', 'Admin\UserController@show')->name('show');
     //Route::get('/edit', 'Admin\UserController@edit')->name('edit');
-    //Route::get('/create', 'Admin\UserController@create')->name('create');
-    
+    //Route::get('/create', 'Admin\UserController@create')->name('create');    
     
     Route::get('/lote', 'Admin\LoteController@index')->name('lote');
 });

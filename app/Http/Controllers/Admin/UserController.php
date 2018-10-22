@@ -68,7 +68,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::where('id')->find($id);
+        $user = User::where('id', $id)->findOrFail($id);
         return view('adm.user.edit', ['data' => $user]);
     }
 

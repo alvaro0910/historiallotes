@@ -30,6 +30,7 @@
                             <th>Tipo</th>
                             <th>Ver</th>
                             <th>Editar</th>
+                            <th>Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,6 +40,7 @@
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->tipo }}</td>
                                 <td><a href="{{ route('users.show', $item->id) }}">Ver</a></td>
+                                <td><a href="{{ route('users.edit', $item->id) }}">Ver</a></td>
                             </tr>
                             @endforeach
                         </tbody>
