@@ -19,7 +19,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Usuarios Administradores</strong>
+                                <strong class="card-title">Usuarios registrados</strong>
                             </div>
                         <div class="card-body">
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
@@ -41,6 +41,10 @@
                                 <td>{{ $item->tipo }}</td>
                                 <td><a href="{{ route('users.show', $item->id) }}">Ver</a></td>
                                 <td><a href="{{ route('users.edit', $item->id) }}">Ver</a></td>
+                                <td>
+                                {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $item->id]]) !!}
+                                    {!! Form::submit('Borrar este usuario?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que deseas eliminarlo?')"])!!}
+                                {!! Form::close() !!}</td>
                             </tr>
                             @endforeach
                         </tbody>

@@ -81,12 +81,13 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::where('id')->findOrFail($id);
+        $user = User::where('id', $id)->findOrFail($id);
+        
         $input = $request->all();
         $user->update($input);
 
         $notificacion = array(
-                'message' => 'Usuario Actualizada Con Exito!',
+                'message' => 'Usuario Actualizado Con Exito!',
                 'alert-type' => 'success'
         );
         return redirect()->back()->with($notificacion);
@@ -100,7 +101,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::where('id')->findOrFail($id);
+        $user = User::where('id', $id)->findOrFail($id);
         $user->delete();
 
         $notificacion = array(
