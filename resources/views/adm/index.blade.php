@@ -38,7 +38,7 @@
                                                     <tr>
                                                     <th>Finca ID</th>
                                                     <th>Nombre</th>
-                                                    <th>Ciudad</th>
+                                                    <th>Municipio</th>
                                                     <th>Ver</th>
                                                     <th>Editar</th>
                                                     <th>Eliminar</th>
@@ -49,7 +49,7 @@
                                                     <tr>
                                                         <td>{{ $item->id }}</td>
                                                         <td>{{ $item->nombre }}</td>
-                                                        <td>{{ $item->ciudad }}</td>
+                                                        <td>{{ $item->municipio }}</td>
                                                         <td><a href="{{ route('fincas.show', $item->id) }}">Ver</a></td>
                                                         <td><a href="{{ route('fincas.edit', $item->id) }}">Editar</a></td>
                                                         <td>
@@ -138,11 +138,12 @@
                                                     @foreach ($collectionfincacultivo as $item)
                                                     <tr>
                                                         <td>{{ $item->id }}</td>
+                                                        <td>{{ $item->nombre }}</td>
                                                         <td>{{ $item->cultivo }}</td>
-                                                        <td><a href="{{ route('fincacultivo.show', $item->id) }}">Ver</a></td>
-                                                        <td><a href="{{ route('fincacultivo.edit', $item->id) }}">Editar</a></td>
+                                                        <td><a href="{{ route('fincascultivos.show', $item->id) }}">Ver</a></td>
+                                                        <td><a href="{{ route('fincascultivos.edit', $item->id) }}">Editar</a></td>
                                                         <td>
-                                                        {!! Form::open(['method' => 'DELETE','route' => ['fincacultivo.destroy', $item->id]]) !!}
+                                                        {!! Form::open(['method' => 'DELETE','route' => ['fincascultivos.destroy', $item->id]]) !!}
                                                             {!! Form::submit('Borrar esta relacion?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta relacion entre la finca y el cultivo?')"])!!}
                                                         {!! Form::close() !!}</td>
                                                     </tr>
@@ -180,14 +181,15 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach ($collectionfincacultivo as $item)
+                                                    @foreach ($collectionfincauser as $item)
                                                     <tr>
                                                         <td>{{ $item->id }}</td>
-                                                        <td>{{ $item->cultivo }}</td>
-                                                        <td><a href="{{ route('fincacultivo.show', $item->id) }}">Ver</a></td>
-                                                        <td><a href="{{ route('fincacultivo.edit', $item->id) }}">Editar</a></td>
+                                                        <td>{{ $item->finca_id }}</td>
+                                                        <td>{{ $item->user_id }}</td>
+                                                        <td><a href="{{ route('fincasusers.show', $item->id) }}">Ver</a></td>
+                                                        <td><a href="{{ route('fincasusers.edit', $item->id) }}">Editar</a></td>
                                                         <td>
-                                                        {!! Form::open(['method' => 'DELETE','route' => ['fincacultivo.destroy', $item->id]]) !!}
+                                                        {!! Form::open(['method' => 'DELETE','route' => ['fincasusers.destroy', $item->id]]) !!}
                                                             {!! Form::submit('Borrar esta relacion?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta relacion entre la finca y el cultivo?')"])!!}
                                                         {!! Form::close() !!}</td>
                                                     </tr>
@@ -211,4 +213,21 @@
     </div>
 </div>
         
+<script src="assets/js/lib/data-table/datatables.min.js"></script>
+<script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+<script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+<script src="assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+<script src="assets/js/lib/data-table/jszip.min.js"></script>
+<script src="assets/js/lib/data-table/pdfmake.min.js"></script>
+<script src="assets/js/lib/data-table/vfs_fonts.js"></script>
+<script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
+<script src="assets/js/lib/data-table/buttons.print.min.js"></script>
+<script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
+<script src="assets/js/lib/data-table/datatables-init.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#bootstrap-data-table-export').DataTable();
+    } );
+</script>
 @endsection

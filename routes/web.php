@@ -29,7 +29,9 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/info/rendimientos', 'Datos\RendimientoController@index')->name('rendimientos');
 
     Route::resource('users','Admin\UserController');
-    Route::resource('fincasycultivos','Admin\FincaCultivoUserController');
+    Route::resource('fincascultivosusers','Admin\FincaCultivoUserController');
     Route::resource('fincas','Admin\FincaController');
     Route::resource('cultivos','Admin\CultivoController');
+    Route::resource('fincascultivos','Admin\FincaCultivoController');
+    Route::resource('fincasusers','Admin\FincaUserController');
 });

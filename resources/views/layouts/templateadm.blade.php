@@ -63,7 +63,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Usuarios</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-bars"></i><a href=" {{ route('users.index') }}">Lista de usuarios</a></li>
-                            <li><i class="fa fa-bars"></i><a href=" {{ route('fincasycultivos.index') }}">Fincas y Cultivos</a></li>
+                            <li><i class="fa fa-bars"></i><a href=" {{ route('fincascultivosusers.index') }}">Fincas y cultivos</a></li>
                         </ul>
                     </li>
 
