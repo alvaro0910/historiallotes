@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\cultivo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use DB;
 
 class CultivoController extends Controller
 {
@@ -16,7 +15,7 @@ class CultivoController extends Controller
      */
     public function create()
     {
-        //
+        return view('adm.cultivo.create');
     }
 
     /**
@@ -38,7 +37,8 @@ class CultivoController extends Controller
      */
     public function show(cultivo $cultivo)
     {
-        //
+        $cultivo = Cultivo::where('id', $id)->findOrFail($id);
+        return view('adm.cultivo.show')->withData($cultivo);
     }
 
     /**
@@ -49,7 +49,8 @@ class CultivoController extends Controller
      */
     public function edit(cultivo $cultivo)
     {
-        //
+        $cultivo = Cultivo::where('id', $id)->findOrFail($id);
+        return view('adm.cultivo.edit', ['data' => $cultivo]);
     }
 
     /**
@@ -61,7 +62,16 @@ class CultivoController extends Controller
      */
     public function update(Request $request, cultivo $cultivo)
     {
-        //
+        $cultivo = Cultivo::where('id', $id)->findOrFail($id);
+        
+        $input = $request->all();
+        $cultivo->update($input);
+
+        $notificacion = array(
+                'message' => 'Cultivo Actualizado Con Exito!',
+                'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notificacion);
     }
 
     /**
@@ -72,6 +82,13 @@ class CultivoController extends Controller
      */
     public function destroy(cultivo $cultivo)
     {
-        //
+        $cultivo = Finca::where('id', $id)->findOrFail($id);
+        $cultivo->delete();
+
+        $notificacion = array(
+            'message' => 'Cultivo Eliminado Con Exito.',
+            'alert-type' => 'info'
+        );
+        return redirect()->back()->with($notificacion);
     }
 }

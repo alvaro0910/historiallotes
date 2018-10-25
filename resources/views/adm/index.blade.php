@@ -54,7 +54,7 @@
                                                         <td><a href="{{ route('fincas.edit', $item->id) }}">Editar</a></td>
                                                         <td>
                                                         {!! Form::open(['method' => 'DELETE','route' => ['fincas.destroy', $item->id]]) !!}
-                                                            {!! Form::submit('Borrar este usuario?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta finca?')"])!!}
+                                                            {!! Form::submit('Borrar finca?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta finca?')"])!!}
                                                         {!! Form::close() !!}</td>
                                                     </tr>
                                                     @endforeach
@@ -174,6 +174,7 @@
                                                     <tr>
                                                     <th>ID</th>
                                                     <th>Finca</th>
+                                                    <th>Municipio</th>
                                                     <th>Usuario</th>
                                                     <th>Ver</th>
                                                     <th>Editar</th>
@@ -184,8 +185,9 @@
                                                     @foreach ($collectionfincauser as $item)
                                                     <tr>
                                                         <td>{{ $item->id }}</td>
-                                                        <td>{{ $item->finca_id }}</td>
-                                                        <td>{{ $item->user_id }}</td>
+                                                        <td>{{ $item->nombre }}</td>
+                                                        <td>{{ $item->municipio }}</td>
+                                                        <td>{{ $item->name }}</td>
                                                         <td><a href="{{ route('fincasusers.show', $item->id) }}">Ver</a></td>
                                                         <td><a href="{{ route('fincasusers.edit', $item->id) }}">Editar</a></td>
                                                         <td>

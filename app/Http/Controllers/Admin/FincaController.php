@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Finca;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use DB;
 
 class FincaController extends Controller
 {
@@ -16,7 +15,7 @@ class FincaController extends Controller
      */
     public function create()
     {
-        //
+        return view('adm.finca.create');
     }
 
     /**
@@ -38,7 +37,8 @@ class FincaController extends Controller
      */
     public function show($id)
     {
-        //
+        $finca = Finca::where('id', $id)->findOrFail($id);
+        return view('adm.finca.show')->withData($finca);
     }
 
     /**
@@ -49,7 +49,8 @@ class FincaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $finca = Finca::where('id', $id)->findOrFail($id);
+        return view('adm.finca.edit', ['data' => $finca]);
     }
 
     /**
@@ -61,7 +62,16 @@ class FincaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $finca = Finca::where('id', $id)->findOrFail($id);
+        
+        $input = $request->all();
+        $finca->update($input);
+
+        $notificacion = array(
+                'message' => 'Finca Actualizada Con Exito!',
+                'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notificacion);
     }
 
     /**
@@ -72,6 +82,13 @@ class FincaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $finca = Finca::where('id', $id)->findOrFail($id);
+        $finca->delete();
+
+        $notificacion = array(
+            'message' => 'Finca Eliminada Con Exito.',
+            'alert-type' => 'info'
+        );
+        return redirect()->back()->with($notificacion);
     }
 }

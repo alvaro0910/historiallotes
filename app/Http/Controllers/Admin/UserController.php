@@ -108,6 +108,6 @@ class UserController extends Controller
             'message' => 'Usuario Eliminado Con Exito.',
             'alert-type' => 'info'
         );
-      return redirect()->back()->with($notificacion);
+        return redirect()->back()->with($notificacion);
     }
 }
