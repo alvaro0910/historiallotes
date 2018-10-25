@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Variedad;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use DB;
 
 class VariedadController extends Controller
 {
@@ -15,7 +16,8 @@ class VariedadController extends Controller
      */
     public function index()
     {
-        //
+        $variedades = DB::table('variedades')->get();
+        return view('adm.variedad.index', ['collection' => $variedades]);
     }
 
     /**
@@ -25,7 +27,7 @@ class VariedadController extends Controller
      */
     public function create()
     {
-        //
+        return view('adm.variedad.create');
     }
 
     /**
@@ -36,7 +38,14 @@ class VariedadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $variedad = new Variedad($request->all());
+        $variedad->save();
+
+        $notificacion = array(
+            'message' => 'Variedad Agregada Con Exito.',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notificacion);
     }
 
     /**
@@ -45,9 +54,10 @@ class VariedadController extends Controller
      * @param  \App\Variedad  $variedad
      * @return \Illuminate\Http\Response
      */
-    public function show(Variedad $variedad)
+    public function show($id)
     {
-        //
+        //$variedad = Variedad::where('id', $id)->findOrFail($id);
+        //return view('adm.variedad.show')->withData($variedad);
     }
 
     /**
@@ -56,9 +66,10 @@ class VariedadController extends Controller
      * @param  \App\Variedad  $variedad
      * @return \Illuminate\Http\Response
      */
-    public function edit(Variedad $variedad)
+    public function edit($id)
     {
-        //
+        $variedad = Variedad::where('id', $id)->findOrFail($id);
+        return view('adm.variedad.edit', ['data' => $variedad]);
     }
 
     /**
@@ -68,9 +79,18 @@ class VariedadController extends Controller
      * @param  \App\Variedad  $variedad
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Variedad $variedad)
+    public function update(Request $request, $id)
     {
-        //
+        $variedad = Variedad::where('id', $id)->findOrFail($id);
+        
+        $input = $request->all();
+        $variedad->update($input);
+
+        $notificacion = array(
+            'message' => 'Variedad Actualizada Con Exito!',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notificacion);
     }
 
     /**
@@ -79,8 +99,15 @@ class VariedadController extends Controller
      * @param  \App\Variedad  $variedad
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Variedad $variedad)
+    public function destroy($id)
     {
-        //
+        $variedad = Variedad::where('id', $id)->findOrFail($id);
+        $variedad->delete();
+
+        $notificacion = array(
+            'message' => 'Variedad Eliminada Con Exito.',
+            'alert-type' => 'info'
+        );
+        return redirect()->back()->with($notificacion);
     }
 }

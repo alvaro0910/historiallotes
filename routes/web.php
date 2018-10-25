@@ -34,4 +34,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('cultivos','Admin\CultivoController');
     Route::resource('fincascultivos','Admin\FincaCultivoController');
     Route::resource('fincasusers','Admin\FincaUserController');
+
+    Route::resource('variedades','Admin\VariedadController');
 });

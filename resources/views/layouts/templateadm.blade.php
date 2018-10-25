@@ -63,8 +63,8 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Usuarios</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-bars"></i><a href=" {{ route('users.index') }}">Lista de usuarios</a></li>
-                            <li><i class="fa fa-bars"></i><a href=" {{ route('fincascultivosusers.index') }}">Fincas y cultivos</a></li>
+                            <li><i class="fa fa-bars"></i><a href=" {{ route('users.index') }} ">Lista de usuarios</a></li>
+                            <li><i class="fa fa-bars"></i><a href=" {{ route('fincascultivosusers.index') }} ">Fincas y cultivos</a></li>
                         </ul>
                     </li>
 
@@ -73,9 +73,10 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Lotes</a>
                         <ul class="sub-menu children dropdown-menu">
+                                <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('variedades.index') }}">Variedades</a></li>
                             <li><i class="menu-icon fa fa-fort-awesome"></i><a href="#">Datos generales</a></li>
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="#">Estado del cultivo</a></li>
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="#">Suelos</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="#">Estado del lote</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="#">Analisis de Suelos</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">

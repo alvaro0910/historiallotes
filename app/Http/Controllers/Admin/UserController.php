@@ -45,7 +45,7 @@ class UserController extends Controller
             'message' => 'Usuario Agregado Con Exito.',
             'alert-type' => 'success'
         );
-      return redirect()->back()->with($notificacion);
+        return redirect()->back()->with($notificacion);
     }
 
     /**

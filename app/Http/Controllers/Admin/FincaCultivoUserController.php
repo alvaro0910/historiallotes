@@ -17,13 +17,12 @@ class FincaCultivoUserController extends Controller
     {
         $fincas = DB::table('fincas')->get();
         $cultivos = DB::table('cultivos')->get();
-        //$fincacultivo = DB::table('cultivo_finca')->get();
-        //$fincauser = DB::table('finca_user')->get();
 
         $fincacultivo = DB::select(
             'SELECT fincas.nombre, cultivos.cultivo, cultivo_finca.id
             FROM fincas
-            INNER JOIN cultivos, cultivo_finca;');
+            INNER JOIN cultivos, cultivo_finca
+            WHERE fincas.id = cultivo_finca.finca_id AND cultivos.id = cultivo_finca.cultivo_id;');
 
         $fincauser = DB::select(
             'SELECT fincas.nombre, fincas.municipio, finca_user.id, users.name

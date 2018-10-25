@@ -35,7 +35,7 @@ class CultivoController extends Controller
      * @param  \App\cultivo  $cultivo
      * @return \Illuminate\Http\Response
      */
-    public function show(cultivo $cultivo)
+    public function show($id)
     {
         $cultivo = Cultivo::where('id', $id)->findOrFail($id);
         return view('adm.cultivo.show')->withData($cultivo);
@@ -47,7 +47,7 @@ class CultivoController extends Controller
      * @param  \App\cultivo  $cultivo
      * @return \Illuminate\Http\Response
      */
-    public function edit(cultivo $cultivo)
+    public function edit($id)
     {
         $cultivo = Cultivo::where('id', $id)->findOrFail($id);
         return view('adm.cultivo.edit', ['data' => $cultivo]);
@@ -60,7 +60,7 @@ class CultivoController extends Controller
      * @param  \App\cultivo  $cultivo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, cultivo $cultivo)
+    public function update(Request $request, $id)
     {
         $cultivo = Cultivo::where('id', $id)->findOrFail($id);
         
@@ -80,7 +80,7 @@ class CultivoController extends Controller
      * @param  \App\cultivo  $cultivo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(cultivo $cultivo)
+    public function destroy($id)
     {
         $cultivo = Finca::where('id', $id)->findOrFail($id);
         $cultivo->delete();

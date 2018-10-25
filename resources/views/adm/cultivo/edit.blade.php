@@ -20,9 +20,9 @@
                         <div class="col-12 col-md-9"><input type="text" id="cultivo" name="cultivo" placeholder="Cultivo" class="form-control" value="{{ $data->cultivo }}"><small class="form-text text-muted">Ingrese el nombre deñ cultivo</small></div>
                     </div>
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Descripcion</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="descripcion" name="descripcion" placeholder="Descripcion" class="form-control" value="{{ $data->descripcion }}"><small class="help-block text-muted">Ingrese la descripcion del cultivo</small></div>
-                    </div>     
+                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Descripcion</label></div>
+                        <div class="col-12 col-md-9"><textarea type="textarea-input" id="descripcion" name="descripcion" rows="9" placeholder="Descripcion" class="form-control">{{ $data->descripcion }}</textarea>
+                    </div>   
                 </div>
                 <div class="card-footer">
                 <button type="submit" class="btn btn-primary btn-sm">

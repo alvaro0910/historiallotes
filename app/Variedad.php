@@ -7,11 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Variedad extends Model
 {
     protected $fillable = [
-        'nombre','descripcion','ubicacion','direccion',
-    ];
-  
-    protected $hidden = [
-        'idUsuario',
+        'variedad', 'descripcion',
     ];
     
     public function lotes(){

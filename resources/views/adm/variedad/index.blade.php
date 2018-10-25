@@ -19,15 +19,15 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Usuarios registrados</strong>
+                                <div style="text-align:center;"><strong class="card-title">Variedades registradas</strong></div>
                             </div>
                         <div class="card-body">
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                            <th>Usuario ID</th>
-                            <th>Nombre</th>
-                            <th>Tipo</th>
+                            <th>Variedad ID</th>
+                            <th>Variedad</th>
+                            <th>Descripcion</th>
                             <th>Ver</th>
                             <th>Editar</th>
                             <th>Eliminar</th>
@@ -37,13 +37,13 @@
                             @foreach ($collection as $item)
                             <tr>
                                 <td>{{ $item->id }}</td>
-                                <td>{{ $item->name }}</td>
-                                <td>{{ $item->tipo }}</td>
-                                <td><a href="{{ route('users.show', $item->id) }}">Ver</a></td>
-                                <td><a href="{{ route('users.edit', $item->id) }}">Editar</a></td>
+                                <td>{{ $item->variedad }}</td>
+                                <td>{{ $item->descripcion }}</td>
+                                <td><a href="{{ route('variedades.show', $item->id) }}">Ver</a></td>
+                                <td><a href="{{ route('variedades.edit', $item->id) }}">Editar</a></td>
                                 <td>
-                                {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $item->id]]) !!}
-                                    {!! Form::submit('Borrar este usuario?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que deseas eliminarlo?')"])!!}
+                                {!! Form::open(['method' => 'DELETE','route' => ['variedades.destroy', $item->id]]) !!}
+                                    {!! Form::submit('Borrar esta variedad?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminarla?')"])!!}
                                 {!! Form::close() !!}</td>
                             </tr>
                             @endforeach
