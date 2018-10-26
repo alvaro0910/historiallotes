@@ -38,5 +38,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('variedades','Admin\VariedadController');
     Route::resource('lotes','Admin\LoteController');
     Route::resource('estados','Admin\EstadoFisicoController');
-    Route::resource('propiedades','Admin\PropiedadController');
+    Route::resource('propiedades','Admin\PropiedadSueloLoteController');
+    Route::resource('propiedad','Admin\PropiedadController');
+    Route::resource('propiedadlote','Admin\PropiedadLoteController');
 });

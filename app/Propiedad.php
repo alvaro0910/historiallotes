@@ -7,11 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Propiedad extends Model
 {
     protected $fillable = [
-        'nombre','descripcion','ubicacion','direccion',
-    ];
-  
-    protected $hidden = [
-        'idUsuario',
+        'material','unidad',
     ];
     
     public function lotes(){

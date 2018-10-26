@@ -36,7 +36,7 @@
                                                         </button>
                                                     </div>
                                                 <div class="card-body">
-                                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                                <table id="bootstrap-data-table1" class="table table-striped table-bordered">
                                                 <thead>
                                                     <tr>
                                                     <th>Finca ID</th>
@@ -85,7 +85,7 @@
                                                         </button>
                                                     </div>
                                                 <div class="card-body">
-                                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                                <table id="bootstrap-data-table2" class="table table-striped table-bordered">
                                                 <thead>
                                                     <tr>
                                                     <th>Cultivo ID</th>
@@ -129,7 +129,7 @@
                                                         <div style="text-align: center;"><strong class="card-title">Relaciones entre fincas y cultivos</strong></div>
                                                     </div>
                                                 <div class="card-body">
-                                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                                <table id="bootstrap-data-table3" class="table table-striped table-bordered">
                                                 <thead>
                                                     <tr>
                                                     <th>ID</th>
@@ -175,7 +175,7 @@
                                                         <div style="text-align: center;"><strong class="card-title">Relaciones entre fincas y usuarios</strong></div>
                                                     </div>
                                                 <div class="card-body">
-                                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                                <table id="bootstrap-data-table4" class="table table-striped table-bordered">
                                                 <thead>
                                                     <tr>
                                                     <th>ID</th>

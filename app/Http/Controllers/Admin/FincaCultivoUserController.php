@@ -30,6 +30,6 @@ class FincaCultivoUserController extends Controller
             INNER JOIN users, finca_user
             WHERE fincas.id = finca_user.finca_id AND users.id = finca_user.user_id;');
 
-        return view('adm.index', ['collectionfincas' => $fincas, 'collectioncultivos' => $cultivos, 'collectionfincacultivo' => $fincacultivo, 'collectionfincauser' => $fincauser]);
+        return view('adm.indexfincacultivouser', ['collectionfincas' => $fincas, 'collectioncultivos' => $cultivos, 'collectionfincacultivo' => $fincacultivo, 'collectionfincauser' => $fincauser]);
     }
 }

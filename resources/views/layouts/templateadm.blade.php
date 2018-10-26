@@ -197,9 +197,47 @@
     <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
     <script src="assets/js/lib/data-table/datatables-init.js"></script>
 
+    <!--Scripts individuales para cada uno de las tablas en un grupo de tabs 
+    Original ->-->
     <script type="text/javascript">
         $(document).ready(function() {
             $('#bootstrap-data-table-export').DataTable();
+        } );
+    </script> 
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#bootstrap-data-table1').DataTable();
+        } );
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#bootstrap-data-table2').DataTable();
+        } );
+    </script>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#bootstrap-data-table3').DataTable();
+        } );
+    </script>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#bootstrap-data-table4').DataTable();
+        } );
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#bootstrap-data-table5').DataTable();
+        } );
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#bootstrap-data-table6').DataTable();
         } );
     </script>
 
