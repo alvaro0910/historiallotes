@@ -36,4 +36,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('fincasusers','Admin\FincaUserController');
 
     Route::resource('variedades','Admin\VariedadController');
+    Route::resource('lotes','Admin\LoteController');
+    Route::resource('estados','Admin\EstadoFisicoController');
+    Route::resource('propiedades','Admin\PropiedadController');
 });

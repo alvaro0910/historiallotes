@@ -10,7 +10,7 @@
                         <section class="card">
                             <div class="card-header user-header alt bg-dark">
                                 <div class="media">
-                                    <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="{{ asset('images/user.png') }}">
+                                    <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="{{ asset('images/variedad.jpg') }}">
                                     <div class="media-body">
                                         <h2 class="text-light display-6">{{ $data->variedad }}</h2>
                                     </div>
@@ -28,7 +28,7 @@
                                     <i class="fa fa-bell-o"></i> <b>Ultima Actualización:</b> {{ $data->updated_at }}
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="{{ route('veriedades.index') }}"> 
+                                    <a href="{{ route('variedades.index') }}"> 
                                         <div class="icon-container">
                                             <span class="ti-back-left"></span><span class="icon-name"> Regresar</span>
                                         </div>

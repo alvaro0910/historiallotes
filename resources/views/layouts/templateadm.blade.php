@@ -74,9 +74,9 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Lotes</a>
                         <ul class="sub-menu children dropdown-menu">
                                 <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('variedades.index') }}">Variedades</a></li>
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="#">Datos generales</a></li>
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="#">Estado del lote</a></li>
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="#">Analisis de Suelos</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('lotes.index') }}">Datos generales</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('estados.index') }}">Estado del lote</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('propiedades.index') }}">Analisis de Suelos</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
@@ -184,6 +184,24 @@
     <script src="{{ asset('assets/js/lib/vector-map/jquery.vmap.min.js') }}"></script>
     <script src="{{ asset('assets/js/lib/vector-map/jquery.vmap.sampledata.js') }}"></script>
     <script src="{{ asset('assets/js/lib/vector-map/country/jquery.vmap.world.js') }}"></script>
+
+    <script src="assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+    <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+    <script src="assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+    <script src="assets/js/lib/data-table/jszip.min.js"></script>
+    <script src="assets/js/lib/data-table/pdfmake.min.js"></script>
+    <script src="assets/js/lib/data-table/vfs_fonts.js"></script>
+    <script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
+    <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
+    <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
+    <script src="assets/js/lib/data-table/datatables-init.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#bootstrap-data-table-export').DataTable();
+        } );
+    </script>
 
     <script>
         ( function ( $ ) {

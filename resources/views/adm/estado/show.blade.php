@@ -10,7 +10,7 @@
                         <section class="card">
                             <div class="card-header user-header alt bg-dark">
                                 <div class="media">
-                                    <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="{{ asset('images/lote.jpg') }}">
+                                    <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="{{ asset('images/estado.jpg') }}">
                                     <div class="media-body">
                                         <h2 class="text-light display-6">{{ $data['0']->nombre }}</h2>
                                     </div>
@@ -19,25 +19,10 @@
 
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <i class="fa fa-envelope-o"></i> <b>Codigo:</b> {{ $data['0']->codigo }} 
+                                    <i class="fa fa-envelope-o"></i> <b>Descripcion:</b> {{ $data['0']->descripcion }} 
                                 </li>
                                 <li class="list-group-item">
-                                    <i class="fa fa-envelope-o"></i> <b>Area:</b> {{ $data['0']->area }} 
-                                </li>
-                                <li class="list-group-item">
-                                    <i class="fa fa-tasks"></i> <b>Poblacion:</b> {{ $data['0']->poblacion }}
-                                </li>
-                                <li class="list-group-item">
-                                    <i class="fa fa-tasks"></i> <b>Edad:</b> {{ $data['0']->edad }}
-                                </li>
-                                <li class="list-group-item">
-                                    <i class="fa fa-tasks"></i> <b>Altura SNM:</b> {{ $data['0']->alturasnm }}
-                                </li>
-                                <li class="list-group-item">
-                                    <i class="fa fa-tasks"></i> <b>Cultivo: </b> {{ $data['0']->cultivo }}
-                                </li>
-                                <li class="list-group-item">
-                                    <i class="fa fa-tasks"></i> <b>Variedad:</b> {{ $data['0']->variedad }}
+                                    <i class="fa fa-envelope-o"></i> <b>Periodo:</b> {{ $data['0']->periodo }} 
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fa fa-tasks"></i> <b>Fecha de Creación:</b> {{ $data['0']->created_at }}
@@ -46,12 +31,12 @@
                                     <i class="fa fa-bell-o"></i> <b>Ultima Actualización:</b> {{ $data['0']->updated_at }}
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="{{ route('lotes.index') }}"> 
+                                    <a href="{{ route('estados.index') }}"> 
                                         <div class="icon-container">
                                             <span class="ti-back-left"></span><span class="icon-name"> Regresar</span>
                                         </div>
                                     </a>
-                                    <a href="{{ route('lotes.edit', $data['0']->id) }}"> 
+                                    <a href="{{ route('estados.edit', $data['0']->id) }}"> 
                                         <div class="icon-container">
                                             <span class="ti-pencil-alt"></span><span class="icon-name"> Editar</span>
                                         </div>

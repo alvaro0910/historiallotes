@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\EstadoFisico;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use DB;
 
 class EstadoFisicoController extends Controller
 {
@@ -15,7 +16,12 @@ class EstadoFisicoController extends Controller
      */
     public function index()
     {
-        //
+        $estados = DB::select(
+            'SELECT estados_fisicos.id, estados_fisicos.descripcion, estados_fisicos.periodo, lotes.nombre
+            FROM estados_fisicos
+            INNER JOIN lotes
+            WHERE lotes.id = estados_fisicos.lote_id;');
+        return view('adm.estado.index', ['collection' => $estados]);
     }
 
     /**
@@ -45,9 +51,14 @@ class EstadoFisicoController extends Controller
      * @param  \App\EstadoFisico  $estadoFisico
      * @return \Illuminate\Http\Response
      */
-    public function show(EstadoFisico $estadoFisico)
+    public function show($id)
     {
-        //
+        $estado = DB::select(
+            "SELECT estados_fisicos.id, estados_fisicos.descripcion, estados_fisicos.periodo, estados_fisicos.created_at, estados_fisicos.updated_at, lotes.nombre
+            FROM estados_fisicos
+            INNER JOIN lotes
+            WHERE lotes.id = estados_fisicos.lote_id AND estados_fisicos.id ='".$id."';");
+        return view('adm.estado.show')->withData($estado);
     }
 
     /**
@@ -56,9 +67,10 @@ class EstadoFisicoController extends Controller
      * @param  \App\EstadoFisico  $estadoFisico
      * @return \Illuminate\Http\Response
      */
-    public function edit(EstadoFisico $estadoFisico)
+    public function edit($id)
     {
-        //
+        $estado = EstadoFisico::where('id', $id)->findOrFail($id);
+        return view('adm.estado.edit', ['data' => $estado]);
     }
 
     /**
@@ -68,9 +80,18 @@ class EstadoFisicoController extends Controller
      * @param  \App\EstadoFisico  $estadoFisico
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EstadoFisico $estadoFisico)
+    public function update(Request $request, $id)
     {
-        //
+        $estado = EstadoFisico::where('id', $id)->findOrFail($id);
+        
+        $input = $request->all();
+        $estado->update($input);
+
+        $notificacion = array(
+                'message' => 'Estado Fisico Actualizado Con Exito!',
+                'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notificacion);
     }
 
     /**
@@ -81,6 +102,13 @@ class EstadoFisicoController extends Controller
      */
     public function destroy(EstadoFisico $estadoFisico)
     {
-        //
+        $estado = EstadoFisico::where('id', $id)->findOrFail($id);
+        $estado->delete();
+
+        $notificacion = array(
+            'message' => 'Estado Fisico Eliminado Con Exito.',
+            'alert-type' => 'info'
+        );
+        return redirect()->back()->with($notificacion);
     }
 }

@@ -9,10 +9,6 @@ class Cultivo extends Model
     protected $fillable = [
         'cultivo', 'descripcion',
     ];
-  
-    protected $hidden = [
-        
-    ];
 
     public function fincas(){
         return $this->belongToMany('App\Finca')->withTimestamps();

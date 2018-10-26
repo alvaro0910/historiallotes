@@ -6,12 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class EstadoFisico extends Model
 {
+    public $table = "estados_fisicos";
+
     protected $fillable = [
-        'nombre','descripcion','ubicacion','direccion',
-    ];
-  
-    protected $hidden = [
-        'idUsuario',
+        'descripcion', 'periodo', 'lote_id',
     ];
     
     public function lote(){

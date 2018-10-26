@@ -20,6 +20,9 @@
                         <div class="card">
                             <div class="card-header">
                                 <div style="text-align:center;"><strong class="card-title">Variedades registradas</strong></div>
+                                <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" data-target="#largeModalCrearVariedad">
+                                    Crear variedad
+                                </button>
                             </div>
                         <div class="card-body">
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
@@ -27,7 +30,6 @@
                             <tr>
                             <th>Variedad ID</th>
                             <th>Variedad</th>
-                            <th>Descripcion</th>
                             <th>Ver</th>
                             <th>Editar</th>
                             <th>Eliminar</th>
@@ -38,12 +40,11 @@
                             <tr>
                                 <td>{{ $item->id }}</td>
                                 <td>{{ $item->variedad }}</td>
-                                <td>{{ $item->descripcion }}</td>
                                 <td><a href="{{ route('variedades.show', $item->id) }}">Ver</a></td>
                                 <td><a href="{{ route('variedades.edit', $item->id) }}">Editar</a></td>
                                 <td>
                                 {!! Form::open(['method' => 'DELETE','route' => ['variedades.destroy', $item->id]]) !!}
-                                    {!! Form::submit('Borrar esta variedad?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminarla?')"])!!}
+                                    {!! Form::submit('Borrar este registro?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar el registro? $item->id')"])!!}
                                 {!! Form::close() !!}</td>
                             </tr>
                             @endforeach
@@ -59,21 +60,25 @@
     </div>
 </div>
 
-<script src="assets/js/lib/data-table/datatables.min.js"></script>
-<script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
-<script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
-<script src="assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
-<script src="assets/js/lib/data-table/jszip.min.js"></script>
-<script src="assets/js/lib/data-table/pdfmake.min.js"></script>
-<script src="assets/js/lib/data-table/vfs_fonts.js"></script>
-<script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
-<script src="assets/js/lib/data-table/buttons.print.min.js"></script>
-<script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
-<script src="assets/js/lib/data-table/datatables-init.js"></script>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#bootstrap-data-table-export').DataTable();
-    } );
-</script>
+<div class="modal fade" id="largeModalCrearVariedad" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="largeModalLabel">Large Modal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Crear Variedad
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

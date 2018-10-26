@@ -56,8 +56,8 @@ class VariedadController extends Controller
      */
     public function show($id)
     {
-        //$variedad = Variedad::where('id', $id)->findOrFail($id);
-        //return view('adm.variedad.show')->withData($variedad);
+        $variedad = Variedad::where('id', $id)->findOrFail($id);
+        return view('adm.variedad.show')->withData($variedad);
     }
 
     /**
