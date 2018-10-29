@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Insumo extends Model
 {
     protected $fillable = [
-        'nombre', 'descripcion',
-    ];
-  
-    protected $hidden = [
-        
+        'descripcion', 'costo', 'periodo', 'lote_id', 'grupo_labor_id',
     ];
 
-    public function lotes(){
-        return $this->belongToMany('App\Lote')->withPivot('costo', 'periodo')->withTimestamps();
+    public function lote(){
+        return $this->belongTo('App\Lote');
+    }
+
+    public function grupolabor(){
+        return $this->belongTo('App\GrupoLabor');
     }
 }

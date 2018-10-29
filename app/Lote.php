@@ -9,10 +9,6 @@ class Lote extends Model
     protected $fillable = [
         'codigo', 'nombre', 'area', 'poblacion', 'edad', 'alturasnm',
     ];
-  
-    protected $hidden = [
-        
-    ];
 
     public function cultivo(){
         return $this->belongTo('App\Cultivo');
@@ -31,11 +27,11 @@ class Lote extends Model
     }
 
     public function insumos(){
-        return $this->belongToMany('App\Insumo')->withPivot('costo', 'periodo')->withTimestamps();
+        return $this->hasMany('App\Insumo');
     }
 
-    public function gruposLabores(){
-        return $this->belongToMany('App\GrupoLabor')->withPivot('costo', 'periodo', 'cantidadmo')->withTimestamps();
+    public function labores(){
+        return $this->hasMany('App\Labor');
     }
 
     public function propiedades(){

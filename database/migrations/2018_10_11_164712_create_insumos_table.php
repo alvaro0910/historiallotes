@@ -16,11 +16,15 @@ class CreateInsumosTable extends Migration
         Schema::create('insumos', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->increments('id')->unsigned();
-            $table->string('nombre', 50)->unique();
             $table->text('descripcion')->nullable();
+            $table->integer('costo')->unsigned();
+            $table->date('periodo');
 
-            $table->integer('grupo_insumo_id')->unsigned()->nullable();
-            $table->foreign('grupo_insumo_id')->references('id')->on('grupos_insumos')->onUpdate('SET NULL')->onDelete('RESTRICT');
+            $table->integer('lote_id')->unsigned();
+            $table->foreign('lote_id')->references('id')->on('lotes')->onUpdate('CASCADE')->onDelete('CASCADE');
+
+            $table->integer('grupo_labor_id')->unsigned()->nullable();
+            $table->foreign('grupo_labor_id')->references('id')->on('grupos_labores')->onUpdate('SET NULL')->onDelete('RESTRICT');
 
             $table->timestamps();
         });

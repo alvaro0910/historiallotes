@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/info/rendimientos', 'Datos\RendimientoController@index')->name('rendimientos');
 
     Route::resource('users','Admin\UserController');
+    
     Route::resource('fincascultivosusers','Admin\FincaCultivoUserController');
     Route::resource('fincas','Admin\FincaController');
     Route::resource('cultivos','Admin\CultivoController');
@@ -36,9 +37,18 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('fincasusers','Admin\FincaUserController');
 
     Route::resource('variedades','Admin\VariedadController');
+    
     Route::resource('lotes','Admin\LoteController');
+    
     Route::resource('estados','Admin\EstadoFisicoController');
+    
     Route::resource('propiedades','Admin\PropiedadSueloLoteController');
     Route::resource('propiedad','Admin\PropiedadController');
     Route::resource('propiedadlote','Admin\PropiedadLoteController');
+    
+    Route::resource('producciones','Admin\ProduccionController');
+
+    Route::resource('insumos','Admin\InsumoController');
+
+    Route::resource('labores','Admin\LaborController');
 });

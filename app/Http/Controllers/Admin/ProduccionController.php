@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Produccion;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use DB;
 
 class ProduccionController extends Controller
 {
@@ -15,7 +16,13 @@ class ProduccionController extends Controller
      */
     public function index()
     {
-        //
+        $produccionlote = DB::select(
+            'SELECT lotes.nombre, lotes.area, producciones.id, producciones.cantidad, producciones.periodo
+            FROM lotes
+            INNER JOIN producciones
+            WHERE lotes.id = producciones.lote_id;');
+
+        return view('adm.produccion.index', ['collection' => $produccionlote]);
     }
 
     /**
@@ -45,9 +52,14 @@ class ProduccionController extends Controller
      * @param  \App\Produccion  $produccion
      * @return \Illuminate\Http\Response
      */
-    public function show(Produccion $produccion)
+    public function show($id)
     {
-        //
+        $produccion = DB::select(
+            "SELECT lotes.nombre, lotes.area, producciones.cantidad, producciones.id, producciones.periodo, producciones.created_at, producciones.updated_at
+            FROM producciones
+            INNER JOIN lotes
+            WHERE producciones.id ='".$id."';");
+        return view('adm.produccion.show')->withData($produccion);
     }
 
     /**
@@ -56,9 +68,10 @@ class ProduccionController extends Controller
      * @param  \App\Produccion  $produccion
      * @return \Illuminate\Http\Response
      */
-    public function edit(Produccion $produccion)
+    public function edit($id)
     {
-        //
+        $produccion = Produccion::where('id', $id)->findOrFail($id);
+        return view('adm.produccion.edit', ['data' => $produccion]);
     }
 
     /**
@@ -68,9 +81,18 @@ class ProduccionController extends Controller
      * @param  \App\Produccion  $produccion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Produccion $produccion)
+    public function update(Request $request, $id)
     {
-        //
+        $produccion = Produccion::where('id', $id)->findOrFail($id);
+        
+        $input = $request->all();
+        $produccion->update($input);
+
+        $notificacion = array(
+                'message' => 'Produccion Actualizada Con Exito!',
+                'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notificacion);
     }
 
     /**
@@ -79,8 +101,15 @@ class ProduccionController extends Controller
      * @param  \App\Produccion  $produccion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Produccion $produccion)
+    public function destroy($id)
     {
-        //
+        $produccion = Produccion::where('id', $id)->findOrFail($id);
+        $produccion->delete();
+
+        $notificacion = array(
+            'message' => 'Produccion Eliminado Con Exito.',
+            'alert-type' => 'info'
+        );
+        return redirect()->back()->with($notificacion);
     }
 }

@@ -4,13 +4,6 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            
-            <div class="card-body">
-                @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                @endif
 
             <div class="content mt-3">
                 <div class="animated fadeIn">
@@ -19,19 +12,20 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <div style="text-align:center;"><strong class="card-title">Lotes registrados</strong></div>
-                                <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" data-target="#largeModalCrearLote">
-                                    Crear Lote
+                                <div style="text-align:center;"><strong class="card-title">Costo labores registrados</strong></div>
+                                <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" data-target="#largeModalCrearLabor">
+                                    Crear labor
                                 </button>
                             </div>
                         <div class="card-body">
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                            <th>Lote ID</th>
-                            <th>Nombre</th>
-                            <th>Codigo</th>
-                            <th>Cultivo</th>
+                            <th>ID</th>
+                            <th>Lote</th>
+                            <th>Labor</th>
+                            <th>Costo</th>
+                            <th>Fecha</th>
                             <th>Ver</th>
                             <th>Editar</th>
                             <th>Eliminar</th>
@@ -42,12 +36,13 @@
                             <tr>
                                 <td>{{ $item->id }}</td>
                                 <td>{{ $item->nombre }}</td>
-                                <td>{{ $item->codigo }}</td>
-                                <td>{{ $item->cultivo }}</td>
-                                <td><a href="{{ route('lotes.show', $item->id) }}">Ver</a></td>
-                                <td><a href="{{ route('lotes.edit', $item->id) }}">Editar</a></td>
+                                <td>{{ $item->nomlab }}</td>
+                                <td>{{ $item->costo }}</td>
+                                <td>{{ $item->periodo }}</td>
+                                <td><a href="{{ route('labores.show', $item->id) }}">Ver</a></td>
+                                <td><a href="{{ route('labores.edit', $item->id) }}">Editar</a></td>
                                 <td>
-                                {!! Form::open(['method' => 'DELETE','route' => ['lotes.destroy', $item->id]]) !!}
+                                {!! Form::open(['method' => 'DELETE','route' => ['labores.destroy', $item->id]]) !!}
                                     {!! Form::submit('¿Borrar este registro?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar el registro? $item->id')"])!!}
                                 {!! Form::close() !!}</td>
                             </tr>
@@ -64,7 +59,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="largeModalCrearLote" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+<div class="modal fade" id="largeModalCrearLabor" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -75,7 +70,7 @@
             </div>
             <div class="modal-body">
                 <p>
-                    Crear Lote
+                    Crear labor
                 </p>
             </div>
             <div class="modal-footer">

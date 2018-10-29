@@ -6,12 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produccion extends Model
 {
+    public $table = "producciones";
+
     protected $fillable = [
-        'nombre','descripcion','ubicacion','direccion',
-    ];
-  
-    protected $hidden = [
-        'idUsuario',
+        'cantidad','periodo','lote_id',
     ];
     
     public function lote(){

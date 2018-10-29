@@ -8,7 +8,7 @@
             <div class="col-lg-8">
             <div class="card">
                 <div class="card-header">
-                    <strong>Datos estado fisico</strong>
+                    <strong>Datos Produccion</strong>
                     @if ($errors->any())
                     <div class="alert alert-danger" role="alert">
                     <p>Corrija los errores:</p>
@@ -25,19 +25,19 @@
                 <div class="card-body card-block">
                     {!! Form::model($data, [
                         'method' => 'PUT',
-                        'route' => ['estados.update', $data->id]
+                        'route' => ['producciones.update', $data->id]
                     ]) !!}
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Estado fisico</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="descripcion" name="descripcion" placeholder="Estado Fisico" class="form-control" value="{{ $data->descripcion }}"><small class="form-text text-muted">Ingrese el estado fisico lote</small></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Cantidad</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="cantidad" name="cantidad" placeholder="Cantidad" class="form-control" value="{{ $data->cantidad }}"><small class="form-text text-muted">Ingrese la cantidad producida por el lote</small></div>
                     </div>
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Año</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="periodo" name="periodo" placeholder="Año" class="form-control" value="{{ $data->periodo }}"><small class="form-text text-muted">Ingrese el año del estado fisico del lote</small></div>
+                        <div class="col col-md-3"><label for="text-input" class="form-control-label">Fecha</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="periodo" name="periodo" placeholder="Periodo" class="form-control" value="{{ $data->periodo }}"><small class="form-text text-muted">Ingrese la fecha de produccion</small></div>
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="select" class="form-control-label">Lote</label></div>
-                        <select data-placeholder="Choose a Country..." class="standardSelect" tabindex="1" id="cultivo">
+                        <select data-placeholder="Choose a Country..." class="standardSelect" tabindex="1" id="lote">
                             <option value=""></option>
                             <option value="United States">United States</option>
                             <option value="United Kingdom">United Kingdom</option>
@@ -51,23 +51,22 @@
                             <option value="Anguilla">Anguilla</option>
                             <option value="Antarctica">Antarctica</option>
                         </select>
-                    </div>
                         <!--<select id="prioridadForm" name="prioridadForm">  no olvidar poner el < ? de php
                             <option value="baja" php if($estado=="baja") echo "selected";?>>Baja</option> 
                             <option value="media" php if($estado=="media") echo "selected";?>>Media</option> 
                             <option value="alta" php if($estado=="alta") echo "selected";?>>Alta</option> 
                             </select>-->
-                </div>
+                    </div>
+                </div>    
                 <div class="card-footer">
-                <button type="submit" class="btn btn-primary btn-sm">
-                    <i class="fa fa-dot-circle-o"></i> Actualizar Estado
-                </button>
-                
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Actualizar produccion
+                    </button>
                 </div>
                 <div class="card-footer">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            <a href="{{ route('estados.index') }}"> 
+                            <a href="{{ route('producciones.index') }}"> 
                                 <div class="icon-container">
                                     <span class="ti-back-left"></span><span class="icon-name"> Regresar</span>
                                 </div>

@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Propiedad extends Model
 {
+    public $table = "propiedades";
+
     protected $fillable = [
         'material','unidad',
     ];

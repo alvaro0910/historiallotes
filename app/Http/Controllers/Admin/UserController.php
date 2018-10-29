@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
+use App\Http\Requests\UserUpdateRequest;
 
 class UserController extends Controller
 {
@@ -42,7 +43,7 @@ class UserController extends Controller
         $user->save();
 
         $notificacion = array(
-            'message' => 'Usuario Agregado Con Exito.',
+            'message' => 'Usuario creado con exito.',
             'alert-type' => 'success'
         );
         return redirect()->back()->with($notificacion);
@@ -79,7 +80,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserUpdateRequest $request, $id)
     {
         $user = User::where('id', $id)->findOrFail($id);
         
@@ -87,8 +88,8 @@ class UserController extends Controller
         $user->update($input);
 
         $notificacion = array(
-                'message' => 'Usuario Actualizado Con Exito!',
-                'alert-type' => 'success'
+            'message' => 'Usuario Actualizado Con Exito!',
+            'alert-type' => 'success'
         );
         return redirect()->back()->with($notificacion);
     }

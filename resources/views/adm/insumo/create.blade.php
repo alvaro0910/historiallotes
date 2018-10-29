@@ -1,6 +1,7 @@
 @extends('layouts.templateadm')
 
 @section('content')
+
 @if ($errors->any())
   <div class="alert alert-danger" role="alert">
   <p>Corrija los errores:</p>
@@ -13,6 +14,7 @@
   </ul>
   </div>
 @endif
+
 <div class="col-lg-6">
     <div class="card">
       <div class="card-header"><strong>Lote</strong><small> Form</small></div>
@@ -57,7 +59,6 @@
       </div>
     </div>
   </div>
-
 
 @jquery
 @toastr_js

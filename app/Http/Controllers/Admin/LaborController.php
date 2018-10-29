@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Labor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use DB;
 
 class LaborController extends Controller
 {
@@ -15,7 +16,12 @@ class LaborController extends Controller
      */
     public function index()
     {
-        //
+        $labores = DB::select(
+            'SELECT labores.id, labores.costo, labores.periodo, grupos_labores.nombre AS nomlab, lotes.nombre
+            FROM labores
+            INNER JOIN lotes, grupos_labores
+            WHERE lotes.id = labores.lote_id AND grupos_labores.id = labores.grupo_labor_id;');
+        return view('adm.labor.index', ['collection' => $labores]);
     }
 
     /**
@@ -45,9 +51,14 @@ class LaborController extends Controller
      * @param  \App\Labor  $labor
      * @return \Illuminate\Http\Response
      */
-    public function show(Labor $labor)
+    public function show($id)
     {
-        //
+        $labor = DB::select(
+            "SELECT labores.id, labores.descripcion, labores.costo, labores.periodo, labores.cantidadmo, labores.created_at, labores.updated_at, lotes.nombre, grupos_labores.nombre AS nomlab
+            FROM labores
+            INNER JOIN lotes, grupos_labores
+            WHERE labores.id ='".$id."';");
+        return view('adm.labor.show')->withData($labor);
     }
 
     /**
@@ -56,9 +67,10 @@ class LaborController extends Controller
      * @param  \App\Labor  $labor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Labor $labor)
+    public function edit($id)
     {
-        //
+        $labor = Labor::where('id', $id)->findOrFail($id);
+        return view('adm.labor.edit', ['data' => $labor]);
     }
 
     /**
@@ -68,9 +80,18 @@ class LaborController extends Controller
      * @param  \App\Labor  $labor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Labor $labor)
+    public function update(Request $request, $id)
     {
-        //
+        $labor = Labor::where('id', $id)->findOrFail($id);
+        
+        $input = $request->all();
+        $labor->update($input);
+
+        $notificacion = array(
+                'message' => 'Costo labor Actualizado Con Exito!',
+                'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notificacion);
     }
 
     /**
@@ -79,8 +100,15 @@ class LaborController extends Controller
      * @param  \App\Labor  $labor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Labor $labor)
+    public function destroy($id)
     {
-        //
+        $labor = Labor::where('id', $id)->findOrFail($id);
+        $labor->delete();
+
+        $notificacion = array(
+            'message' => 'Costo Labor Eliminado Con Exito.',
+            'alert-type' => 'info'
+        );
+        return redirect()->back()->with($notificacion);
     }
 }

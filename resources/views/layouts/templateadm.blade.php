@@ -32,6 +32,10 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+    
+    <!-- Toastr.js para mensajes de informacion
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">-->
+    @toastr_css
 </head>
 <body class="bg-dark">   
     <!-- Left Panel -->
@@ -77,12 +81,13 @@
                             <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('lotes.index') }}">Datos generales</a></li>
                             <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('estados.index') }}">Estado del lote</a></li>
                             <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('propiedades.index') }}">Analisis de Suelos</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('producciones.index') }}">Producciones</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Labores</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="#">Costos mensuales</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{ route('labores.index') }}">Costos mensuales</a></li>
                             <li><i class="menu-icon fa fa-area-chart"></i><a href="#">Archivo plano</a></li>
                             <li><i class="menu-icon fa fa-area-chart"></i><a href="#">Mano de obra</a></li>
                         </ul>
@@ -91,7 +96,7 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Insumos</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Costos mensuales</a></li>
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{ route('insumos.index') }}">Costos mensuales</a></li>
                             <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Archivo plano</a></li>
                         </ul>
                     </li>
@@ -198,12 +203,12 @@
     <script src="assets/js/lib/data-table/datatables-init.js"></script>
 
     <!--Scripts individuales para cada uno de las tablas en un grupo de tabs 
-    Original ->-->
-    <script type="text/javascript">
+    Original ->  <script type="text/javascript">
         $(document).ready(function() {
             $('#bootstrap-data-table-export').DataTable();
         } );
-    </script> 
+    </script> -->
+    
     
     <script type="text/javascript">
         $(document).ready(function() {
@@ -238,6 +243,12 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#bootstrap-data-table6').DataTable();
+        } );
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#bootstrap-data-table7').DataTable();
         } );
     </script>
 
