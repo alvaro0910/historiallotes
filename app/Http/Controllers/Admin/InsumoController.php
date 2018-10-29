@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Insumo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\InsumoRequest;
 use DB;
 
 class InsumoController extends Controller
@@ -31,7 +32,7 @@ class InsumoController extends Controller
      */
     public function create()
     {
-        //
+        return view('adm.insumo.create');
     }
 
     /**
@@ -40,9 +41,16 @@ class InsumoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(InsumoRequest $request)
     {
-        //
+        $insumo = new Insumo($request->all());
+        $insumo->save();
+
+        $notificacion = array(
+            'message' => 'Costo de insumo agregado con exito.',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notificacion);
     }
 
     /**

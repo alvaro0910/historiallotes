@@ -7,7 +7,7 @@ use \Illuminate\Database\Eloquent\Model;
 class Finca extends Model
 {
     protected $fillable = [
-        'nombre', 'ciudad', 'departamento', 'direccion',
+        'nombre', 'ciudad', 'departamento', 'municipio', 'direccion',
     ];
   
     protected $hidden = [

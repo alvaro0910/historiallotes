@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Propiedad;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PropiedadRequest;
+use DB;
 
 class PropiedadController extends Controller
 {
@@ -15,7 +17,14 @@ class PropiedadController extends Controller
      */
     public function index()
     {
-        //
+        $propiedades = DB::table('propiedades')->get();
+
+        $propiedadlote = DB::select(
+            'SELECT lotes.nombre, lote_propiedad.cantidad, lote_propiedad.periodo, propiedades.id, propiedades.material, propiedades.unidad
+            FROM ((lotes
+            INNER JOIN lote_propiedad ON lote_propiedad.lote_id = lotes.id)
+            INNER JOIN propiedades ON lote_propiedad.propiedad_id = propiedades.id);');
+        return view('adm.indexpropiedadsuelolote', ['collectionpropiedades' => $propiedades, 'collectionpropiedadlotes' => $propiedadlote]);
     }
 
     /**
@@ -25,7 +34,7 @@ class PropiedadController extends Controller
      */
     public function create()
     {
-        //
+        return view('adm.propiedad.create');
     }
 
     /**
@@ -34,9 +43,16 @@ class PropiedadController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PropiedadRequest $request)
     {
-        //
+        $propiedad = new Propiedad($request->all());
+        $propiedad->save();
+
+        $notificacion = array(
+            'message' => 'Propiedad agregada con exito.',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notificacion);
     }
 
     /**

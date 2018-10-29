@@ -11,7 +11,7 @@
                     <strong>Datos costo insumo</strong>
                     @if ($errors->any())
                     <div class="alert alert-danger" role="alert">
-                    <p>Corrija los errores:</p>
+                    <p>Los siguientes errores fueron encontrados al validar el formulario!</p>
                     <ul>
                         @foreach ($errors->all() as $error)
                         <li>    

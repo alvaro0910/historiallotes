@@ -8,10 +8,10 @@
             <div class="col-lg-8">
             <div class="card">
                 <div class="card-header">
-                    <strong>Datos estado fisico</strong>
+                    <strong>Datos propiedad</strong>
                     @if ($errors->any())
                     <div class="alert alert-danger" role="alert">
-                    <p>Corrija los errores:</p>
+                    <p>Los siguientes errores fueron encontrados al validar el formulario!</p>
                     <ul>
                         @foreach ($errors->all() as $error)
                         <li>    
@@ -29,11 +29,11 @@
                     ]) !!}
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Material</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="descripcion" name="descripcion" placeholder="Estado Fisico" class="form-control" value="{{ $data->material }}"><small class="form-text text-muted">Ingrese el material</small></div>
+                        <div class="col-12 col-md-9"><input type="text" id="material" name="material" placeholder="Material" class="form-control" value="{{ $data->material }}"><small class="form-text text-muted">Ingrese el material</small></div>
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Unidad</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="periodo" name="periodo" placeholder="Año" class="form-control" value="{{ $data->unidad }}"><small class="form-text text-muted">Ingrese la unidad del material</small></div>
+                        <div class="col-12 col-md-9"><input type="text" id="unidad" name="unidad" placeholder="Unidad de medida" class="form-control"><small class="form-text text-muted">Ingrese la unidad de medida del material</small></div>
                     </div>
                 </div>
                 <div class="card-footer">

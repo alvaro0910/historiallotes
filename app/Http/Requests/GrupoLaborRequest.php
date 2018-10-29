@@ -28,4 +28,19 @@ class GrupoLaborRequest extends FormRequest
             'descripcion' => 'string',
         ];
     }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'nombre.required' => 'El nombre es obligatorio.',
+            'nombre.string' => 'El nombre no permite valores numericos.',
+            'nombre.max' => 'El cultivo permite maximo cincuenta(50) caracteres.',
+            'descripcion.string' => 'La descripcion no permite valores numericos.',
+        ];
+    }
 }

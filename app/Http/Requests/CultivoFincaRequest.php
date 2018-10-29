@@ -24,8 +24,23 @@ class CultivoFincaRequest extends FormRequest
     public function rules()
     {
         return [
-            'finca_id' => 'required | integer',
-            'cultivo_id' => 'required | integer',
+            'finca_id' => 'required | integer | min:1',
+            'cultivo_id' => 'required | integer | min:1',
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'finca_id.required' => 'El identificador(id) de la finca es requerido.',
+            'finca_id.integer' => 'El identificador(id) debe ser un numero entero positivo.',
+            'cultivo_id.required' => 'El identificador(id) de la finca es requerido.',
+            'finca_id.integer' => 'El identificador(id) debe ser un numero entero positivo.',
         ];
     }
 }

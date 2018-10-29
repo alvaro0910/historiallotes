@@ -24,8 +24,23 @@ class PropiedadRequest extends FormRequest
     public function rules()
     {
         return [
-            'material' => 'required | max:255',
-            'unidad' => 'required | max:255',
+            'material' => 'required | string | min:1 | max:255',
+            'unidad' => 'required | string | min:1 | max:255',
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'material.required' => 'El material es obligatorio.',
+            'material.string' => 'El material no permite valores numericos.',
+            'unidad.required' => 'La unidad es obligatoria.',
+            'unidad.string' => 'La unidad no permite valores numericos.',
         ];
     }
 }

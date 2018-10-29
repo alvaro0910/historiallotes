@@ -31,9 +31,7 @@
                                                 <div class="card">
                                                     <div class="card-header">
                                                         <div style="text-align: center;"><strong class="card-title">Fincas registradas</strong></div>
-                                                        <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" data-target="#largeModalCrearFinca">
-                                                            Crear Finca
-                                                        </button>
+                                                        <a href="{{ route('fincas.create') }}" class="btn btn-secondary mb-1">Crear Finca</a>
                                                     </div>
                                                 <div class="card-body">
                                                 <table id="bootstrap-data-table1" class="table table-striped table-bordered">
@@ -80,9 +78,7 @@
                                                 <div class="card">
                                                     <div class="card-header">
                                                         <div style="text-align: center;"><strong class="card-title">Cultivos registrados</strong></div>
-                                                        <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" data-target="#largeModalCrearCultivo">
-                                                            Crear Cultivo
-                                                        </button>
+                                                        <a href="{{ route('cultivos.create') }}" class="btn btn-secondary mb-1">Crear Cultivo</a>
                                                     </div>
                                                 <div class="card-body">
                                                 <table id="bootstrap-data-table2" class="table table-striped table-bordered">
@@ -225,20 +221,19 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="largeModalLabel">Large Modal</h5>
+                <h5 class="modal-title" id="largeModalLabel">Finca</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p>
-                    Crear Finca
-                </p>
-            </div>
+                
+            </div>      
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-primary">Confirm</button>
             </div>
+            
         </div>
     </div>
 </div>
@@ -247,14 +242,14 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="largeModalLabel">Large Modal</h5>
+                <h5 class="modal-title" id="largeModalLabel">Cultivo</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <p>
-                    Crear Cultivo
+                    
                 </p>
             </div>
             <div class="modal-footer">

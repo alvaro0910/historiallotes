@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFincasTable extends Migration
+class CreateDepartamentosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateFincasTable extends Migration
      */
     public function up()
     {
-        Schema::create('fincas', function (Blueprint $table) {
+        Schema::create('departamentos', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->increments('id')->unsigned();
-            $table->string('nombre', 50);
-            $table->string('departamento', 50);
-            $table->string('municipio', 50);
-            $table->string('direccion', 250)->nullable();
+            $table->string('departamento');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateFincasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fincas');
+        Schema::dropIfExists('departamentos');
     }
 }

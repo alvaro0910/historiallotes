@@ -28,4 +28,20 @@ class CultivoRequest extends FormRequest
             'descripcion' => 'string'
         ];
     }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'cultivo.required' => 'Se debe especificar el cultivo.',
+            'cultivo.string' => 'El cultivo no permite valores numericos.',
+            'cultivo.min' => 'El cultivo debe contener minimo dos(2) caracteres.',
+            'cultivo.max' => 'El cultivo permite maximo cincuenta(50) caracteres.',
+            'descripcion.string' => 'La descripcion no permite valores vacios o numericos.',
+        ];
+    }
 }

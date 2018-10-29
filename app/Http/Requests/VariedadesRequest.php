@@ -28,4 +28,20 @@ class VariedadesRequest extends FormRequest
             'descripcion' => 'string'
         ];
     }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'variedad.required' => 'La variedad es obligatoria.',
+            'variedad.string' => 'La variedad no permite valores numericos.',
+            'variedad.min' => 'La variedad debe contener minimo dos(2) caracteres.',
+            'cultivo.max' => 'La variedad permite maximo cien(100) caracteres.',
+            'descripcion.string' => 'La descripcion no permite valores vacios o numericos.',
+        ];
+    }
 }

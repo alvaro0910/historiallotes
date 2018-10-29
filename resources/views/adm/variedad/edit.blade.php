@@ -11,7 +11,7 @@
                     <strong>Datos variedad</strong>
                     @if ($errors->any())
                     <div class="alert alert-danger" role="alert">
-                    <p>Corrija los errores:</p>
+                    <p>Los siguientes errores fueron encontrados al validar el formulario!</p>
                     <ul>
                         @foreach ($errors->all() as $error)
                         <li>    
@@ -29,7 +29,7 @@
                     ]) !!}
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Variedad</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="name" name="name" placeholder="Nombre" class="form-control" value="{{ $data->variedad }}"><small class="form-text text-muted">Ingrese el nombre del usuario</small></div>
+                        <div class="col-12 col-md-9"><input type="text" id="name" name="name" placeholder="Nombre" class="form-control" value="{{ $data->variedad }}"><small class="form-text text-muted">Ingrese la variedad</small></div>
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Descripcion</label></div>
@@ -40,7 +40,7 @@
                 <button type="submit" class="btn btn-primary btn-sm">
                     <i class="fa fa-dot-circle-o"></i> Actualizar Variedad
                 </button>
-                
+                {{ Form::close() }}
                 </div>
                 <div class="card-footer">
                     <ul class="list-group list-group-flush">

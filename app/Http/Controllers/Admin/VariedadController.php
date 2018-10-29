@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Variedad;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\VariedadRequest;
 use DB;
 
 class VariedadController extends Controller
@@ -36,7 +37,7 @@ class VariedadController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(VariedadRequest $request)
     {
         $variedad = new Variedad($request->all());
         $variedad->save();
