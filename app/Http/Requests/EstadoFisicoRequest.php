@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class UserUpdateRequest extends FormRequest
+class EstadoFisicoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,9 +24,9 @@ class UserUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required | string |min:2 | max:50',
-            'email' =>'required | email',
-            'tipo' => 'required',
+            'descripcion' => 'string',
+            'periodo' => 'required | date',
+            'lote_id' => 'required | integer',
         ];
     }
 }

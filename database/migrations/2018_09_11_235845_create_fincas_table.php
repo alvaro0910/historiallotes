@@ -19,7 +19,7 @@ class CreateFincasTable extends Migration
             $table->string('nombre', 50);
             $table->string('municipio', 50)->nullable();
             $table->string('departamento', 50)->nullable();
-            $table->string('direccion', 50)->nullable();
+            $table->string('direccion', 250)->nullable();
             $table->timestamps();
         });
     }

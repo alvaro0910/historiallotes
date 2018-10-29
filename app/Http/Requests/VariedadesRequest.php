@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class UserUpdateRequest extends FormRequest
+class VariedadesRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -14,7 +13,7 @@ class UserUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -25,9 +24,8 @@ class UserUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required | string |min:2 | max:50',
-            'email' =>'required | email',
-            'tipo' => 'required',
+            'variedad' => 'required | string | min:2 | max:100',
+            'descripcion' => 'string'
         ];
     }
 }

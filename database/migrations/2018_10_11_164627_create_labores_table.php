@@ -17,7 +17,7 @@ class CreateLaboresTable extends Migration
             $table->engine='InnoDB';
             $table->increments('id')->unsigned();
             $table->text('descripcion')->nullable();
-            $table->decimal('cantidadmo', 4, 1)->unsigned();
+            $table->decimal('cantidadmo', 5, 1)->unsigned();
             $table->integer('costo')->unsigned();
             $table->date('periodo');
             

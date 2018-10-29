@@ -19,10 +19,10 @@ class CreateLotePropiedadTable extends Migration
             $table->decimal('cantidad', 7, 2);
             $table->date('periodo');
             
-            $table->integer('lote_id')->unsigned()->nullable();
+            $table->integer('lote_id')->unsigned();
             $table->foreign('lote_id')->references('id')->on('lotes')->onUpdate('CASCADE')->onDelete('CASCADE');
             
-            $table->integer('propiedad_id')->unsigned()->nullable();
+            $table->integer('propiedad_id')->unsigned();
             $table->foreign('propiedad_id')->references('id')->on('propiedades')->onUpdate('CASCADE')->onDelete('CASCADE');
 
             $table->timestamps();
