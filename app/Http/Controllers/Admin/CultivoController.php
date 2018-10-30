@@ -94,7 +94,7 @@ class CultivoController extends Controller
      * @param  \App\cultivo  $cultivo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CultivoRequest $request, $id)
     {
         $cultivo = Cultivo::where('id', $id)->findOrFail($id);
         

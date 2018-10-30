@@ -12,10 +12,8 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <div style="text-align:center;"><strong class="card-title">Costo insumos registrados</strong></div>
-                                <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" data-target="#largeModalCrearInsumo">
-                                    Crear insumo
-                                </button>
+                                <div style="text-align:center;"><strong class="card-title">Costos registrados de insumos</strong></div>
+                                <a href="{{ route('insumos.create') }}" class="btn btn-secondary mb-1">Crear costo insumo</a>
                             </div>
                         <div class="card-body">
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">

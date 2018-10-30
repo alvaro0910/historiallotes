@@ -5,10 +5,10 @@
     <div class="animated fadeIn">
         <div class="row">
 
-            <div class="col-lg-8">
+            <div class="col-lg-8" style="">
             <div class="card">
                 <div class="card-header">
-                    <strong>Datos variedad</strong>
+                    <strong>Datos Relacion</strong>
                     @if ($errors->any())
                     <div class="alert alert-danger" role="alert">
                     <p>Los siguientes errores fueron encontrados al validar el formulario!</p>
@@ -25,28 +25,33 @@
                 <div class="card-body card-block">
                     {!! Form::model($data, [
                         'method' => 'PUT',
-                        'route' => ['variedades.update', $data->id]
+                        'route' => ['cultivosfincas.update', $data{'0'}->id]
                     ]) !!}
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Variedad</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="name" name="name" placeholder="Nombre" class="form-control" value="{{ $data->variedad }}">
-                        <small class="form-text text-muted">Ingrese la variedad</small></div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Descripcion</label></div>
-                        <div class="col-12 col-md-9"><textarea type="textarea-input" id="descripcion" name="descripcion" rows="9" placeholder="Descripcion" class="form-control">{{ $data->descripcion }}</textarea>
+                        <div class="col col-md-3"><label for="select" class="form-control-label">Variedad</label></div>
+                        <select data-placeholder="Seleccione Finca..." class="standardSelect" tabindex="1" id="finca_id" name="finca_id">
+                            @foreach ($listfincas as $e)
+                                <option value="{{ $e->id }}">{{ $e->nombre }}</option>
+                            @endforeach
+                        </select>
+                        <div class="col col-md-3"><label for="select" class="form-control-label">Cultivo</label></div>
+                        <select data-placeholder="Seleccione cultivo..." class="standardSelect" tabindex="1" id="cultivo_id" name="cultivo_id">
+                            @foreach ($listcultivos as $e)
+                                <option value="{{ $e->id }}">{{ $e->cultivo }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="card-footer">
                 <button type="submit" class="btn btn-primary btn-sm">
-                    <i class="fa fa-dot-circle-o"></i> Actualizar Variedad
+                    <i class="fa fa-dot-circle-o"></i> Actualizar relacion
                 </button>
-                
+                {{ Form::close() }}
                 </div>
                 <div class="card-footer">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            <a href="{{ route('variedades.index') }}"> 
+                            <a href="{{ route('fincascultivosusers.index') }}"> 
                                 <div class="icon-container">
                                     <span class="ti-back-left"></span><span class="icon-name"> Regresar</span>
                                 </div>
@@ -54,7 +59,6 @@
                         </li>
                     </ul>
                 </div>
-                {{ Form::close() }}
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@
                     <strong>Datos costo labor</strong>
                     @if ($errors->any())
                     <div class="alert alert-danger" role="alert">
-                    <p>Corrija los errores:</p>
+                    <p>Los siguientes errores fueron encontrados al validar el formulario!</p>
                     <ul>
                         @foreach ($errors->all() as $error)
                         <li>    
@@ -85,7 +85,7 @@
                 <button type="submit" class="btn btn-primary btn-sm">
                     <i class="fa fa-dot-circle-o"></i> Actualizar costo labor
                 </button>
-                
+                {{ Form::close() }}
                 </div>
                 <div class="card-footer">
                     <ul class="list-group list-group-flush">
@@ -102,28 +102,28 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 
-@jquery
-@toastr_js
-<script>
+    @jquery
+    @toastr_js
+    <script>
     @if(Session::has('message'))
-      var type = "{{ Session::get('alert-type', 'info') }}";
-      
-      switch(type){
+        var type = "{{ Session::get('alert-type', 'info') }}";
+        
+        switch(type){
         case 'info':
-          toastr.info("{{ Session::get('message') }}");
-          break;
+            toastr.info("{{ Session::get('message') }}");
+            break;
         case 'warning':
-          toastr.warning("{{ Session::get('message') }}");
-          break;
+            toastr.warning("{{ Session::get('message') }}");
+            break;
         case 'success':
-          toastr.success("{{ Session::get('message') }}");
-          break;
+            toastr.success("{{ Session::get('message') }}");
+            break;
         case 'error':
-          toastr.error("{{ Session::get('message') }}");
-          break;
-      }
+            toastr.error("{{ Session::get('message') }}");
+            break;
+        }
     @endif
 </script>
 @endsection

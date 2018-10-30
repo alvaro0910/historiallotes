@@ -33,7 +33,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('fincascultivosusers','Admin\FincaCultivoUserController');
     Route::resource('fincas','Admin\FincaController');
     Route::resource('cultivos','Admin\CultivoController');
-    Route::resource('fincascultivos','Admin\FincaCultivoController');
+    Route::resource('cultivosfincas','Admin\FincaCultivoController');
     Route::resource('fincasusers','Admin\FincaUserController');
 
     Route::resource('variedades','Admin\VariedadController');

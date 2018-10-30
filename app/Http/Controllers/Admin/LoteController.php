@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Lote;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoteRequest;
 use DB;
 
 class LoteController extends Controller
@@ -31,7 +32,9 @@ class LoteController extends Controller
      */
     public function create()
     {
-        //
+        $cultivos = DB::table('cultivos')->get();
+        $variedades = DB::table('variedades')->get();
+        return view('adm.lote.create', ['listcultivos' => $cultivos, 'listvariedades' => $variedades, ]);
     }
 
     /**
@@ -40,9 +43,16 @@ class LoteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LoteRequest $request)
     {
-        //
+        $lote = new Lote($request->all());
+        $lote->save();
+
+        $notificacion = array(
+            'message' => 'Lote agregado con exito.',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notificacion);
     }
 
     /**
@@ -71,7 +81,9 @@ class LoteController extends Controller
     public function edit($id)
     {
         $lote = Lote::where('id', $id)->findOrFail($id);
-        return view('adm.lote.edit', ['data' => $lote]);
+        $cultivos = DB::table('cultivos')->get();
+        $variedades = DB::table('variedades')->get();
+        return view('adm.lote.edit', ['data' => $lote, 'listcultivos' => $cultivos, 'listvariedades' => $variedades,]);
     }
 
     /**
@@ -81,7 +93,7 @@ class LoteController extends Controller
      * @param  \App\Lote  $lote
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(LoteRequest $request, $id)
     {
         $lote = Lote::where('id', $id)->findOrFail($id);
         

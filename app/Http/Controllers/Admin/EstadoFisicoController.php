@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\EstadoFisico;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\RequestsEstadoFisicoRequest;
 use DB;
 
 class EstadoFisicoController extends Controller
@@ -31,7 +32,7 @@ class EstadoFisicoController extends Controller
      */
     public function create()
     {
-        //
+        return view('adm.estado.create');
     }
 
     /**
@@ -40,9 +41,16 @@ class EstadoFisicoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EstadoFisicoRequest $request)
     {
-        //
+        $estado = new EstadoFisico($request->all());
+        $estado->save();
+
+        $notificacion = array(
+            'message' => 'Estado fisico agregado con exito.',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notificacion);
     }
 
     /**
@@ -80,7 +88,7 @@ class EstadoFisicoController extends Controller
      * @param  \App\EstadoFisico  $estadoFisico
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EstadoFisicoRequest $request, $id)
     {
         $estado = EstadoFisico::where('id', $id)->findOrFail($id);
         

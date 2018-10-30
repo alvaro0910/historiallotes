@@ -73,7 +73,7 @@
                 <button type="submit" class="btn btn-primary btn-sm">
                     <i class="fa fa-dot-circle-o"></i> Actualizar finca
                 </button>
-                
+                {{ Form::close() }}
                 </div>
                 <div class="card-footer">
                     <ul class="list-group list-group-flush">
@@ -113,14 +113,5 @@
           break;
       }
     @endif
-</script>
-<script>
-    jQuery(document).ready(function() {
-        jQuery(".standardSelect").chosen({
-            disable_search_threshold: 10,
-            no_results_text: "Oops, nothing found!",
-            width: "100%"
-        });
-    });
 </script>
 @endsection

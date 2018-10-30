@@ -9,16 +9,12 @@ class Finca extends Model
     protected $fillable = [
         'nombre', 'ciudad', 'departamento', 'municipio', 'direccion',
     ];
-  
-    protected $hidden = [
-        
-    ];
 
     public function users(){
-        return $this->belongToMany('App\User')->withTimestamps();
+        return $this->belongsToMany('App\User')->withTimestamps();
     }
 
     public function cultivos(){
-        return $this->belongToMany('App\Cultivo')->withTimestamps();
+        return $this->belongsToMany('App\Cultivo')->withTimestamps();
     }
 }

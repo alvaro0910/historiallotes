@@ -29,11 +29,13 @@
                     ]) !!}
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Material</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="material" name="material" placeholder="Material" class="form-control" value="{{ $data->material }}"><small class="form-text text-muted">Ingrese el material</small></div>
+                        <div class="col-12 col-md-9"><input type="text" id="material" name="material" placeholder="Material" class="form-control" value="{{ $data->material }}">
+                        <small class="form-text text-muted">Ingrese el material</small></div>
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Unidad</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="unidad" name="unidad" placeholder="Unidad de medida" class="form-control"><small class="form-text text-muted">Ingrese la unidad de medida del material</small></div>
+                        <div class="col-12 col-md-9"><input type="text" id="unidad" name="unidad" placeholder="Unidad de medida" class="form-control" value="{{ $data->unidad }}">
+                        <small class="form-text text-muted">Ingrese la unidad de medida del material</small></div>
                     </div>
                 </div>
                 <div class="card-footer">
@@ -41,6 +43,7 @@
                         <i class="fa fa-dot-circle-o"></i> Actualizar propiedad
                     </button>
                 </div>
+                {{ Form::close() }}
                 <div class="card-footer">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">

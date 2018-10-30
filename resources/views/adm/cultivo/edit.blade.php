@@ -40,7 +40,7 @@
                 <button type="submit" class="btn btn-primary btn-sm">
                     <i class="fa fa-dot-circle-o"></i> Actualizar cultivo
                 </button>
-                
+                {{ Form::close() }}
                 </div>
                 <div class="card-footer">
                     <ul class="list-group list-group-flush">

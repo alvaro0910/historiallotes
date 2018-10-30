@@ -80,7 +80,7 @@ class VariedadController extends Controller
      * @param  \App\Variedad  $variedad
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(VariedadRequest $request, $id)
     {
         $variedad = Variedad::where('id', $id)->findOrFail($id);
         

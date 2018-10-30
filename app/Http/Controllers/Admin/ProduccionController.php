@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Produccion;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProduccionRequest;
 use DB;
 
 class ProduccionController extends Controller
@@ -32,7 +33,7 @@ class ProduccionController extends Controller
      */
     public function create()
     {
-        //
+        return view('adm.produccion.create');
     }
 
     /**
@@ -41,9 +42,16 @@ class ProduccionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProduccionRequest $request)
     {
-        //
+        $produccion = new Produccion($request->all());
+        $produccion->save();
+
+        $notificacion = array(
+            'message' => 'Produccion agregada con exito.',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notificacion);
     }
 
     /**
@@ -81,7 +89,7 @@ class ProduccionController extends Controller
      * @param  \App\Produccion  $produccion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProduccionRequest $request, $id)
     {
         $produccion = Produccion::where('id', $id)->findOrFail($id);
         

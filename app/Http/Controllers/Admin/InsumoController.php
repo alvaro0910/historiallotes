@@ -88,7 +88,7 @@ class InsumoController extends Controller
      * @param  \App\Insumo  $insumo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(InsumoRequest $request, $id)
     {
         $insumo = Insumo::where('id', $id)->findOrFail($id);
         

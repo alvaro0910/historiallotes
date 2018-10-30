@@ -12,10 +12,8 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <div style="text-align:center;"><strong class="card-title">Costo labores registrados</strong></div>
-                                <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" data-target="#largeModalCrearLabor">
-                                    Crear labor
-                                </button>
+                                <div style="text-align:center;"><strong class="card-title">Costos registrados de labores</strong></div>
+                                <a href="{{ route('labores.create') }}" class="btn btn-secondary mb-1">Crear costo labor</a>
                             </div>
                         <div class="card-body">
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">

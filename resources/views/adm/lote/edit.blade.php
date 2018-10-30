@@ -11,7 +11,7 @@
                     <strong>Datos lote</strong>
                     @if ($errors->any())
                     <div class="alert alert-danger" role="alert">
-                    <p>Corrija los errores:</p>
+                    <p>Los siguientes errores fueron encontrados al validar el formulario!</p>
                     <ul>
                         @foreach ($errors->all() as $error)
                         <li>    
@@ -53,34 +53,16 @@
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="select" class="form-control-label">Cultivo</label></div>
-                        <select data-placeholder="Choose a Country..." class="standardSelect" tabindex="1" id="cultivo">
-                            <option value=""></option>
-                            <option value="United States">United States</option>
-                            <option value="United Kingdom">United Kingdom</option>
-                            <option value="Afghanistan">Afghanistan</option>
-                            <option value="Aland Islands">Aland Islands</option>
-                            <option value="Albania">Albania</option>
-                            <option value="Algeria">Algeria</option>
-                            <option value="American Samoa">American Samoa</option>
-                            <option value="Andorra">Andorra</option>
-                            <option value="Angola">Angola</option>
-                            <option value="Anguilla">Anguilla</option>
-                            <option value="Antarctica">Antarctica</option>
+                        <select data-placeholder="Seleccione cultivo..." class="standardSelect" tabindex="1" id="cultivo_id" name="cultivo_id">
+                            @foreach ($listcultivos as $e)
+                                <option value="{{ $e->id }}">{{ $e->cultivo }}</option>
+                            @endforeach
                         </select>
                         <div class="col col-md-3"><label for="select" class="form-control-label">Variedad</label></div>
-                        <select data-placeholder="Choose a Country..." class="standardSelect" tabindex="1" id="variedad">
-                            <option value=""></option>
-                            <option value="United States">United States</option>
-                            <option value="United Kingdom">United Kingdom</option>
-                            <option value="Afghanistan">Afghanistan</option>
-                            <option value="Aland Islands">Aland Islands</option>
-                            <option value="Albania">Albania</option>
-                            <option value="Algeria">Algeria</option>
-                            <option value="American Samoa">American Samoa</option>
-                            <option value="Andorra">Andorra</option>
-                            <option value="Angola">Angola</option>
-                            <option value="Anguilla">Anguilla</option>
-                            <option value="Antarctica">Antarctica</option>
+                        <select data-placeholder="Seleccione variedad..." class="standardSelect" tabindex="1" id="variedad_id" name="variedad_id">
+                            @foreach ($listvariedades as $e)
+                                <option value="{{ $e->id }}">{{ $e->variedad }}</option>
+                            @endforeach
                         </select>
                     </div>
                         <!--<select id="prioridadForm" name="prioridadForm">  no olvidar poner el < ? de php
@@ -93,7 +75,7 @@
                 <button type="submit" class="btn btn-primary btn-sm">
                     <i class="fa fa-dot-circle-o"></i> Actualizar Lote
                 </button>
-                
+                {{ Form::close() }}
                 </div>
                 <div class="card-footer">
                     <ul class="list-group list-group-flush">

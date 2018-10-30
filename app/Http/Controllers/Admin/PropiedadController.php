@@ -86,9 +86,18 @@ class PropiedadController extends Controller
      * @param  \App\Propiedad  $propiedad
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PropiedadRequest $request, $id)
     {
-        //
+        $propiedad = Propiedad::where('id', $id)->findOrFail($id);
+        
+        $input = $request->all();
+        $propiedad->update($input);
+
+        $notificacion = array(
+                'message' => 'Propiedad Actualizada Con Exito!',
+                'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notificacion);
     }
 
     /**
@@ -99,6 +108,13 @@ class PropiedadController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $propiedad = Propiedad::where('id', $id)->findOrFail($id);
+        $propiedad->delete();
+
+        $notificacion = array(
+            'message' => 'Propiedad eliminada con exito.',
+            'alert-type' => 'info'
+        );
+        return redirect()->back()->with($notificacion);
     }
 }

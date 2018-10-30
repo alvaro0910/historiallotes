@@ -16,7 +16,8 @@ class CreateMunicipiosTable extends Migration
         Schema::create('municipios', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->increments('id')->unsigned();
-            $table->string('municipio');
+            $table->string('codigo', 50);
+            $table->string('municipio', 100);
 
             $table->integer('departamento_id')->unsigned();
             $table->foreign('departamento_id')->references('id')->on('departamentos')->onUpdate('CASCADE')->onDelete('CASCADE');

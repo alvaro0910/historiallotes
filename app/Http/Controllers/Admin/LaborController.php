@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Labor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LaborRequest;
 use DB;
 
 class LaborController extends Controller
@@ -31,7 +32,7 @@ class LaborController extends Controller
      */
     public function create()
     {
-        //
+        return view('adm.labor.create');
     }
 
     /**
@@ -40,9 +41,16 @@ class LaborController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LaborRequest $request)
     {
-        //
+        $labor = new Labor($request->all());
+        $labor->save();
+
+        $notificacion = array(
+            'message' => 'Costo labor agregada con exito.',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notificacion);
     }
 
     /**
@@ -80,7 +88,7 @@ class LaborController extends Controller
      * @param  \App\Labor  $labor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(LaborRequest $request, $id)
     {
         $labor = Labor::where('id', $id)->findOrFail($id);
         

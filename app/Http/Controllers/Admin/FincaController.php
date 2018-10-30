@@ -94,7 +94,7 @@ class FincaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FincaRequest $request, $id)
     {
         $finca = Finca::where('id', $id)->findOrFail($id);
         

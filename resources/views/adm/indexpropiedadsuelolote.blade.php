@@ -29,9 +29,7 @@
                                                 <div class="card">
                                                     <div class="card-header">
                                                         <div style="text-align: center;"><strong class="card-title">Propiedades registradas</strong></div>
-                                                        <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" data-target="#largeModalCrearPropiedad">
-                                                            Crear Propiedad
-                                                        </button>
+                                                        <a href="{{ route('propiedad.create') }}" class="btn btn-secondary mb-1">Crear propiedad</a>
                                                     </div>
                                                 <div class="card-body">
                                                 <table id="bootstrap-data-table5" class="table table-striped table-bordered">
@@ -78,9 +76,7 @@
                                                 <div class="card">
                                                     <div class="card-header">
                                                         <div style="text-align: center;"><strong class="card-title">Relaciones entre fincas y cultivos</strong></div>
-                                                        <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" data-target="#largeModalCrearRelacionLotePropiedad">
-                                                            Crear Relacion Lote-Propiedad
-                                                        </button>
+                                                        <a href="{{ route('propiedadlote.create') }}" class="btn btn-secondary mb-1">Crear relacion</a>
                                                     </div>
                                                 <div class="card-body">
                                                 <table id="bootstrap-data-table6" class="table table-striped table-bordered">

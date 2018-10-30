@@ -22,189 +22,189 @@
                             </nav>
                             <div class="tab-content pl-3 pt-2" id="nav-tabContent">
         
-                                <div class="tab-pane fade show active" id="nav-fincas" role="tabpanel" aria-labelledby="nav-fincas-tab">
-                                    <div class="content mt-3">
-                                        <div class="animated fadeIn">
-                                            <div class="row">
-                
-                                            <div class="col-md-12">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <div style="text-align: center;"><strong class="card-title">Fincas registradas</strong></div>
-                                                        <a href="{{ route('fincas.create') }}" class="btn btn-secondary mb-1">Crear Finca</a>
-                                                    </div>
-                                                <div class="card-body">
-                                                <table id="bootstrap-data-table1" class="table table-striped table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                    <th>Finca ID</th>
-                                                    <th>Nombre</th>
-                                                    <th>Municipio</th>
-                                                    <th>Ver</th>
-                                                    <th>Editar</th>
-                                                    <th>Eliminar</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach ($collectionfincas as $item)
-                                                    <tr>
-                                                        <td>{{ $item->id }}</td>
-                                                        <td>{{ $item->nombre }}</td>
-                                                        <td>{{ $item->municipio }}</td>
-                                                        <td><a href="{{ route('fincas.show', $item->id) }}">Ver</a></td>
-                                                        <td><a href="{{ route('fincas.edit', $item->id) }}">Editar</a></td>
-                                                        <td>
-                                                        {!! Form::open(['method' => 'DELETE','route' => ['fincas.destroy', $item->id]]) !!}
-                                                            {!! Form::submit('Borrar finca?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta finca?')"])!!}
-                                                        {!! Form::close() !!}</td>
-                                                    </tr>
-                                                    @endforeach
-                                                </tbody>
-                                                </table>
-                                                </div>
-                                                </div>
+                        <div class="tab-pane fade show active" id="nav-fincas" role="tabpanel" aria-labelledby="nav-fincas-tab">
+                            <div class="content mt-3">
+                                <div class="animated fadeIn">
+                                    <div class="row">
+        
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <div style="text-align: center;"><strong class="card-title">Fincas registradas</strong></div>
+                                                <a href="{{ route('fincas.create') }}" class="btn btn-secondary mb-1">Crear Finca</a>
                                             </div>
-                                            </div>
+                                        <div class="card-body">
+                                        <table id="bootstrap-data-table1" class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                            <th>Finca ID</th>
+                                            <th>Nombre</th>
+                                            <th>Municipio</th>
+                                            <th>Ver</th>
+                                            <th>Editar</th>
+                                            <th>Eliminar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($collectionfincas as $item)
+                                            <tr>
+                                                <td>{{ $item->id }}</td>
+                                                <td>{{ $item->nombre }}</td>
+                                                <td>{{ $item->municipio }}</td>
+                                                <td><a href="{{ route('fincas.show', $item->id) }}">Ver</a></td>
+                                                <td><a href="{{ route('fincas.edit', $item->id) }}">Editar</a></td>
+                                                <td>
+                                                {!! Form::open(['method' => 'DELETE','route' => ['fincas.destroy', $item->id]]) !!}
+                                                    {!! Form::submit('Borrar finca?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta finca?')"])!!}
+                                                {!! Form::close() !!}</td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                        </table>
+                                        </div>
                                         </div>
                                     </div>
-                                </div>
-                                
-                                <div class="tab-pane fade" id="nav-cultivos" role="tabpanel" aria-labelledby="nav-cultivos-tab">
-                                    <div class="content mt-3">
-                                        <div class="animated fadeIn">
-                                            <div class="row">
-                
-                                            <div class="col-md-12">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <div style="text-align: center;"><strong class="card-title">Cultivos registrados</strong></div>
-                                                        <a href="{{ route('cultivos.create') }}" class="btn btn-secondary mb-1">Crear Cultivo</a>
-                                                    </div>
-                                                <div class="card-body">
-                                                <table id="bootstrap-data-table2" class="table table-striped table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                    <th>Cultivo ID</th>
-                                                    <th>Cultivo</th>
-                                                    <th>Ver</th>
-                                                    <th>Editar</th>
-                                                    <th>Eliminar</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach ($collectioncultivos as $item)
-                                                    <tr>
-                                                        <td>{{ $item->id }}</td>
-                                                        <td>{{ $item->cultivo }}</td>
-                                                        <td><a href="{{ route('cultivos.show', $item->id) }}">Ver</a></td>
-                                                        <td><a href="{{ route('cultivos.edit', $item->id) }}">Editar</a></td>
-                                                        <td>
-                                                        {!! Form::open(['method' => 'DELETE','route' => ['cultivos.destroy', $item->id]]) !!}
-                                                            {!! Form::submit('Borrar este Cultivo?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar este cultivo?')"])!!}
-                                                        {!! Form::close() !!}</td>
-                                                    </tr>
-                                                    @endforeach
-                                                </tbody>
-                                                </table>
-                                                </div>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
-                                
-                                <div class="tab-pane fade" id="nav-culfin" role="tabpanel" aria-labelledby="nav-culfin-tab">
-                                    <div class="content mt-3">
-                                        <div class="animated fadeIn">
-                                            <div class="row">
-                
-                                            <div class="col-md-12">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <div style="text-align: center;"><strong class="card-title">Relaciones entre fincas y cultivos</strong></div>
-                                                    </div>
-                                                <div class="card-body">
-                                                <table id="bootstrap-data-table3" class="table table-striped table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                    <th>ID</th>
-                                                    <th>Finca</th>
-                                                    <th>Cultivo</th>
-                                                    <th>Ver</th>
-                                                    <th>Editar</th>
-                                                    <th>Eliminar</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach ($collectionfincacultivo as $item)
-                                                    <tr>
-                                                        <td>{{ $item->id }}</td>
-                                                        <td>{{ $item->nombre }}</td>
-                                                        <td>{{ $item->cultivo }}</td>
-                                                        <td><a href="{{ route('fincascultivos.show', $item->id) }}">Ver</a></td>
-                                                        <td><a href="{{ route('fincascultivos.edit', $item->id) }}">Editar</a></td>
-                                                        <td>
-                                                        {!! Form::open(['method' => 'DELETE','route' => ['fincascultivos.destroy', $item->id]]) !!}
-                                                            {!! Form::submit('Borrar esta relacion?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta relacion entre la finca y el cultivo?')"])!!}
-                                                        {!! Form::close() !!}</td>
-                                                    </tr>
-                                                    @endforeach
-                                                </tbody>
-                                                </table>
-                                                </div>
-                                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="nav-cultivos" role="tabpanel" aria-labelledby="nav-cultivos-tab">
+                            <div class="content mt-3">
+                                <div class="animated fadeIn">
+                                    <div class="row">
+        
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <div style="text-align: center;"><strong class="card-title">Cultivos registrados</strong></div>
+                                                <a href="{{ route('cultivos.create') }}" class="btn btn-secondary mb-1">Crear Cultivo</a>
                                             </div>
-                                            </div>
+                                        <div class="card-body">
+                                        <table id="bootstrap-data-table2" class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                            <th>Cultivo ID</th>
+                                            <th>Cultivo</th>
+                                            <th>Ver</th>
+                                            <th>Editar</th>
+                                            <th>Eliminar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($collectioncultivos as $item)
+                                            <tr>
+                                                <td>{{ $item->id }}</td>
+                                                <td>{{ $item->cultivo }}</td>
+                                                <td><a href="{{ route('cultivos.show', $item->id) }}">Ver</a></td>
+                                                <td><a href="{{ route('cultivos.edit', $item->id) }}">Editar</a></td>
+                                                <td>
+                                                {!! Form::open(['method' => 'DELETE','route' => ['cultivos.destroy', $item->id]]) !!}
+                                                    {!! Form::submit('Borrar este Cultivo?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar este cultivo?')"])!!}
+                                                {!! Form::close() !!}</td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                        </table>
+                                        </div>
                                         </div>
                                     </div>
+                                    </div>
                                 </div>
-                                
-                                <div class="tab-pane fade" id="nav-usufin" role="tabpanel" aria-labelledby="nav-usufin-tab">
-                                    <div class="content mt-3">
-                                        <div class="animated fadeIn">
-                                            <div class="row">
-                
-                                            <div class="col-md-12">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <div style="text-align: center;"><strong class="card-title">Relaciones entre fincas y usuarios</strong></div>
-                                                    </div>
-                                                <div class="card-body">
-                                                <table id="bootstrap-data-table4" class="table table-striped table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                    <th>ID</th>
-                                                    <th>Finca</th>
-                                                    <th>Municipio</th>
-                                                    <th>Usuario</th>
-                                                    <th>Ver</th>
-                                                    <th>Editar</th>
-                                                    <th>Eliminar</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach ($collectionfincauser as $item)
-                                                    <tr>
-                                                        <td>{{ $item->id }}</td>
-                                                        <td>{{ $item->nombre }}</td>
-                                                        <td>{{ $item->municipio }}</td>
-                                                        <td>{{ $item->name }}</td>
-                                                        <td><a href="{{ route('fincasusers.show', $item->id) }}">Ver</a></td>
-                                                        <td><a href="{{ route('fincasusers.edit', $item->id) }}">Editar</a></td>
-                                                        <td>
-                                                        {!! Form::open(['method' => 'DELETE','route' => ['fincasusers.destroy', $item->id]]) !!}
-                                                            {!! Form::submit('Borrar esta relacion?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta relacion entre la finca y el cultivo?')"])!!}
-                                                        {!! Form::close() !!}</td>
-                                                    </tr>
-                                                    @endforeach
-                                                </tbody>
-                                                </table>
-                                                </div>
-                                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="nav-culfin" role="tabpanel" aria-labelledby="nav-culfin-tab">
+                            <div class="content mt-3">
+                                <div class="animated fadeIn">
+                                    <div class="row">
+        
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <div style="text-align: center;"><strong class="card-title">Relaciones entre fincas y cultivos</strong></div>
+                                                <a href="{{ route('cultivosfincas.create') }}" class="btn btn-secondary mb-1">Crear relacion</a>
                                             </div>
-                                            </div>
+                                        <div class="card-body">
+                                        <table id="bootstrap-data-table3" class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                            <th>ID</th>
+                                            <th>Finca</th>
+                                            <th>Cultivo</th>
+                                            <th>Ver</th>
+                                            <th>Editar</th>
+                                            <th>Eliminar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($collectionfincacultivo as $item)
+                                            <tr>
+                                                <td>{{ $item->id }}</td>
+                                                <td>{{ $item->nombre }}</td>
+                                                <td>{{ $item->cultivo }}</td>
+                                                <td><a href="{{ route('cultivosfincas.show', $item->id) }}">Ver</a></td>
+                                                <td><a href="{{ route('cultivosfincas.edit', $item->id) }}">Editar</a></td>
+                                                <td>
+                                                {!! Form::open(['method' => 'DELETE','route' => ['cultivosfincas.destroy', $item->id]]) !!}
+                                                    {!! Form::submit('Borrar esta relacion?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta relacion entre la finca y el cultivo?')"])!!}
+                                                {!! Form::close() !!}</td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                        </table>
                                         </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="nav-usufin" role="tabpanel" aria-labelledby="nav-usufin-tab">
+                            <div class="content mt-3">
+                                <div class="animated fadeIn">
+                                    <div class="row">
+        
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <div style="text-align: center;"><strong class="card-title">Relaciones entre fincas y usuarios</strong></div>
+                                                <a href="{{ route('fincasusers.create') }}" class="btn btn-secondary mb-1">Crear relacion</a>
+                                            </div>
+                                        <div class="card-body">
+                                        <table id="bootstrap-data-table4" class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                            <th>ID</th>
+                                            <th>Finca</th>
+                                            <th>Municipio</th>
+                                            <th>Usuario</th>
+                                            <th>Ver</th>
+                                            <th>Editar</th>
+                                            <th>Eliminar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($collectionfincauser as $item)
+                                            <tr>
+                                                <td>{{ $item->id }}</td>
+                                                <td>{{ $item->nombre }}</td>
+                                                <td>{{ $item->municipio }}</td>
+                                                <td>{{ $item->name }}</td>
+                                                <td><a href="{{ route('fincasusers.show', $item->id) }}">Ver</a></td>
+                                                <td><a href="{{ route('fincasusers.edit', $item->id) }}">Editar</a></td>
+                                                <td>
+                                                {!! Form::open(['method' => 'DELETE','route' => ['fincasusers.destroy', $item->id]]) !!}
+                                                    {!! Form::submit('Borrar esta relacion?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta relacion entre la finca y el cultivo?')"])!!}
+                                                {!! Form::close() !!}</td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                        </table>
+                                        </div>
+                                        </div>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -212,50 +212,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
         
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="largeModalCrearFinca" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="largeModalLabel">Finca</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                
-            </div>      
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Confirm</button>
-            </div>
-            
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="largeModalCrearCultivo" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="largeModalLabel">Cultivo</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>
-                    
-                </p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Confirm</button>
-            </div>
         </div>
     </div>
 </div>
