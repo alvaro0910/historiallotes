@@ -29,7 +29,7 @@
                     ]) !!}
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Variedad</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="name" name="name" placeholder="Nombre" class="form-control" value="{{ $data->variedad }}">
+                        <div class="col-12 col-md-9"><input type="text" id="variedad" name="variedad" placeholder="Variedad" class="form-control" value="{{ $data->variedad }}">
                         <small class="form-text text-muted">Ingrese la variedad</small></div>
                     </div>
                     <div class="row form-group">
@@ -38,10 +38,9 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                <button type="submit" class="btn btn-primary btn-sm">
-                    <i class="fa fa-dot-circle-o"></i> Actualizar Variedad
-                </button>
-                
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Actualizar Variedad
+                    </button>
                 </div>
                 <div class="card-footer">
                     <ul class="list-group list-group-flush">

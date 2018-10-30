@@ -63,7 +63,6 @@
                         <i class="fa fa-dot-circle-o"></i> Crear produccion
                     </button>
                 </div>
-                {{ Form::close() }}
                 <div class="card-footer">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
@@ -75,6 +74,7 @@
                         </li>
                     </ul>
                 </div>
+                {{ Form::close() }}
                 </div>
             </div>
         </div>

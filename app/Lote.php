@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Lote extends Model
 {
     protected $fillable = [
-        'codigo', 'nombre', 'area', 'poblacion', 'edad', 'alturasnm',
+        'codigo', 'nombre', 'area', 'poblacion', 'edad', 'alturasnm', 'cultivo_id', 'variedad_id',
     ];
 
     public function cultivo(){

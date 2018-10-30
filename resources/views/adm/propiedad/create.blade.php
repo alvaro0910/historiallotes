@@ -41,7 +41,6 @@
                         <i class="fa fa-dot-circle-o"></i> Crear propiedad
                     </button>
                 </div>
-                {{ Form::close() }}
                 <div class="card-footer">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
@@ -54,6 +53,7 @@
                     </ul>
                 </div>
             </div>
+            {{ Form::close() }}
             </div>
         
         </div>

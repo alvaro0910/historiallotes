@@ -28,7 +28,7 @@
                         'route' => ['cultivosfincas.update', $data{'0'}->id]
                     ]) !!}
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="select" class="form-control-label">Variedad</label></div>
+                        <div class="col col-md-3"><label for="select" class="form-control-label">Finca</label></div>
                         <select data-placeholder="Seleccione Finca..." class="standardSelect" tabindex="1" id="finca_id" name="finca_id">
                             @foreach ($listfincas as $e)
                                 <option value="{{ $e->id }}">{{ $e->nombre }}</option>
@@ -46,7 +46,6 @@
                 <button type="submit" class="btn btn-primary btn-sm">
                     <i class="fa fa-dot-circle-o"></i> Actualizar relacion
                 </button>
-                {{ Form::close() }}
                 </div>
                 <div class="card-footer">
                     <ul class="list-group list-group-flush">
@@ -59,6 +58,7 @@
                         </li>
                     </ul>
                 </div>
+                {{ Form::close() }}
                 </div>
             </div>
         </div>

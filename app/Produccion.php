@@ -9,7 +9,7 @@ class Produccion extends Model
     public $table = "producciones";
 
     protected $fillable = [
-        'cantidad','periodo','lote_id',
+        'cantidad', 'periodo', 'lote_id',
     ];
     
     public function lote(){

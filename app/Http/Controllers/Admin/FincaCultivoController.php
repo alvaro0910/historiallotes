@@ -96,10 +96,10 @@ class FincaCultivoController extends Controller
             FROM cultivo_finca
             INNER JOIN cultivos, fincas
             WHERE cultivo_finca.finca_id = fincas.id AND cultivo_finca.cultivo_id = cultivos.id AND cultivo_finca.id ='.$id.';');
-        
+
         $fincas = DB::table('fincas')->get();
         $cultivos = DB::table('cultivos')->get();
-        return view('adm.cultivofinca.edit', ['data' => $cultivofinca, 'listfincas' => $fincas, 'listcultivos' => $cultivos, ]);
+        return view('adm.cultivofinca.edit', ['data' => $cultivofinca, 'listfincas' => $fincas, 'listcultivos' => $cultivos]);
     }
 
     /**
@@ -111,15 +111,6 @@ class FincaCultivoController extends Controller
      */
     public function update(CultivoFincaRequest $request, $id)
     {
-        //$cultivofinca = Finca::find($request->finca_id);
-        //$input = $request->all();
-        //$cultivofinca->update($input);
-        //$cultivofinca->cultivos()->updateExistingPivot($request->cultivo_id, array('id' => $id), false);
-        $cultivofinca = DB::select(
-            'DELETE
-            FROM cultivo_finca
-            WHERE cultivo_finca.id ='.$id.';');
-
         $notificacion = array(
             'message' => 'Relacion actualizada con exito!',
             'alert-type' => 'success'

@@ -52,8 +52,7 @@
                 <button type="submit" class="btn btn-primary btn-sm">
                     <i class="fa fa-dot-circle-o">Crear finca</i> 
                 </button>
-                </div>
-                {{ Form::close() }} 
+                </div> 
                 <div class="card-footer">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
@@ -65,6 +64,7 @@
                         </li>
                     </ul>
                 </div>
+                {{ Form::close() }}
                 </div>
             </div>
         </div>

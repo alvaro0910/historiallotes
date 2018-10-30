@@ -83,7 +83,6 @@ class VariedadController extends Controller
     public function update(VariedadRequest $request, $id)
     {
         $variedad = Variedad::where('id', $id)->findOrFail($id);
-        
         $input = $request->all();
         $variedad->update($input);
 

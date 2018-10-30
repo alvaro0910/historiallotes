@@ -9,7 +9,7 @@ class Propiedad extends Model
     public $table = "propiedades";
 
     protected $fillable = [
-        'material','unidad',
+        'material', 'unidad',
     ];
     
     public function lotes(){

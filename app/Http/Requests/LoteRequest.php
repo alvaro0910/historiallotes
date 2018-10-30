@@ -28,8 +28,8 @@ class LoteRequest extends FormRequest
             'nombre' => 'required | string | min:1 | max:255',
             'area' => 'required | numeric | min:0.001',
             'poblacion' => 'required | integer | min:1 | max:9999999999',
-            'edad' => 'integer',
-            'alturasnm' => 'integer',
+            //'edad' => 'integer',
+            //'alturasnm' => 'integer',
             'cultivo_id' => 'required | integer',
             'variedad_id' => 'required | integer',
         ];
@@ -53,12 +53,10 @@ class LoteRequest extends FormRequest
             'poblacion.integer' => 'El area debe ser un numero entero positivo entre 1 y 9999999999.',
             'poblacion.min' => 'El area debe ser un numero entero positivo entre 1 y 9999999999.',
             'poblacion.max' => 'El area debe ser un numero entero positivo entre 1 y 9999999999.',
-            'edad.integer' => 'La edad debe ser un numero entero positivo.(Este campo no es obligatorio)',
-            'alturasnm.integer' => 'La altura sobre el nivel del mar debe ser un numero positivo.(Este campo no es obligatorio)',
+            //'edad.integer' => 'La edad debe ser un numero entero positivo.(Este campo no es obligatorio)',
+            //'alturasnm.integer' => 'La altura sobre el nivel del mar debe ser un numero positivo.(Este campo no es obligatorio)',
             'cultivo_id.required' => 'El identificador(id) del cultivo es requerido.',
-            'cultivo_id.integer' => 'El identificador(id) debe ser un numero entero positivo.',
             'variedad_id.required' => 'El identificador(id) de la variedad es requerido.',
-            'variedad_id.integer' => 'El identificador(id) de la variedad debe ser un numero entero positivo.',
         ];
     }
 }
