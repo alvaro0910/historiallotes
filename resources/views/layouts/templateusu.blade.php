@@ -1,3 +1,7 @@
+{{  include("{{ asset('fusioncharts/integrations/php/samples/includes/fusioncharts.php') }} ") }}
+<!--
+    include('fusioncharts/integrations/php/samples/includes/fusioncharts.php');
+-->
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -32,39 +36,12 @@
     
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 
-    <!-- Style requerido para el contenedor de graficos -->
-    <style type="text/css">
-        #container {
-            max-width: 800px;
-            height: 400px;
-            margin: 1em auto;
-        }
-    </style>
-
-    <style type="text/css">
-        #container3d1,#container3d2,#container3d3,#container3d4,#container3d5,#container3d6,#container3d7,#container3d8,#container3d9,#container3d10,#container3d11,#container3d12,
-        #sliders {
-            min-width: 310px; 
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        #container3d1,#container3d2,#container3d3,#container3d4,#container3d5,#container3d6,#container3d7,#container3d8,#container3d9,#container3d10,#container3d11,#container3d12 {
-            height: 400px; 
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/fusioncharts/assets/css/style.css') }}" />
 </head>
 <body class="bg-dark">
     <!-- Scripts requeridos para los graficos -->
-    <script src="{{ asset('highcharts/code/highcharts.js') }}"></script>
-    <script src="{{ asset('highcharts/code/modules/pareto.js') }}"></script>
-    <script src="{{ asset('highcharts/code/highcharts-more.js') }}"></script>
-    <script src="{{ asset('highcharts/code/modules/exporting.js') }}"></script>
-    <script src="{{ asset('highcharts/code/modules/export-data.js') }}"></script>
-    <script src="{{ asset('highcharts/code/modules/heatmap.js') }}"></script>
-    <script src="{{ asset('highcharts/code/highcharts-3d.js') }}""></script>
-    
-    
-
+    <script type="text/javascript" src="{{ asset('fusioncharts/js/fusioncharts.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('fusioncharts/js/themes/fusioncharts.theme.fusion.js') }}"></script>
 
     <!-- Left Panel -->
     @if (session('status'))
