@@ -10,7 +10,7 @@
             <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <strong class="card-title">Data Table</strong>
+                    <strong class="card-title">Informacion lotes</strong>
                 </div>
             <div class="card-body">
                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
@@ -18,7 +18,7 @@
                 <tr>
                     <th>Codigo</th>
                     <th>Nombre</th>
-                    <th>Finca</th>
+                    <th>Cultivo</th>
                     <th>Detalle Lote</th>
                     <th>Costo labores</th>
                     <th>Costo insumos</th>
@@ -27,13 +27,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                <?php $list = array(1,2,3,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,); ?>
-                @foreach ($list as &$e)
+                @foreach ($data as $e)
                 <tr>
-                    <td>250</td>
-                    <td>Torre</td>
-                    <td>Jordan</td>
-                    <td><a title="Detallar" href="{{ route('detalle') }}">de</a></td>
+                    <td>{{ $e->codigo }}</td>
+                    <td>{{ $e->nombre }}</td>
+                    <td>{{ $e->cultivo }}</td>
+                    <td><a title="Detallar" href="{{ route('detalle', $e->id) }}">de</a></td>
                     <td><a title="Detallar" href="{{ route('costolabores') }}">cl</a></td>
                     <td><a title="Detallar" href="{{ route('costoinsumos') }}">ci</a></td>
                     <td><a title="Detallar" href="{{ route('producciones') }}">pr</a></td>

@@ -111,6 +111,14 @@ class FincaCultivoController extends Controller
      */
     public function update(CultivoFincaRequest $request, $id)
     {
+        DB::table('cultivo_finca')
+            ->where('id', $id)
+            ->update(['cultivo_id' => $request->cultivo_id ]);
+        
+        DB::table('cultivo_finca')
+            ->where('id', $id)
+            ->update(['finca_id' => $request->finca_id ]);
+        
         $notificacion = array(
             'message' => 'Relacion actualizada con exito!',
             'alert-type' => 'success'
@@ -126,10 +134,7 @@ class FincaCultivoController extends Controller
      */
     public function destroy($id)
     {
-        $cultivofinca = DB::select(
-            'DELETE
-            FROM cultivo_finca
-            WHERE cultivo_finca.id ='.$id.';');                    
+        DB::table('cultivo_finca')->where('id', '=', $id)->delete();                   
 
         $notificacion = array(
             'message' => 'Relacion eliminada con exito.',

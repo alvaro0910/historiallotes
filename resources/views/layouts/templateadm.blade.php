@@ -62,7 +62,7 @@
                         <a href="/homeadm"> <i class="menu-icon fa fa-home"></i>Home</a><!-- organizar ruta -->
                     </li>
                     
-                    <h3 class="menu-title">Usuarios</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">Usuarios y fincas</h3><!-- /.menu-title -->
                     
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Usuarios, cultivo y fincas</a>
@@ -72,22 +72,22 @@
                         </ul>
                     </li>
 
-                    <h3 class="menu-title">Informacion Lotes</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">Informacion General</h3><!-- /.menu-title -->
 
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Lotes</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Catalogos</a>
                         <ul class="sub-menu children dropdown-menu">
-                                <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('variedades.index') }}">Variedades</a></li>
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('lotes.index') }}">Datos generales</a></li>
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('estados.index') }}">Estado del lote</a></li>
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('propiedades.index') }}">Analisis de Suelos</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('lotes.index') }}">Lotes</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('variedades.index') }}">Variedades</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('estados.index') }}">Estados</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('propiedades.index') }}">Propiedades</a></li>
                             <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('producciones.index') }}">Producciones</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Labores</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{ route('labores.index') }}">Costos mensuales</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{ route('labores.index') }}">Costos labores</a></li>
                             <li><i class="menu-icon fa fa-area-chart"></i><a href="#">Archivo plano</a></li>
                             <li><i class="menu-icon fa fa-area-chart"></i><a href="#">Mano de obra</a></li>
                         </ul>
@@ -96,7 +96,7 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Insumos</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{ route('insumos.index') }}">Costos mensuales</a></li>
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{ route('insumos.index') }}">Costos insumos</a></li>
                             <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Archivo plano</a></li>
                         </ul>
                     </li>
