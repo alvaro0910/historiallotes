@@ -3,10 +3,6 @@
 @section('title', 'Detalle')
 
 @section('content')
-@foreach ($data as $e)
-{{ $e->cantidad }}
-@endforeach
-
 <div class="content mt-2">
     <div class="animated fadeIn">
         <div class="row">
@@ -192,9 +188,10 @@
                   
                 $arrData["data"] = array();
                  
-                foreach ($data as $e) {
+                foreach ($data as &$e) {
+                    $nomlote = ($e->cantidad);
                     array_push($arrData["data"], array(
-                        "label" => $row[$e],
+                        "label" => $row[$nomlote],
                         "value" => $row[]
                     )); 
                 }
