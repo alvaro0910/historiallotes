@@ -6,6 +6,7 @@ use App\Finca;
 use App\Departamento;
 use App\Municipio;
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\FincaRequest;
 use DB;
@@ -49,7 +50,7 @@ class FincaController extends Controller
         return view('adm.finca.create', compact('departamentos'));
     }
 
-    public static function getMunicipios(Request $request, $id){
+    public function getMunicipios(Request $request, $id){
         if ($request->ajax()) {
             $municipios = Municipio::municipios($id);
             return response()->json($municipios);

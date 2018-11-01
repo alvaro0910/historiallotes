@@ -25,7 +25,7 @@ Route::group(['middleware' => 'auth'], function() {
     
     Route::resource('fincascultivosusers','Admin\FincaCultivoUserController');
     Route::resource('fincas','Admin\FincaController');
-    Route::get('municipios/{id}', 'Admin\FincaController@getMunicipios');
+    Route::get('fincas/{id}', 'Admin\FincaController@getMunicipios');
     Route::resource('cultivos','Admin\CultivoController');
     Route::resource('cultivosfincas','Admin\FincaCultivoController');
     Route::resource('fincasusers','Admin\FincaUserController');
