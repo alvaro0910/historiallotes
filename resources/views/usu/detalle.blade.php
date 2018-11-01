@@ -177,10 +177,10 @@
         
             <div class="col-md-6">
                 <@php
-                
+                    
                 $arrData = array(
                     "chart" => array(
-                        "caption" => "Countires With Most Oil Reserves [2018-2019]",
+                        "caption" => "tituo",
                         "showValues" => "0",
                         "theme" => "fusion"
                     )
@@ -191,16 +191,10 @@
                 foreach ($data as &$e) {
                     $nomlote = ($e->cantidad);
                     array_push($arrData["data"], array(
-                        "label" => $row["2005"],
-                        "value" => $row["1234"]
+                        "label" => $row[$nomlote],
+                        "value" => $row[]
                     )); 
                 }
-                while($row = $data) {
-                    array_push($arrData["data"], array(
-                        "label" => $row["cantidad"],
-                        "value" => $row["periodo"]
-                    ));
-                }   
                     
                 $jsonEncodedData = json_encode($arrData);
 

@@ -31,17 +31,19 @@
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="select" class="form-control-label">Departamento</label></div>
-                        <select data-placeholder="Seleccione un departamento..." class="standardSelect" tabindex="1" id="departamento" name="departamento">
-                            <option value=""></option>
-                            <option value="Caldas">Caldas</option>
-                            <option value="Antioquia">Antioquia</option>
-                        </select>
+                        {!! Form::select('departamento', $departamentos, null, ['id','departamento']) !!}
+                        <!--<select data-placeholder="Seleccione un departamento..." class="standardSelect" tabindex="1" id="departamento" name="departamento">
+                            foreach ($collectiondepartamentos as $e)
+                                <option value="{ $e->id }}">{ $e->departamento }}</option>
+                            endforeach
+                        </select>-->
                         <div class="col col-md-3"><label for="select" class="form-control-label">Municipio</label></div>
-                        <select data-placeholder="Seleccione un municipio..." class="standardSelect" tabindex="1" id="municipio" name="municipio">
-                            <option value=""></option>
-                            <option value="Manizales">Manizales</option>
-                            <option value="Medellin">Medellin</option>
-                        </select>
+                        {!! Form::select('municipio', ['placeholder'=>'Seleccione municipio...'], null, ['id'=>'municipio']) !!}
+                        <!--<select data-placeholder="Seleccione un municipio..." class="standardSelect" tabindex="1" id="municipio" name="municipio">
+                            foreach ($collectionmunicipios as $e)
+                                <option value="{ $e->id }}">{ $e->municipio }}</option>
+                            endforeach
+                        </select>-->
                     </div>        
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Direccion</label></div>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Finca;
+use App\Departamento;
+use App\Municipio;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\FincaRequest;
@@ -42,7 +44,16 @@ class FincaController extends Controller
      */
     public function create()
     {
-        return view('adm.finca.create');
+        //$departamentos = DB::table('departamentos')->get();
+        $departamentos = Departamento::pluck('departamento','id');
+        return view('adm.finca.create', compact('departamentos'));
+    }
+
+    public static function getMunicipios(Request $request, $id){
+        if ($request->ajax()) {
+            $municipios = Municipio::municipios($id);
+            return response()->json($municipios);
+        }
     }
 
     /**

@@ -175,7 +175,7 @@
         </header><!-- /header -->
         <!-- Header-->
     @yield('content')
-
+    <!-- Scripts para la plantilla -->
     <script src="{{ asset('assets/js/vendor/jquery-2.1.4.min.js') }}"></script>
     <script src="{{ asset('assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins.js') }}"></script>
@@ -190,6 +190,10 @@
     <script src="{{ asset('assets/js/lib/vector-map/jquery.vmap.sampledata.js') }}"></script>
     <script src="{{ asset('assets/js/lib/vector-map/country/jquery.vmap.world.js') }}"></script>
 
+    <!-- Script para el select dinamico de ciudades y departamentos tambien debe ir jquery el cual ya lo trae la plantilla -->
+    <script src="{{ asset('js/dropdown.js') }}"></script>
+
+    <!-- Script para el control y manejo de tablas -->
     <script src="assets/js/lib/data-table/datatables.min.js"></script>
     <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
     <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
