@@ -42,13 +42,36 @@ class InfoController extends Controller
             //->where([['lotes.id', '=', $id], ['producciones.periodo', '=', "2008-01-31"],])
             //->take(1)
             ->get();
-        
-        $infoproduccion = DB::table('producciones')
-            ->select('producciones.cantidad', 'producciones.periodo')
-            ->where('producciones.lote_id', '=', $id)
-            ->get();
+            
+            $infoproduccion = DB::table('producciones')
+                ->select('producciones.cantidad', 'producciones.periodo', 'producciones.lote_id')
+                ->where('producciones.lote_id', '=', $id)
+                ->get()->toArray();
 
-            //dd($infoproduccion);
+            $arrayinfo = array($this->sumarMeses($infoproduccion));
+            dd($arrayinfo);
         return view('usu.detalle')->withData($infoproduccion);
+    }
+
+    function sumarMeses($infoproduccion){
+        $sum=0;
+        $pila = array();
+        foreach ($infoproduccion as $key) {
+            $p = $key->periodo;
+            $l = $key->lote_id;
+            if (strpos($p, '2008') !== false && strpos($l, '1') !== false) {
+                $sum += $key->cantidad;
+            }
+        }
+        array_push($pila, "manzana", "arándano");
+        array_push($arrData["data"], array(
+            "lote" => $row["2005"],
+            "value" => $row["1234"]
+        )); 
+        $array[] = $t->id;
+        dd($sum);
+        
+
+        
     }
 }

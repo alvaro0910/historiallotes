@@ -177,7 +177,7 @@
         
             <div class="col-md-6">
                 <@php
-                    
+                
                 $arrData = array(
                     "chart" => array(
                         "caption" => "Countires With Most Oil Reserves [2018-2019]",
@@ -191,8 +191,8 @@
                 foreach ($data as &$e) {
                     $nomlote = ($e->cantidad);
                     array_push($arrData["data"], array(
-                        "label" => $row[$nomlote],
-                        "value" => $row[]
+                        "label" => $row["2005"],
+                        "value" => $row["1234"]
                     )); 
                 }
                 while($row = $data) {

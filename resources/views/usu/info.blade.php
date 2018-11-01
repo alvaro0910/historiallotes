@@ -32,7 +32,7 @@
                     <td>{{ $e->codigo }}</td>
                     <td>{{ $e->nombre }}</td>
                     <td>{{ $e->cultivo }}</td>
-                    <td><a title="Detallar" href="{{ route('detalle', $e->id) }}">de</a></td>
+                    <td><a title="Detallar" href="{{ route('detalle', [$e->id]) }}">de</a></td>
                     <td><a title="Detallar" href="{{ route('costolabores') }}">cl</a></td>
                     <td><a title="Detallar" href="{{ route('costoinsumos') }}">ci</a></td>
                     <td><a title="Detallar" href="{{ route('producciones') }}">pr</a></td>
