@@ -23,19 +23,31 @@
                         @endif
                     </div>
                     <div class="card-body card-block">
-                        {{ Form::open(['route' => 'cultivosfincas.store', 'method' => 'POST']) }}
+                        {{ Form::open(['route' => 'propiedadlote.store', 'method' => 'POST']) }}
                         @method('post')
                         <div class="row form-group">
-                            <div class="col col-md-3"><label for="select" class="form-control-label">Variedad</label></div>
-                            <select data-placeholder="Seleccione Finca..." class="standardSelect" tabindex="1" id="finca_id" name="finca_id">
-                                @foreach ($listfincas as $e)
-                                    <option value="{{ $e->id }}">{{ $e->nombre }}</option>
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Cantidad</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="cantidad" name="cantidad" placeholder="Cantidad Material" class="form-control">
+                            <small class="form-text text-muted">Ingrese la cantidad del material analizado</small></div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Fecha</label></div>
+                            <div class="col-12 col-md-9"><input type="date" id="periodo" name="periodo" class="form-control">
+                            <small class="form-text text-muted">Ingrese la fecha del analisis</small></div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3"><label for="select" class="form-control-label">Lote</label></div>
+                            <select data-placeholder="Seleccione lote..." class="standardSelect" id="lote_id" name="lote_id">
+                                @foreach ($listlotes as $item)
+                                    <option value="{{ $item->id }}">{{ $item->codigo }} - {{ $item->nombre }}</option>
                                 @endforeach
                             </select>
-                            <div class="col col-md-3"><label for="select" class="form-control-label">Cultivo</label></div>
-                            <select data-placeholder="Seleccione cultivo..." class="standardSelect" tabindex="1" id="cultivo_id" name="cultivo_id">
-                                @foreach ($listcultivos as $e)
-                                    <option value="{{ $e->id }}">{{ $e->cultivo }}</option>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3"><label for="select" class="form-control-label">Propiedad</label></div>
+                            <select data-placeholder="Seleccione propiedad..." class="standardSelect" id="propiedad_id" name="propiedad_id">
+                                @foreach ($listpropiedades as $item)
+                                    <option value="{{ $item->id }}">{{ $item->material }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -48,7 +60,7 @@
                     <div class="card-footer">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                <a href="{{ route('fincascultivosusers.index') }}"> 
+                                <a href="{{ route('propiedades.index') }}"> 
                                     <div class="icon-container">
                                         <span class="ti-back-left"></span><span class="icon-name"> Regresar</span>
                                     </div>

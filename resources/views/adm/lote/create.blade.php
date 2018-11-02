@@ -47,8 +47,8 @@
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Edad</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="edad" name="edad" placeholder="Edad" class="form-control">
-                        <small class="help-block text-muted">Ingrese la edad del lote</small></div>
+                        <div class="col-12 col-md-9"><input type="text" id="edad" name="edad" placeholder="Edad en meses" class="form-control">
+                        <small class="help-block text-muted">Ingrese la edad del lote en meses</small></div>
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Altura</label></div>

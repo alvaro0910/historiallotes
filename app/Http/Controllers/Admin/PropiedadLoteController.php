@@ -37,7 +37,7 @@ class PropiedadLoteController extends Controller
     {
         $lotes = DB::table('lotes')->get();
         $propiedades = DB::table('propiedades')->get();
-        return view('adm.propiedadlote.create', ['listlotes' => $lotes, 'listpropiedades' => $propiedades, ]);
+        return view('adm.propiedadlote.create', ['listlotes' => $lotes, 'listpropiedades' => $propiedades]);
     }
 
     /**
@@ -72,7 +72,7 @@ class PropiedadLoteController extends Controller
             INNER JOIN lotes, propiedades
             WHERE lote_propiedad.lote_id = lotes.id AND lote_propiedad.propiedad_id = propiedades.id AND lote_propiedad.id ='.$id.';');
         
-        return view('adm.propiedadlote.show')->withData($cultivofinca);
+        return view('adm.propiedadlote.show')->withData($propiedadlote);
     }
 
     /**

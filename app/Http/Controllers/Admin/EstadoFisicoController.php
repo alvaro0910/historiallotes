@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\EstadoFisico;
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\RequestsEstadoFisicoRequest;
+use App\Http\Requests\EstadoFisicoRequest;
 use DB;
+use Carbon\Carbon;
 
 class EstadoFisicoController extends Controller
 {
@@ -32,7 +34,8 @@ class EstadoFisicoController extends Controller
      */
     public function create()
     {
-        return view('adm.estado.create');
+        $lotes = DB::table('lotes')->get();
+        return view('adm.estado.create')->withData($lotes);
     }
 
     /**
@@ -43,14 +46,31 @@ class EstadoFisicoController extends Controller
      */
     public function store(EstadoFisicoRequest $request)
     {
-        $estado = new EstadoFisico($request->all());
-        $estado->save();
+        $fecha = Carbon::parse($request->periodo);
+        $afecha = $fecha->year;
+        
+        $request["periodo"] = $afecha."-01"."-01";
 
-        $notificacion = array(
-            'message' => 'Estado fisico agregado con exito.',
-            'alert-type' => 'success'
-        );
-        return redirect()->back()->with($notificacion);
+        $hoy = date("Y-m-d");
+        $fechaFormulario = $request->periodo;
+
+        if ($hoy <= $fechaFormulario) {
+            $estado = new EstadoFisico($request->all());
+            $estado->save();
+
+            $notificacion = array(
+                'message' => 'Estado fisico agregado con exito.',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notificacion);
+        }
+        else {
+            $notificacion = array(
+                'message' => 'La fecha debe ser menor a la actual.',
+                'alert-type' => 'error'
+            );
+            return redirect()->back()->with($notificacion);
+        }
     }
 
     /**
