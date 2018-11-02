@@ -32,7 +32,9 @@ class LaborController extends Controller
      */
     public function create()
     {
-        return view('adm.labor.create');
+        $lotes = DB::table('lotes')->get();
+        $grupos = DB::table('grupos_labores')->get();
+        return view('adm.labor.create', ['listlotes' => $lotes, 'listgrupos' => $grupos]);
     }
 
     /**

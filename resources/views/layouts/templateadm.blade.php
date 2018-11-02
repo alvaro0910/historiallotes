@@ -212,48 +212,104 @@
             $('#bootstrap-data-table-export').DataTable();
         } );
     </script> -->
+
+    <script>
+        $(document).ready(function() {
+            $('#bootstrap-data-table-export').DataTable({
+                responsive: true,
+                language: {
+                    url: 'assets/js/lib/data-table/es-ar.json' //Ubicacion del archivo con el json del idioma.
+                }
+            });
+        });
+     </script>
     
-    
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable({
+                responsive: true,
+                language: {
+                    url: 'assets/js/lib/data-table/es-ar.json' //Ubicacion del archivo con el json del idioma.
+                }
+            });
+        });
+     </script>
+
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#bootstrap-data-table1').DataTable();
-        } );
+            $('#bootstrap-data-table1').DataTable({
+                responsive: true,
+                language: {
+                    url: 'assets/js/lib/data-table/es-ar.json' //Ubicacion del archivo con el json del idioma.
+                }
+            });
+        });
     </script>
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#bootstrap-data-table2').DataTable();
-        } );
+            $('#bootstrap-data-table2').DataTable({
+                responsive: true,
+                language: {
+                    url: 'assets/js/lib/data-table/es-ar.json' //Ubicacion del archivo con el json del idioma.
+                }
+            });
+        });
     </script>
     
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#bootstrap-data-table3').DataTable();
-        } );
+            $('#bootstrap-data-table3').DataTable({
+                responsive: true,
+                language: {
+                    url: 'assets/js/lib/data-table/es-ar.json' //Ubicacion del archivo con el json del idioma.
+                }
+            });
+        });
     </script>
     
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#bootstrap-data-table4').DataTable();
-        } );
+            $('#bootstrap-data-table4').DataTable({
+                responsive: true,
+                language: {
+                    url: 'assets/js/lib/data-table/es-ar.json' //Ubicacion del archivo con el json del idioma.
+                }
+            });
+        });
     </script>
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#bootstrap-data-table5').DataTable();
-        } );
+            $('#bootstrap-data-table5').DataTable({
+                responsive: true,
+                language: {
+                    url: 'assets/js/lib/data-table/es-ar.json' //Ubicacion del archivo con el json del idioma.
+                }
+            });
+        });
     </script>
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#bootstrap-data-table6').DataTable();
-        } );
+            $('#bootstrap-data-table6').DataTable({
+                responsive: true,
+                language: {
+                    url: 'assets/js/lib/data-table/es-ar.json' //Ubicacion del archivo con el json del idioma.
+                }
+            });
+        });
     </script>
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#bootstrap-data-table7').DataTable();
-        } );
+            $('#bootstrap-data-table7').DataTable({
+                responsive: true,
+                language: {
+                    url: 'assets/js/lib/data-table/es-ar.json' //Ubicacion del archivo con el json del idioma.
+                }
+            });
+        });
     </script>
 
     <script>

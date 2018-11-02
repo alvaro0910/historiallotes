@@ -16,7 +16,7 @@
                                 <a href="{{ route('estados.create') }}" class="btn btn-secondary mb-1">Crear Estado</a>
                             </div>
                         <div class="card-body">
-                        <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                        <table id="example" class="table table-striped table-bordered">
                         <thead>
                             <tr>
                             <th>Estado ID</th>

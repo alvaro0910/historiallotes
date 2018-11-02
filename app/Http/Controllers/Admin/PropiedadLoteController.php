@@ -91,7 +91,7 @@ class PropiedadLoteController extends Controller
         
         $fincas = DB::table('fincas')->get();
         $cultivos = DB::table('cultivos')->get();
-        return view('adm.propiedadlote.edit', ['data' => $propiedadlote, 'listfincas' => $fincas, 'listcultivos' => $cultivos, ]);
+        return view('adm.propiedadlote.edit', ['data' => $propiedadlote, 'listfincas' => $fincas, 'listcultivos' => $cultivos]);
     }
 
     /**

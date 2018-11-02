@@ -45,7 +45,7 @@ class FincaCultivoController extends Controller
     {
         $fincas = DB::table('fincas')->get();
         $cultivos = DB::table('cultivos')->get();
-        return view('adm.cultivofinca.create', ['listfincas' => $fincas, 'listcultivos' => $cultivos, ]);
+        return view('adm.cultivofinca.create', ['listfincas' => $fincas, 'listcultivos' => $cultivos]);
     }
 
     /**

@@ -24,8 +24,8 @@ class FincaUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => 'required | integer | min:1',
-            'finca_id' => 'required | integer | min:1',
+            'user_id' => 'required',
+            'finca_id' => 'required',
         ];
     }
 
@@ -38,9 +38,7 @@ class FincaUserRequest extends FormRequest
     {
         return [
             'user_id.required' => 'El identificador(id) del usuario es requerido.',
-            'user_id.integer' => 'El identificador(id) debe ser un numero entero positivo.',
             'finca_id.required' => 'El identificador(id) de la finca es requerido.',
-            'finca_id.integer' => 'El identificador(id) debe ser un numero entero positivo.',
         ];
     }
 }

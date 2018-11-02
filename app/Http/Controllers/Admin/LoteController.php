@@ -34,7 +34,7 @@ class LoteController extends Controller
     {
         $cultivos = DB::table('cultivos')->get();
         $variedades = DB::table('variedades')->get();
-        return view('adm.lote.create', ['listcultivos' => $cultivos, 'listvariedades' => $variedades, ]);
+        return view('adm.lote.create', ['listcultivos' => $cultivos, 'listvariedades' => $variedades]);
     }
 
     /**
@@ -83,7 +83,7 @@ class LoteController extends Controller
         $lote = Lote::where('id', $id)->findOrFail($id);
         $cultivos = DB::table('cultivos')->get();
         $variedades = DB::table('variedades')->get();
-        return view('adm.lote.edit', ['data' => $lote, 'listcultivos' => $cultivos, 'listvariedades' => $variedades,]);
+        return view('adm.lote.edit', ['data' => $lote, 'listcultivos' => $cultivos, 'listvariedades' => $variedades]);
     }
 
     /**

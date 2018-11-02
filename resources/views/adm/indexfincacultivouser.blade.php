@@ -51,8 +51,16 @@
                                                 <td>{{ $item->id }}</td>
                                                 <td>{{ $item->nombre }}</td>
                                                 <td>{{ $item->municipio }}</td>
-                                                <td><a href="{{ route('fincas.show', $item->id) }}">Ver</a></td>
-                                                <td><a href="{{ route('fincas.edit', $item->id) }}">Editar</a></td>
+                                                <td>
+                                                    <div class="icon-container" style="width: 20px;">
+                                                        <a href="{{ route('fincas.show', $item->id) }}"><span class="ti-search"></span></a>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="icon-container" style="width: 20px;">
+                                                        <a href="{{ route('fincas.edit', $item->id) }}"><span class="ti-pencil-alt"></span></a>
+                                                    </div>
+                                                </td>
                                                 <td>
                                                 {!! Form::open(['method' => 'DELETE','route' => ['fincas.destroy', $item->id]]) !!}
                                                     {!! Form::submit('Borrar finca?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta finca?')"])!!}
@@ -96,8 +104,16 @@
                                             <tr>
                                                 <td>{{ $item->id }}</td>
                                                 <td>{{ $item->cultivo }}</td>
-                                                <td><a href="{{ route('cultivos.show', $item->id) }}">Ver</a></td>
-                                                <td><a href="{{ route('cultivos.edit', $item->id) }}">Editar</a></td>
+                                                <td>
+                                                    <div class="icon-container" style="width: 20px;">
+                                                        <a href="{{ route('cultivos.show', $item->id) }}"><span class="ti-search"></span></a>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="icon-container" style="width: 20px;">
+                                                        <a href="{{ route('cultivos.edit', $item->id) }}"><span class="ti-pencil-alt"></span></a>
+                                                    </div>
+                                                </td>
                                                 <td>
                                                 {!! Form::open(['method' => 'DELETE','route' => ['cultivos.destroy', $item->id]]) !!}
                                                     {!! Form::submit('Borrar este Cultivo?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar este cultivo?')"])!!}
@@ -143,8 +159,16 @@
                                                 <td>{{ $item->id }}</td>
                                                 <td>{{ $item->nombre }}</td>
                                                 <td>{{ $item->cultivo }}</td>
-                                                <td><a href="{{ route('cultivosfincas.show', $item->id) }}">Ver</a></td>
-                                                <td><a href="{{ route('cultivosfincas.edit', $item->id) }}">Editar</a></td>
+                                                <td>
+                                                    <div class="icon-container" style="width: 20px;">
+                                                        <a href="{{ route('cultivosfincas.show', $item->id) }}"><span class="ti-search"></span></a>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="icon-container" style="width: 20px;">
+                                                        <a href="{{ route('cultivosfincas.edit', $item->id) }}"><span class="ti-pencil-alt"></span></a>
+                                                    </div>
+                                                </td>
                                                 <td>
                                                 {!! Form::open(['method' => 'DELETE','route' => ['cultivosfincas.destroy', $item->id]]) !!}
                                                     {!! Form::submit('Borrar esta relacion?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta relacion entre la finca y el cultivo?')"])!!}
@@ -192,11 +216,22 @@
                                                 <td>{{ $item->nombre }}</td>
                                                 <td>{{ $item->municipio }}</td>
                                                 <td>{{ $item->name }}</td>
-                                                <td><a href="{{ route('fincasusers.show', $item->id) }}">Ver</a></td>
-                                                <td><a href="{{ route('fincasusers.edit', $item->id) }}">Editar</a></td>
                                                 <td>
-                                                {!! Form::open(['method' => 'DELETE','route' => ['fincasusers.destroy', $item->id]]) !!}
-                                                    {!! Form::submit('Borrar esta relacion?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta relacion entre la finca y el cultivo?')"])!!}
+                                                    <div class="icon-container" style="width: 20px;">
+                                                        <a href="{{ route('fincasusers.show', $item->id) }}"><span class="ti-search"></span></a>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="icon-container" style="width: 20px;">
+                                                        <a href="{{ route('fincasusers.edit', $item->id) }}"><span class="ti-pencil-alt"></span></a>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                {!! Form::open(['method' => 'DELETE','route' => ['fincasusers.destroy', $item->id], 'id' => 'form1']) !!}
+                                                    <div class="icon-container" style="width: 20px;">
+                                                        <a href="javascript:;" onclick="return  confirm('¿Seguro que desea eliminar esta relacion entre la finca y el cultivo?'); document.getElementById('form1').submit();"><span class="ti-pencil-alt"></span><%=n%></a>
+                                                        {!! Form::submit('Borrar esta relacion?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta relacion entre la finca y el cultivo?')"])!!}</span></a>
+                                                    </div>
                                                 {!! Form::close() !!}</td>
                                             </tr>
                                             @endforeach
