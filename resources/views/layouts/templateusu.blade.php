@@ -1,6 +1,3 @@
-<!--
-    include('fusioncharts/integrations/php/samples/includes/fusioncharts.php');
--->
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -35,13 +32,13 @@
     
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/fusioncharts/assets/css/style.css') }}" />
+    <!-- graficos fusioncharts -->
+    <script type="text/javascript" src="{{ asset('fusioncharts/js/fusioncharts.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('fusioncharts/js/fusioncharts.charts.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('fusioncharts/js/themes/fusioncharts.theme.fint.js') }}"></script>
 </head>
 <body class="bg-dark">
-    <!-- Scripts requeridos para los graficos -->
-    <script type="text/javascript" src="{{ asset('fusioncharts/js/fusioncharts.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('fusioncharts/js/themes/fusioncharts.theme.fusion.js') }}"></script>
-
+        
     <!-- Left Panel -->
     @if (session('status'))
         <div class="alert alert-success" role="alert">
@@ -63,7 +60,7 @@
                 <ul class="nav navbar-nav">
                 <!-- <ul class="nav nav-pill"> -->
                     <li class="active">
-                        <a href="/homeusu"> <i class="menu-icon fa fa-home"></i>Home</a><!-- organizar ruta -->
+                        <a href="{{ route('usu') }}"> <i class="menu-icon fa fa-home"></i>Home</a><!-- organizar ruta -->
                     </li>
                     
                     <h3 class="menu-title">Lotes</h3><!-- /.menu-title -->
@@ -78,21 +75,6 @@
                             <li><i class="fa fa-bars"></i><a href="{{ route('rendimientos') }}">Rendimientos</a></li>
                         </ul>
                     </li>
-
-                    {{-- <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
-                        </ul>
-                    </li> --}}
 
                     <h3 class="menu-title">Comparativos</h3><!-- /.menu-title -->
 
@@ -155,72 +137,6 @@
                                 <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
                             </form>
                         </div>
-
-                        {{-- <div class="dropdown for-notification">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-bell"></i>
-                            <span class="count bg-danger">5</span>
-                          </button>
-                          <div class="dropdown-menu" aria-labelledby="notification">
-                            <p class="red">You have 3 Notification</p>
-                            <a class="dropdown-item media bg-flat-color-1" href="#">
-                                <i class="fa fa-check"></i>
-                                <p>Server #1 overloaded.</p>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-4" href="#">
-                                <i class="fa fa-info"></i>
-                                <p>Server #2 overloaded.</p>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-5" href="#">
-                                <i class="fa fa-warning"></i>
-                                <p>Server #3 overloaded.</p>
-                            </a>
-                          </div>
-                        </div> --}}
-
-                        {{-- <div class="dropdown for-message">
-                          <button class="btn btn-secondary dropdown-toggle" type="button"
-                                id="message"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="ti-email"></i>
-                            <span class="count bg-primary">9</span>
-                          </button>
-                          <div class="dropdown-menu" aria-labelledby="message">
-                            <p class="red">You have 4 Mails</p>
-                            <a class="dropdown-item media bg-flat-color-1" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="images/avatar/1.jpg"></span>
-                                <span class="message media-body">
-                                    <span class="name float-left">Jonathan Smith</span>
-                                    <span class="time float-right">Just now</span>
-                                        <p>Hello, this is an example msg</p>
-                                </span>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-4" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="images/avatar/2.jpg"></span>
-                                <span class="message media-body">
-                                    <span class="name float-left">Jack Sanders</span>
-                                    <span class="time float-right">5 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                </span>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-5" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="images/avatar/3.jpg"></span>
-                                <span class="message media-body">
-                                    <span class="name float-left">Cheryl Wheeler</span>
-                                    <span class="time float-right">10 minutes ago</span>
-                                        <p>Hello, this is an example msg</p>
-                                </span>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-3" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="images/avatar/4.jpg"></span>
-                                <span class="message media-body">
-                                    <span class="name float-left">Rachel Santos</span>
-                                    <span class="time float-right">15 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                </span>
-                            </a>
-                          </div>
-                        </div> --}}
                     </div>
                 </div>
 
@@ -245,7 +161,6 @@
                                 </form>
                         </div>
                     </div>
-
                 </div>
             </div>
 

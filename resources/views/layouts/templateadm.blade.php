@@ -59,7 +59,7 @@
                 <ul class="nav navbar-nav">
                 <!-- <ul class="nav nav-pill"> -->
                     <li class="active">
-                        <a href="/homeadm"> <i class="menu-icon fa fa-home"></i>Home</a><!-- organizar ruta -->
+                        <a href="{{ route('admin') }}"> <i class="menu-icon fa fa-home"></i>Home</a><!-- organizar ruta -->
                     </li>
                     
                     <h3 class="menu-title">Usuarios y fincas</h3><!-- /.menu-title -->
