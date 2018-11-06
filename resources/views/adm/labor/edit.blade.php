@@ -40,46 +40,25 @@
                         <div class="col-12 col-md-9"><input type="text" id="periodo" name="periodo" placeholder="Fecha" class="form-control" value="{{ $data->periodo }}"><small class="form-text text-muted">Ingrese la fecha del costo de labores</small></div>
                     </div>
                     <div class="row form-group">
-                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Cantidad MO</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="cantidadmo" name="cantidadmo" placeholder="Cantidad MO" class="form-control" value="{{ $data->cantidadmo }}"><small class="form-text text-muted">Ingrese la cantidad de mano de obra</small></div>
-                        </div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Cantidad MO</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="cantidadmo" name="cantidadmo" placeholder="Cantidad MO" class="form-control" value="{{ $data->cantidadmo }}"><small class="form-text text-muted">Ingrese la cantidad de mano de obra</small></div>
+                    </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="select" class="form-control-label">Lote</label></div>
-                        <select data-placeholder="Choose a Country..." class="standardSelect" tabindex="1" id="cultivo">
-                            <option value=""></option>
-                            <option value="United States">United States</option>
-                            <option value="United Kingdom">United Kingdom</option>
-                            <option value="Afghanistan">Afghanistan</option>
-                            <option value="Aland Islands">Aland Islands</option>
-                            <option value="Albania">Albania</option>
-                            <option value="Algeria">Algeria</option>
-                            <option value="American Samoa">American Samoa</option>
-                            <option value="Andorra">Andorra</option>
-                            <option value="Angola">Angola</option>
-                            <option value="Anguilla">Anguilla</option>
-                            <option value="Antarctica">Antarctica</option>
-                        </select>
-                        <div class="col col-md-3"><label for="select" class="form-control-label">Grupo Labores</label></div>
-                        <select data-placeholder="Choose a Country..." class="standardSelect" tabindex="1" id="variedad">
-                            <option value=""></option>
-                            <option value="United States">United States</option>
-                            <option value="United Kingdom">United Kingdom</option>
-                            <option value="Afghanistan">Afghanistan</option>
-                            <option value="Aland Islands">Aland Islands</option>
-                            <option value="Albania">Albania</option>
-                            <option value="Algeria">Algeria</option>
-                            <option value="American Samoa">American Samoa</option>
-                            <option value="Andorra">Andorra</option>
-                            <option value="Angola">Angola</option>
-                            <option value="Anguilla">Anguilla</option>
-                            <option value="Antarctica">Antarctica</option>
+                        <select data-placeholder="Seleccione lote..." class="standardSelect" tabindex="1" id="lote_id" name="lote_id">
+                        @foreach ($listlotes as $item)
+                            <option value="{{ $item->id }}">{{ $item->codigo }} - {{ $item->nombre }}</option>
+                        @endforeach
                         </select>
                     </div>
-                        <!--<select id="prioridadForm" name="prioridadForm">  no olvidar poner el < ? de php
-                            <option value="baja" php if($estado=="baja") echo "selected";?>>Baja</option> 
-                            <option value="media" php if($estado=="media") echo "selected";?>>Media</option> 
-                            <option value="alta" php if($estado=="alta") echo "selected";?>>Alta</option> 
-                            </select>-->
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="select" class="form-control-label">Grupo Labores</label></div>
+                        <select data-placeholder="Seleccione grupo labor..." class="standardSelect" tabindex="1" id="grupo_labor_id" name="grupo_labor_id">
+                        @foreach ($listgrupos as $item)
+                            <option value="{{ $item->id }}">{{ $item->nombre }}</option>     
+                        @endforeach
+                        </select>
+                    </div>
                 </div>
                 <div class="card-footer">
                 <button type="submit" class="btn btn-primary btn-sm">
@@ -90,7 +69,7 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <a href="{{ route('labores.index') }}"> 
-                                <div class="icon-container">
+                                <div class="icon-container" style="width:240px;">
                                     <span class="ti-back-left"></span><span class="icon-name"> Regresar</span>
                                 </div>
                             </a>

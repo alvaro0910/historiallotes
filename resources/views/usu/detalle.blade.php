@@ -3,26 +3,24 @@
 @section('title', 'Detalle')
 
 @section('content')
+
 <div class="content mt-2">
     <div class="animated fadeIn">
         <div class="row">
 
             <div class="col-md-6">
                 <section class="card">
-                    
                     <div class="twt-feed blue-bg">
                         <div class="corner-ribon black-ribon">
                             <i class=""></i>
                         </div>
-                        {{-- <div class="fa fa-twitter wtt-mark"></div> --}}
-
                         <div class="media">
                             <a href="#">
                                 <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="images/admin.jpg">
                             </a>
                             <div class="media-body">
-                                <h2 class="text-white display-6">Lote 250</h2>
-                                <p class="text-light">Finca Morelia</p>
+                                <h2 class="text-white display-6">Lote: {{ $infolote['0']->codigo }}</h2>
+                                <p class="text-light">{{ $infolote['0']->nombre }}</p>
                             </div>
                         </div>
                     </div>
@@ -30,15 +28,15 @@
                     <div class="weather-category twt-category">
                         <ul>
                             <li class="active">
-                                <h5>2,5</h5>
+                                <h5>{{ $infolote['0']->area }}</h5>
                                 Hectareas
                             </li>
                             <li>
-                                <h5>14.060</h5>
+                                <h5>{{ $infolote['0']->poblacion }}</h5>
                                 Total plantas
                             </li>
                             <li>
-                                <h5>750 @/ha</h5>
+                                <h5>{{ round($otrosdatoslote['1']) }} @/ha</h5>
                                 Prom. produccion anual
                             </li>
                         </ul>
@@ -60,7 +58,6 @@
                             </li>
                         </ul>
                     </div>
-    
                 </section>
             </div>
 
@@ -74,19 +71,6 @@
                                 </a>
                                 <div class="media-body">
                                     <h2 class="text-light display-6">Analisis de suelos</h2>
-                                        <div class="card">
-                                                <div class="card-body">
-                                                <strong>Seleccionar año </strong><select data-placeholder="Choose a Country..." class="standardSelect" tabindex="1">
-                                                    <option value=""></option>
-                                                    <option value="2008">2008</option>
-                                                    <option value="2009">2009</option>
-                                                    <option value="2010">2010</option>
-                                                    <option value="2011">2011</option>
-                                                    <option value="2012">2012</option>
-                                                    <option value="2013">2013</option>
-                                                </select>
-                                            </div>
-                                        </div>
                                 </div>
                             </div>
                         </div>
@@ -176,50 +160,12 @@
         <div class="row">
         
             <div class="col-md-6">
-                <@php
-                    
-                $arrData = array(
-                    "chart" => array(
-                        "caption" => "tituo",
-                        "showValues" => "0",
-                        "theme" => "fusion"
-                    )
-                ); 
-                  
-                $arrData["data"] = array();
-                 
-                foreach ($data as &$e) {
-                    $nomlote = ($e->cantidad);
-                    array_push($arrData["data"], array(
-                        "label" => $row[$nomlote],
-                        "value" => $row[]
-                    )); 
-                }
-                    
-                $jsonEncodedData = json_encode($arrData);
-
-                $columnChart = new FusionCharts("column2D", "myFirstChart" , 700, 400, "chart-1", "json", $jsonEncodedData);
-
-                // Render the chart
-                $columnChart->render();
-
-                // Close the database connection
-                $dbhandle->close();
-                @endphp
             
-            <div id="chart-1"><!-- Fusion Charts will render here--></div>\
+                <div id="chart-1"><!-- Fusion Charts will render here--></div>\
                   
-            </div>
-
-            <div class="col-md-6">
-                
             </div>
     
         </div>
     </div>
 </div>
-
-{{ <?php foreach ($infolote as &$item){ $nomlote = ($item->nombre); print_r($nomlote);} ?>'; }}
-
-
 @endsection            

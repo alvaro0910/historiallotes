@@ -32,7 +32,9 @@ class InsumoController extends Controller
      */
     public function create()
     {
-        return view('adm.insumo.create');
+        $lotes = DB::table('lotes')->get();
+        $grupos = DB::table('grupos_labores')->get();
+        return view('adm.insumo.create', ['listlotes' => $lotes, 'listgrupos' => $grupos]);
     }
 
     /**
@@ -78,7 +80,9 @@ class InsumoController extends Controller
     public function edit($id)
     {
         $insumo = Insumo::where('id', $id)->findOrFail($id);
-        return view('adm.insumo.edit', ['data' => $insumo]);
+        $lotes = DB::table('lotes')->get();
+        $grupos = DB::table('grupos_labores')->get();
+        return view('adm.insumo.edit', ['data' => $insumo, 'listlotes' => $lotes, 'listgrupos' => $grupos]);
     }
 
     /**

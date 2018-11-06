@@ -42,8 +42,16 @@
                                 <td>{{ $item->nombre }}</td>
                                 <td>{{ $item->codigo }}</td>
                                 <td>{{ $item->cultivo }}</td>
-                                <td><a href="{{ route('lotes.show', $item->id) }}">Ver</a></td>
-                                <td><a href="{{ route('lotes.edit', $item->id) }}">Editar</a></td>
+                                <td>
+                                    <div class="icon-container" style="width: 20px;">
+                                        <a href="{{ route('lotes.show', $item->id) }}"><span class="ti-search"></span></a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="icon-container" style="width: 20px;">
+                                        <a href="{{ route('lotes.edit', $item->id) }}"><span class="ti-pencil-alt"></span></a>
+                                    </div>
+                                </td>
                                 <td>
                                 {!! Form::open(['method' => 'DELETE','route' => ['lotes.destroy', $item->id]]) !!}
                                     {!! Form::submit('¿Borrar este registro?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar el registro? $item->id')"])!!}

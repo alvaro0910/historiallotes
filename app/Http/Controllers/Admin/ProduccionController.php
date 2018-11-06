@@ -33,7 +33,8 @@ class ProduccionController extends Controller
      */
     public function create()
     {
-        return view('adm.produccion.create');
+        $lotes = DB::table('lotes')->get();
+        return view('adm.produccion.create', ['listlotes' => $lotes]);
     }
 
     /**
@@ -79,7 +80,8 @@ class ProduccionController extends Controller
     public function edit($id)
     {
         $produccion = Produccion::where('id', $id)->findOrFail($id);
-        return view('adm.produccion.edit', ['data' => $produccion]);
+        $lotes = DB::table('lotes')->get();
+        return view('adm.produccion.edit', ['data' => $produccion, 'listlotes' => $lotes]);
     }
 
     /**

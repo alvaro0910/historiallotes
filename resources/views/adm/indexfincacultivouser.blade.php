@@ -227,11 +227,8 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                {!! Form::open(['method' => 'DELETE','route' => ['fincasusers.destroy', $item->id], 'id' => 'form1']) !!}
-                                                    <div class="icon-container" style="width: 20px;">
-                                                        <a href="javascript:;" onclick="return  confirm('¿Seguro que desea eliminar esta relacion entre la finca y el cultivo?'); document.getElementById('form1').submit();"><span class="ti-pencil-alt"></span><%=n%></a>
-                                                        {!! Form::submit('Borrar esta relacion?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta relacion entre la finca y el cultivo?')"])!!}</span></a>
-                                                    </div>
+                                                {!! Form::open(['method' => 'DELETE','route' => ['fincasusers.destroy', $item->id], 'id' => 'frmMain1']  ) !!}
+                                                    {!! Form::submit('Borrar esta relacion?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta relacion entre la finca y usuario?')"])!!}
                                                 {!! Form::close() !!}</td>
                                             </tr>
                                             @endforeach

@@ -37,19 +37,10 @@
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="select" class="form-control-label">Lote</label></div>
-                        <select data-placeholder="Choose a Country..." class="standardSelect" tabindex="1" id="cultivo">
-                            <option value=""></option>
-                            <option value="United States">United States</option>
-                            <option value="United Kingdom">United Kingdom</option>
-                            <option value="Afghanistan">Afghanistan</option>
-                            <option value="Aland Islands">Aland Islands</option>
-                            <option value="Albania">Albania</option>
-                            <option value="Algeria">Algeria</option>
-                            <option value="American Samoa">American Samoa</option>
-                            <option value="Andorra">Andorra</option>
-                            <option value="Angola">Angola</option>
-                            <option value="Anguilla">Anguilla</option>
-                            <option value="Antarctica">Antarctica</option>
+                        <select data-placeholder="Seleccione lote..." class="standardSelect" id="lote_id" name="lote_id">
+                            @foreach ($lotes as $item)
+                                <option value="{{ $item->id }}">{{ $item->codigo }} - {{ $item->nombre }}</option>
+                            @endforeach
                         </select>
                     </div>
                         <!--<select id="prioridadForm" name="prioridadForm">  no olvidar poner el < ? de php
@@ -67,7 +58,7 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <a href="{{ route('estados.index') }}"> 
-                                <div class="icon-container">
+                                <div class="icon-container" style="width:240px;">
                                     <span class="ti-back-left"></span><span class="icon-name"> Regresar</span>
                                 </div>
                             </a>

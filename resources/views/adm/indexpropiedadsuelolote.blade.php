@@ -49,8 +49,16 @@
                                                         <td>{{ $item->id }}</td>
                                                         <td>{{ $item->material }}</td>
                                                         <td>{{ $item->unidad }}</td>
-                                                        <td><a href="{{ route('propiedad.show', $item->id) }}">Ver</a></td>
-                                                        <td><a href="{{ route('propiedad.edit', $item->id) }}">Editar</a></td>
+                                                        <td>
+                                                            <div class="icon-container" style="width: 20px;">
+                                                                <a href="{{ route('propiedad.show', $item->id) }}"><span class="ti-search"></span></a>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="icon-container" style="width: 20px;">
+                                                                <a href="{{ route('propiedad.edit', $item->id) }}"><span class="ti-pencil-alt"></span></a>
+                                                            </div>
+                                                        </td>
                                                         <td>
                                                         {!! Form::open(['method' => 'DELETE','route' => ['propiedad.destroy', $item->id]]) !!}
                                                             {!! Form::submit('¿Borrar este registro?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar este registro?')"])!!}
@@ -98,8 +106,16 @@
                                                         <td>{{ $item->material }}</td>
                                                         <td>{{ $item->cantidad }}</td>
                                                         <td>{{ $item->unidad }}</td>
-                                                        <td><a href="{{ route('propiedadlote.show', $item->id) }}">Ver</a></td>
-                                                        <td><a href="{{ route('propiedadlote.edit', $item->id) }}">Editar</a></td>
+                                                        <td>
+                                                            <div class="icon-container" style="width: 20px;">
+                                                                <a href="{{ route('propiedadlote.show', $item->id) }}"><span class="ti-search"></span></a>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="icon-container" style="width: 20px;">
+                                                                <a href="{{ route('propiedadlote.edit', $item->id) }}"><span class="ti-pencil-alt"></span></a>
+                                                            </div>
+                                                        </td>
                                                         <td>
                                                         {!! Form::open(['method' => 'DELETE','route' => ['propiedadlote.destroy', $item->id]]) !!}
                                                             {!! Form::submit('Borrar esta relacion?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta relacion entre el lote y la propiedad?')"])!!}
@@ -122,50 +138,6 @@
                 </div>
             </div>
         
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="largeModalCrearPropiedad" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="largeModalLabel">Large Modal</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>
-                    Crear Propiedad
-                </p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Confirm</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="largeModalCrearRelacionLotePropiedad" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="largeModalLabel">Large Modal</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>
-                    Crear Relacion
-                </p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Confirm</button>
-            </div>
         </div>
     </div>
 </div>

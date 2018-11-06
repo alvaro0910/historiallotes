@@ -29,12 +29,12 @@
                                 </li>
                                 <li class="list-group-item">
                                     <a href="{{ route('variedades.index') }}"> 
-                                        <div class="icon-container">
+                                        <div class="icon-container" style="width:240px;">
                                             <span class="ti-back-left"></span><span class="icon-name"> Regresar</span>
                                         </div>
                                     </a>
                                     <a href="{{ route('variedades.edit', $data->id) }}"> 
-                                        <div class="icon-container">
+                                        <div class="icon-container" style="width:240px;">
                                             <span class="ti-pencil-alt"></span><span class="icon-name"> Editar</span>
                                         </div>
                                     </a>

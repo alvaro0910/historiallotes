@@ -84,14 +84,15 @@ class PropiedadLoteController extends Controller
     public function edit($id)
     {
         $propiedadlote = DB::select(
-            'SELECT lote_propiedad.id, lote_propiedad.cantidad, lote_propiedad.periodo, lotes.id, propiedades.id
+            'SELECT lote_propiedad.id, lote_propiedad.cantidad, lote_propiedad.periodo, lotes.id, lotes.nombre, propiedades.id, propiedades.material
             FROM lote_propiedad
             INNER JOIN lotes, propiedades
             WHERE lote_propiedad.lote_id = lotes.id AND lote_propiedad.propiedad_id = propiedades.id AND lote_propiedad.id ='.$id.';');
         
-        $fincas = DB::table('fincas')->get();
-        $cultivos = DB::table('cultivos')->get();
-        return view('adm.propiedadlote.edit', ['data' => $propiedadlote, 'listfincas' => $fincas, 'listcultivos' => $cultivos]);
+        $lotes = DB::table('lotes')->get();
+        $propiedades = DB::table('propiedades')->get();
+
+        return view('adm.propiedadlote.edit', ['data' => $propiedadlote, 'listlotes' => $lotes, 'listpropiedades' => $propiedades]);
     }
 
     /**

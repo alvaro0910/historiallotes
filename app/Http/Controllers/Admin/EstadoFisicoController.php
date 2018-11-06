@@ -98,7 +98,8 @@ class EstadoFisicoController extends Controller
     public function edit($id)
     {
         $estado = EstadoFisico::where('id', $id)->findOrFail($id);
-        return view('adm.estado.edit', ['data' => $estado]);
+        $lotes = DB::table('lotes')->get();
+        return view('adm.estado.edit', ['data' => $estado, 'lotes' => $lotes ]);
     }
 
     /**

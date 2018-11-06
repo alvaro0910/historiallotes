@@ -38,8 +38,16 @@
                             <tr>
                                 <td>{{ $item->id }}</td>
                                 <td>{{ $item->variedad }}</td>
-                                <td><a href="{{ route('variedades.show', $item->id) }}">Ver</a></td>
-                                <td><a href="{{ route('variedades.edit', $item->id) }}">Editar</a></td>
+                                <td>
+                                    <div class="icon-container" style="width: 20px;">
+                                        <a href="{{ route('variedades.show', $item->id) }}"><span class="ti-search"></span></a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="icon-container" style="width: 20px;">
+                                        <a href="{{ route('variedades.edit', $item->id) }}"><span class="ti-pencil-alt"></span></a>
+                                    </div>
+                                </td>
                                 <td>
                                 {!! Form::open(['method' => 'DELETE','route' => ['variedades.destroy', $item->id]]) !!}
                                     {!! Form::submit('Borrar este registro?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar el registro? $item->id')"])!!}

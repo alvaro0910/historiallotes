@@ -80,7 +80,9 @@ class LaborController extends Controller
     public function edit($id)
     {
         $labor = Labor::where('id', $id)->findOrFail($id);
-        return view('adm.labor.edit', ['data' => $labor]);
+        $lotes = DB::table('lotes')->get();
+        $grupos = DB::table('grupos_labores')->get();
+        return view('adm.labor.edit', ['data' => $labor, 'listlotes' => $lotes, 'listgrupos' => $grupos]);
     }
 
     /**

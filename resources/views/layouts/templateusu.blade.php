@@ -1,4 +1,3 @@
-{{  include("{{ asset('fusioncharts/integrations/php/samples/includes/fusioncharts.php') }} ") }}
 <!--
     include('fusioncharts/integrations/php/samples/includes/fusioncharts.php');
 -->

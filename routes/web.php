@@ -47,9 +47,11 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('labores','Admin\LaborController');
 
     Route::get('/info', 'User\InfoController@index')->name('info');
-    Route::get('/info/detalle/{id}', 'User\InfoController@show')->name('detalle');
+    Route::get('/info/detalles/{id}/anio/{anio}','User\InfoController@show')->name('detalles');
     Route::get('/info/costoinsumos', 'User\CostoInsumosController@index')->name('costoinsumos');
     Route::get('/info/costolabores', 'User\CostoLaboresController@index')->name('costolabores');
     Route::get('/info/producciones', 'User\ProduccionController@index')->name('producciones');
     Route::get('/info/rendimientos', 'User\RendimientoController@index')->name('rendimientos');
 });
+
+

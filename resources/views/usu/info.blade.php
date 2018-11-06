@@ -3,11 +3,11 @@
 @section('title', 'Info')
 
 @section('content')
-    <div class="content mt-3">
-        <div class="animated fadeIn">
-            <div class="row">
+<div class="content mt-3">
+    <div class="animated fadeIn">
+        <div class="row">
 
-            <div class="col-md-12">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
                     <strong class="card-title">Informacion lotes</strong>
@@ -17,36 +17,32 @@
                 <thead>
                 <tr>
                     <th>Codigo</th>
-                    <th>Nombre</th>
+                    <th>Nombre lote</th>
                     <th>Cultivo</th>
-                    <th>Detalle Lote</th>
-                    <th>Costo labores</th>
-                    <th>Costo insumos</th>
-                    <th>Producciones</th>
-                    <th>Rendimientos</th>
+                    <th>Año</th>
+                    <th>Detallar</th>
                 </tr>
                 </thead>
                 <tbody>
+                    {{ $anio = 2008 }}
                 @foreach ($data as $e)
                 <tr>
                     <td>{{ $e->codigo }}</td>
                     <td>{{ $e->nombre }}</td>
                     <td>{{ $e->cultivo }}</td>
-                    <td><a title="Detallar" href="{{ route('detalle', [$e->id]) }}">de</a></td>
-                    <td><a title="Detallar" href="{{ route('costolabores') }}">cl</a></td>
-                    <td><a title="Detallar" href="{{ route('costoinsumos') }}">ci</a></td>
-                    <td><a title="Detallar" href="{{ route('producciones') }}">pr</a></td>
-                    <td><a title="Detallar" href="{{ route('rendimientos') }}">re</a></td>
+                    <td><a href="{{ route('detalles', [$e->id,$anio]) }}">ver</a></td>
+                    <td></td>
                 </tr>
                 @endforeach
+                {{ Form::close() }}
                 </tbody>
             </table>
             </div>
             </div>
-            </div>
-            </div>
+        </div>
         </div>
     </div>
+</div>
 
     <script src="assets/js/lib/data-table/datatables.min.js"></script>
     <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>

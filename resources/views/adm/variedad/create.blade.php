@@ -44,7 +44,7 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 <a href="{{ route('variedades.index') }}"> 
-                                    <div class="icon-container">
+                                    <div class="icon-container" style="width:240px;">
                                         <span class="ti-back-left"></span><span class="icon-name"> Regresar</span>
                                     </div>
                                 </a>

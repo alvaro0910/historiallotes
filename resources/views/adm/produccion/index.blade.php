@@ -35,8 +35,16 @@
                                 <td>{{ $item->nombre }}</td>
                                 <td>{{ $item->cantidad }}</td>
                                 <td>{{ $item->periodo }}</td>
-                                <td><a href="{{ route('producciones.show', $item->id) }}">Ver</a></td>
-                                <td><a href="{{ route('producciones.edit', $item->id) }}">Editar</a></td>
+                                <td>
+                                    <div class="icon-container" style="width: 20px;">
+                                        <a href="{{ route('producciones.show', $item->id) }}"><span class="ti-search"></span></a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="icon-container" style="width: 20px;">
+                                        <a href="{{ route('producciones.edit', $item->id) }}"><span class="ti-pencil-alt"></span></a>
+                                    </div>
+                                </td>
                                 <td>
                                 {!! Form::open(['method' => 'DELETE','route' => ['producciones.destroy', $item->id]]) !!}
                                     {!! Form::submit('¿Borrar este registro?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar el registro? $item->id')"])!!}

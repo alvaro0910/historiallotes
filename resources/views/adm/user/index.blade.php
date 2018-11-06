@@ -32,8 +32,16 @@
                                 <td>{{ $item->id }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->tipo }}</td>
-                                <td><a href="{{ route('users.show', $item->id) }}">Ver</a></td>
-                                <td><a href="{{ route('users.edit', $item->id) }}">Editar</a></td>
+                                <td>
+                                    <div class="icon-container" style="width: 20px;">
+                                        <a href="{{ route('users.show', $item->id) }}"><span class="ti-search"></span></a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="icon-container" style="width: 20px;">
+                                        <a href="{{ route('users.edit', $item->id) }}"><span class="ti-pencil-alt"></span></a>
+                                    </div>
+                                </td>
                                 <td>
                                 {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $item->id]]) !!}
                                     {!! Form::submit('Borrar este usuario?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que deseas eliminarlo?')"])!!}
