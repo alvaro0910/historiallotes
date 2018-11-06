@@ -76,76 +76,20 @@
                         </div>
 
                         <div class="weather-category twt-category">
-                            <ul>
-                                <li class="active">
-                                    <h5>4,6</h5>
-                                    pH
-                                </li>
-                                <li>
-                                    <h5>8,65</h5>
-                                    MOrg [%]
-                                </li>
-                                <li>
-                                    <h5>36</h5>
-                                    K [me/100gm]
-                                </li>
-                            </ul>
-                            <ul>
-                                <li class="active">
-                                    <h5>25</h5>
-                                    Ca [me/100gm]
-                                </li>
-                                <li>
-                                    <h5>865</h5>
-                                    Mg [me/100gm]
-                                </li>
-                                <li>
-                                    <h5>3,2</h5>
-                                    Fe [ppm]
-                                </li>
-                            </ul>
-                            <ul>
-                                <li class="active">
-                                    <h5>0,4</h5>
-                                    Al [me/100gm]
-                                </li>
-                                <li>
-                                    <h5>8</h5>
-                                    Sat_Al [%]
-                                </li>
-                                <li>
-                                    <h5>3645</h5>
-                                    CIC [me/100gm]
-                                </li>
-                            </ul>
-                            <ul>
-                                <li class="active">
-                                    <h5>25</h5>
-                                    Ca [me/100gm]
-                                </li>
-                                <li>
-                                    <h5>865</h5>
-                                    Mg [me/100gm]
-                                </li>
-                                <li>
-                                    <h5>3,2</h5>
-                                    Fe [ppm]
-                                </li>
-                            </ul>
-                            <ul>
-                                <li class="active">
-                                    <h5>0,4</h5>
-                                    Al [me/100gm]
-                                </li>
-                                <li>
-                                    <h5>8</h5>
-                                    Sat_Al [%]
-                                </li>
-                                <li>
-                                    <h5>3645</h5>
-                                    CIC [me/100gm]
-                                </li>
-                            </ul>
+                            @php $contador = 0;
+                            for ($i = 0; $i < count($infopropiedades)-1; $i++){
+                                echo "<ul>";
+                                        
+                                    for ($j = 0; $j < 3; $j++){
+                                        echo "<li>";
+                                                echo "<h5>".$infopropiedades[$contador]->cantidad."</h5>";
+                                                echo $infopropiedades[$contador]->material;
+                                        echo "</li>";
+                                    }
+                                    $contador++;
+                                echo "</ul>";
+                            }   
+                            @endphp
                         </div>
                     </section>
                 </aside>
