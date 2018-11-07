@@ -115,7 +115,7 @@
             $columnChart = new FusionCharts("column2d", "ex1", "100%", 400, "chart-container", "json", "
             {
             'chart': {
-                'caption': 'Produccion cafe cereza año'.{{ $anio }},
+                'caption': 'Produccion cafe cereza año',
                 'subcaption': 'In MMbbl = One Million barrels',
                 'xaxisname': 'Mes',
                 'yaxisname': 'Produccion (CC)',
