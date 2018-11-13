@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Importar producciones</div>
+                <div class="card-header">Importar costo insumos</div>
                 @if ($errors->any())
                 <div class="alert alert-danger" role="alert">
                 <p>¡Los siguientes errores fueron encontrados al importar el archivo!</p>

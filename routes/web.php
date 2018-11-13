@@ -38,6 +38,12 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/import', 'Admin\ImportProduccionesController@importView')->name('importproducciones');
     Route::post('import-file-producciones', 'Admin\ImportProduccionesController@importFile')->name('importproducciones.file');
 
+    Route::get('/import', 'Admin\ImportLaboresController@importView')->name('importlabores');
+    Route::post('import-file-labores', 'Admin\ImportLaboresController@importFile')->name('importlabores.file');
+
+    Route::get('/import', 'Admin\ImportInsumosController@importView')->name('importinsumos');
+    Route::post('import-file-insumos', 'Admin\ImportInsumosController@importFile')->name('importinsumos.file');
+
     Route::get('/info', 'User\InfoController@index')->name('info');
     Route::get('/info/detalles/{id}/anio/{anio}','User\InfoController@show')->name('detalles');
     Route::get('/info/costoinsumos', 'User\CostoInsumosController@index')->name('costoinsumos');

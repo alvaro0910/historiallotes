@@ -88,7 +88,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Producciones</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('producciones.index') }}">Produccion total</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{ route('importproducciones') }}">Archivo plano</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{ route('importproducciones') }}">Importar datos</a></li>
                         </ul>
                     </li>
 
@@ -97,7 +97,7 @@
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-area-chart"></i><a href="">Grupos de labores</a></li>
                             <li><i class="menu-icon fa fa-area-chart"></i><a href="{{ route('labores.index') }}">Costos labores</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="#">Archivo plano</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{ route('importlabores') }}">Importar datos</a></li>
                         </ul>
                     </li>
 
@@ -105,7 +105,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Insumos</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-map-o"></i><a href="{{ route('insumos.index') }}">Costos insumos</a></li>
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="#">Archivo plano</a></li>
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="{{ route('importinsumos') }}">Importar datos</a></li>
                         </ul>
                     </li>
 
