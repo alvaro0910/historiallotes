@@ -24,8 +24,7 @@ class LaborRequest extends FormRequest
     public function rules()
     {
         return [
-            'descripcion' => 'string',
-            'cantidadmo' => 'required | numeric | min:1 |max:9999',
+            'cantidadmo' => 'required | numeric | min:1 | max:9999',
             'costo' => 'required | integer | min:1',
             'periodo' => 'required | date',
             'grupo_labor_id' => 'required | integer | min:1',
@@ -41,7 +40,6 @@ class LaborRequest extends FormRequest
     public function messages()
     {
         return [
-            'descripcion.string' => 'La descripción no permite valores nulos o numéricos.',
             'cantidadmo.required' => 'La cantidad de mano de obra es obligatoria.',
             'cantidadmo.numeric' => 'La cantidad de mano de obra debe ser un numero positivo.',
             'cantidadmo.min' => 'La cantidad de mano de obra debe ser entre 1 y 9999.',

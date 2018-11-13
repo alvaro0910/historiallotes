@@ -81,15 +81,23 @@
                             <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('variedades.index') }}">Variedades</a></li>
                             <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('estados.index') }}">Estados</a></li>
                             <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('propiedades.index') }}">Propiedades</a></li>
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('producciones.index') }}">Producciones</a></li>
                         </ul>
                     </li>
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Producciones</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ route('producciones.index') }}">Produccion total</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{{ route('importproducciones') }}">Archivo plano</a></li>
+                        </ul>
+                    </li>
+
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Labores</a>
                         <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="">Grupos de labores</a></li>
                             <li><i class="menu-icon fa fa-area-chart"></i><a href="{{ route('labores.index') }}">Costos labores</a></li>
                             <li><i class="menu-icon fa fa-area-chart"></i><a href="#">Archivo plano</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="#">Mano de obra</a></li>
                         </ul>
                     </li>
 
@@ -97,15 +105,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Insumos</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-map-o"></i><a href="{{ route('insumos.index') }}">Costos insumos</a></li>
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Archivo plano</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Rendimientos</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Costos mensuales</a></li>
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Archivo plano</a></li>
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="#">Archivo plano</a></li>
                         </ul>
                     </li>
 
@@ -114,8 +114,6 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Informacion otros</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Lluvias</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Grupos de labores</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Ventas</a></li>
                         </ul>
                     </li>
                 </ul>
