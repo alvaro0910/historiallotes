@@ -19,7 +19,7 @@
                 </div>
                 @endif
                 <div class="card-body">
-                    {!! Form::open(array('route' => 'importproducciones.file','method'=>'POST','files'=>'true')) !!}
+                    {!! Form::open(array('route' => 'importlabores.file','method'=>'POST','files'=>'true')) !!}
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">

@@ -95,7 +95,7 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Labores</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="">Grupos de labores</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="#">Grupos de labores</a></li>
                             <li><i class="menu-icon fa fa-area-chart"></i><a href="{{ route('labores.index') }}">Costos labores</a></li>
                             <li><i class="menu-icon fa fa-area-chart"></i><a href="{{ route('importlabores') }}">Importar datos</a></li>
                         </ul>
