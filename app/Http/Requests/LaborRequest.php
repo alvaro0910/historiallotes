@@ -41,7 +41,7 @@ class LaborRequest extends FormRequest
     public function messages()
     {
         return [
-            'descripcion.string' => 'La descripcion no permite valores numericos.',
+            'descripcion.string' => 'La descripción no permite valores nulos o numéricos.',
             'cantidadmo.required' => 'La cantidad de mano de obra es obligatoria.',
             'cantidadmo.numeric' => 'La cantidad de mano de obra debe ser un numero positivo.',
             'cantidadmo.min' => 'La cantidad de mano de obra debe ser entre 1 y 9999.',

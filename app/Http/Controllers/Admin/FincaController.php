@@ -45,17 +45,10 @@ class FincaController extends Controller
      */
     public function create()
     {
-        //$departamentos = DB::table('departamentos')->get();
         $departamentos = Departamento::pluck('departamento','id');
         return view('adm.finca.create', compact('departamentos'));
     }
 
-    public function getMunicipios(Request $request, $id){
-        if ($request->ajax()) {
-            $municipios = Municipio::municipios($id);
-            return response()->json($municipios);
-        }
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -95,8 +88,9 @@ class FincaController extends Controller
      */
     public function edit($id)
     {
+        $departamentos = Departamento::pluck('departamento','id');
         $finca = Finca::where('id', $id)->findOrFail($id);
-        return view('adm.finca.edit', ['data' => $finca]);
+        return view('adm.finca.edit', ['data' => $finca], compact('departamentos'));
     }
 
     /**
@@ -136,5 +130,12 @@ class FincaController extends Controller
             'alert-type' => 'info'
         );
         return redirect()->back()->with($notificacion);
+    }
+
+    public function getMunicipios(Request $request, $id){
+        if ($request->ajax()) {
+            $municipios = Municipio::municipios($id);
+            return response()->json($municipios);
+        }
     }
 }

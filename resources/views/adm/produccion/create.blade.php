@@ -8,10 +8,10 @@
             <div class="col-lg-8">
             <div class="card">
                 <div class="card-header">
-                    <strong>Crear Produccion</strong>
+                    <strong>Crear producción</strong>
                     @if ($errors->any())
                     <div class="alert alert-danger" role="alert">
-                    <p>Los siguientes errores fueron encontrados al validar el formulario!</p>
+                    <p>¡Los siguientes errores fueron encontrados al validar el formulario!</p>
                     <ul>
                         @foreach ($errors->all() as $error)
                         <li>    
@@ -26,27 +26,29 @@
                     {{ Form::open(['route' => 'producciones.store', 'method' => 'POST']) }}
                     @method('post')
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Cantidad</label></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Cantidad *</label></div>
                         <div class="col-12 col-md-9"><input type="text" id="cantidad" name="cantidad" placeholder="Cantidad" class="form-control">
                         <small class="form-text text-muted">Ingrese la cantidad producida por el lote</small></div>
                     </div>
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class="form-control-label">Fecha</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="periodo" name="periodo" placeholder="Periodo" class="form-control">
-                        <small class="form-text text-muted">Ingrese la fecha de produccion</small></div>
+                        <div class="col col-md-3"><label for="text-input" class="form-control-label">Fecha (aaaa/mm/dd) *</label></div>
+                        <div class="col-12 col-md-9"><input type="date" id="periodo" name="periodo" placeholder="Periodo" class="form-control">
+                        <small class="form-text text-muted">Ingrese la fecha de producción</small></div>
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="select" class="form-control-label">Lote</label></div>
-                        <select data-placeholder="Seleccione propiedad..." class="standardSelect" id="propiedad_id" name="propiedad_id">
-                            @foreach ($listlotes as $item)
-                                <option value="{{ $item->id }}">{{ $item->codigo }} - {{ $item->nombre }}</option>
-                            @endforeach
-                        </select>
+                        <div class="col-12 col-md-9">
+                            <select data-placeholder="Seleccione propiedad..." class="standardSelect" id="propiedad_id" name="propiedad_id">
+                                @foreach ($listlotes as $item)
+                                    <option value="{{ $item->id }}">{{ $item->codigo }} - {{ $item->nombre }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                 </div>    
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary btn-sm">
-                        <i class="fa fa-dot-circle-o"></i> Crear produccion
+                        <i class="fa fa-dot-circle-o"></i> Crear producción
                     </button>
                 </div>
                 <div class="card-footer">

@@ -19,10 +19,10 @@
 
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <i class="fa fa-envelope-o"></i> <b>Descripcion:</b> {{ $data['0']->descripcion }} 
+                                    <i class="fa fa-envelope-o"></i> <b>Descripción:</b> {{ $data['0']->descripcion }} 
                                 </li>
                                 <li class="list-group-item">
-                                    <i class="fa fa-envelope-o"></i> <b>Periodo:</b> {{ $data['0']->periodo }} 
+                                    <i class="fa fa-envelope-o"></i> <b>Fecha (aaaa/mm/dd):</b> {{ $data['0']->periodo }} 
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fa fa-tasks"></i> <b>Fecha de Creación:</b> {{ $data['0']->created_at }}

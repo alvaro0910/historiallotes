@@ -23,7 +23,7 @@
                             <th>Lote</th>
                             <th>Labor</th>
                             <th>Costo</th>
-                            <th>Fecha</th>
+                            <th>Fecha (aaaa/mm/dd)</th>
                             <th>Ver</th>
                             <th>Editar</th>
                             <th>Eliminar</th>

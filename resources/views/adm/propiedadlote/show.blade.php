@@ -12,7 +12,7 @@
                                 <div class="media">
                                     <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="{{ asset('images/cultivo.png') }}">
                                     <div class="media-body">
-                                        <h2 class="text-light display-6">Relacion propiedad - lote: {{ $data{'0'}->id }}</h2>
+                                        <h2 class="text-light display-6">Relación propiedad - lote: {{ $data{'0'}->id }}</h2>
                                     </div>
                                 </div>
                             </div>
@@ -31,7 +31,7 @@
                                     <i class="fa fa-envelope-o"></i> <b>Cantidad:</b> {{ $data{'0'}->cantidad }} 
                                 </li>
                                 <li class="list-group-item">
-                                        <i class="fa fa-envelope-o"></i> <b>Fecha:</b> {{ $data{'0'}->periodo }} 
+                                        <i class="fa fa-envelope-o"></i> <b>Fecha (aaaa/mm/dd):</b> {{ $data{'0'}->periodo }} 
                                     </li>
                                 <li class="list-group-item">
                                     <i class="fa fa-envelope-o"></i> <b>Lote:</b> {{ $data{'0'}->nombre}} 

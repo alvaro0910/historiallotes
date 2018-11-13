@@ -25,7 +25,7 @@
                                     <i class="fa fa-envelope-o"></i> <b>Departamento:</b> {{ $data->departamento }} 
                                 </li>
                                 <li class="list-group-item">
-                                        <i class="fa fa-tasks"></i> <b>Direccion:</b> {{ $data->direccion }}
+                                        <i class="fa fa-tasks"></i> <b>Dirección:</b> {{ $data->direccion }}
                                     </li>
                                 <li class="list-group-item">
                                     <i class="fa fa-tasks"></i> <b>Fecha de Creación:</b> {{ $data->created_at }}

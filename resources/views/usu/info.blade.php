@@ -19,22 +19,22 @@
                     <th>Codigo</th>
                     <th>Nombre lote</th>
                     <th>Cultivo</th>
-                    <th>Año</th>
                     <th>Detallar</th>
                 </tr>
                 </thead>
                 <tbody>
-                    {{ $anio = 2008 }}
+                @php 
+                    $anio = 2009;       
+                @endphp 
+                
                 @foreach ($data as $e)
                 <tr>
                     <td>{{ $e->codigo }}</td>
                     <td>{{ $e->nombre }}</td>
                     <td>{{ $e->cultivo }}</td>
-                    <td><a href="{{ route('detalles', [$e->id,$anio]) }}">ver</a></td>
-                    <td></td>
+                    <td><a href="{{ route('detalles', [$e->id, $anio]) }}">ver</a></td>
                 </tr>
                 @endforeach
-                {{ Form::close() }}
                 </tbody>
             </table>
             </div>

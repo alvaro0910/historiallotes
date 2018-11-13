@@ -11,7 +11,7 @@
                     <strong>Datos lote</strong>
                     @if ($errors->any())
                     <div class="alert alert-danger" role="alert">
-                    <p>Los siguientes errores fueron encontrados al validar el formulario!</p>
+                    <p>¡Los siguientes errores fueron encontrados al validar el formulario!</p>
                     <ul>
                         @foreach ($errors->all() as $error)
                         <li>    
@@ -28,28 +28,34 @@
                         'route' => ['lotes.update', $data->id]
                     ]) !!}
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombre</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="nombre" name="nombre" placeholder="Nombre" class="form-control" value="{{ $data->nombre }}"><small class="form-text text-muted">Ingrese el nombre del lote</small></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombre *</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="nombre" name="nombre" placeholder="Nombre" class="form-control" value="{{ $data->nombre }}">
+                        <small class="form-text text-muted">Ingrese el nombre del lote</small></div>
                     </div>
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Codigo</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="codigo" name="codigo" placeholder="Codigo" class="form-control" value="{{ $data->codigo }}"><small class="form-text text-muted">Ingrese el codigo del lote</small></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Código *</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="codigo" name="codigo" placeholder="Código" class="form-control" value="{{ $data->codigo }}">
+                        <small class="form-text text-muted">Ingrese el código del lote</small></div>
                     </div>
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Area</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="area" name="area" placeholder="Area" class="form-control" value="{{ $data->area }}"><small class="form-text text-muted">Ingrese el area del lote</small></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Área *</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="area" name="area" placeholder="Área" class="form-control" value="{{ $data->area }}">
+                        <small class="form-text text-muted">Ingrese el área del lote</small></div>
                     </div>
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Poblacion</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="poblacion" name="poblacion" placeholder="Poblacion" class="form-control" value="{{ $data->codigo }}"><small class="form-text text-muted">Ingrese la poblacion del lote</small></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Población</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="poblacion" name="poblacion" placeholder="Población" class="form-control" value="{{ $data->codigo }}">
+                        <small class="form-text text-muted">Ingrese la población del lote</small></div>
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Edad</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="edad" name="edad" placeholder="Edad" class="form-control" value="{{ $data->edad }}"><small class="help-block text-muted">Ingrese la edad del lote</small></div>
+                        <div class="col-12 col-md-9"><input type="text" id="edad" name="edad" placeholder="Edad" class="form-control" value="{{ $data->edad }}">
+                        <small class="help-block text-muted">Ingrese la edad del lote</small></div>
                     </div>
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Altura </label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="alturasnm" name="alturasnm" placeholder="Altura SNM" class="form-control" value="{{ $data->alturasnm }}"><small class="help-block text-muted">Ingrese la altura sobre el nivel de mar del lote</small></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Altura</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="alturasnm" name="alturasnm" placeholder="Altura SNM" class="form-control" value="{{ $data->alturasnm }}">
+                        <small class="help-block text-muted">Ingrese la altura sobre el nivel de mar del lote</small></div>
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="select" class="form-control-label">Cultivo</label></div>

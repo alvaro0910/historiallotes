@@ -59,7 +59,7 @@
                 <ul class="nav navbar-nav">
                 <!-- <ul class="nav nav-pill"> -->
                     <li class="active">
-                        <a href="{{ route('admin') }}"> <i class="menu-icon fa fa-home"></i>Home</a><!-- organizar ruta -->
+                        <a href="{{ route('admin') }}"> <i class="menu-icon fa fa-home"></i>Inicio</a><!-- organizar ruta -->
                     </li>
                     
                     <h3 class="menu-title">Usuarios y fincas</h3><!-- /.menu-title -->
@@ -162,7 +162,7 @@
                             <a class="nav-link" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                                <i class="fa fa-power -off"></i>Logout</a>
+                                <i class="fa fa-power -off"></i>Cerrar sesión</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>

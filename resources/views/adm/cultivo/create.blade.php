@@ -11,7 +11,7 @@
                     <strong>Datos Cultivo</strong>
                     @if ($errors->any())
                     <div class="alert alert-danger" role="alert">
-                    <p>Los siguientes errores fueron encontrados al validar el formulario!</p>
+                    <p>¡Los siguientes errores fueron encontrados al validar el formulario!</p>
                     <ul>
                         @foreach ($errors->all() as $error)
                         <li>    
@@ -26,13 +26,13 @@
                     {{ Form::open(['route' => 'cultivos.store', 'method' => 'POST']) }}
                     @method('post')
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombre</label></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombre *</label></div>
                         <div class="col-12 col-md-9"><input type="text" id="cultivo" name="cultivo" placeholder="Cultivo" class="form-control">
                             <small class="form-text text-muted">Ingrese el nombre del cultivo</small></div>
                     </div>
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Descripcion</label></div>
-                        <div class="col-12 col-md-9"><textarea type="textarea-input" id="descripcion" name="descripcion" rows="9" placeholder="Descripcion" class="form-control"></textarea>
+                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Descripción</label></div>
+                        <div class="col-12 col-md-9"><textarea type="textarea-input" id="descripcion" name="descripcion" rows="9" placeholder="Descripción" class="form-control"></textarea>
                     </div>   
                 </div>
                 <div class="card-footer">

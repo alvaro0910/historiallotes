@@ -19,7 +19,7 @@
 
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <i class="fa fa-envelope-o"></i> <b>Descripcion:</b> {{ $data->descripcion }} 
+                                    <i class="fa fa-envelope-o"></i> <b>Descripción:</b> {{ $data->descripcion }} 
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fa fa-tasks"></i> <b>Fecha de Creación:</b> {{ $data->created_at }}

@@ -118,7 +118,7 @@
                                                         </td>
                                                         <td>
                                                         {!! Form::open(['method' => 'DELETE','route' => ['propiedadlote.destroy', $item->id]]) !!}
-                                                            {!! Form::submit('Borrar esta relacion?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta relacion entre el lote y la propiedad?')"])!!}
+                                                            {!! Form::submit('¿Borrar esta relacion?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta relacion entre el lote y la propiedad?')"])!!}
                                                         {!! Form::close() !!}</td>
                                                     </tr>
                                                     @endforeach

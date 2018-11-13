@@ -27,10 +27,7 @@
         ],
         "psr-4": {
             "App\\": "app/"
-        },
-        "files":[
-            "public/fusioncharts/integrations/php/fusioncharts-wrapper/fusioncharts.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {

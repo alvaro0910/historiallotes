@@ -11,7 +11,7 @@
                         <strong>Crear Relacion</strong>
                         @if ($errors->any())
                         <div class="alert alert-danger" role="alert">
-                        <p>Los siguientes errores fueron encontrados al validar el formulario!</p>
+                        <p>¡Los siguientes errores fueron encontrados al validar el formulario!</p>
                         <ul>
                             @foreach ($errors->all() as $error)
                             <li>    
@@ -27,22 +27,26 @@
                         @method('post')
                         <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class="form-control-label">Finca</label></div>
-                            <select data-placeholder="Seleccione Finca..." class="standardSelect" tabindex="1" id="finca_id" name="finca_id">
-                                @foreach ($listfincas as $e)
-                                    <option value="{{ $e->id }}">{{ $e->nombre }}</option>
-                                @endforeach
-                            </select>
+                            <div class="col col-md-9">
+                                <select data-placeholder="Seleccione Finca..." class="standardSelect" tabindex="1" id="finca_id" name="finca_id">
+                                    @foreach ($listfincas as $e)
+                                        <option value="{{ $e->id }}">{{ $e->nombre }}</option>
+                                    @endforeach
+                                </select>
+                            </div> 
                             <div class="col col-md-3"><label for="select" class="form-control-label">Cultivo</label></div>
-                            <select data-placeholder="Seleccione cultivo..." class="standardSelect" tabindex="1" id="cultivo_id" name="cultivo_id">
-                                @foreach ($listcultivos as $e)
-                                    <option value="{{ $e->id }}">{{ $e->cultivo }}</option>
-                                @endforeach
-                            </select>
+                            <div class="col col-md-9">    
+                                <select data-placeholder="Seleccione cultivo..." class="standardSelect" tabindex="1" id="cultivo_id" name="cultivo_id">
+                                    @foreach ($listcultivos as $e)
+                                        <option value="{{ $e->id }}">{{ $e->cultivo }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="card-footer">
                     <button type="submit" class="btn btn-primary btn-sm">
-                        <i class="fa fa-dot-circle-o"></i> Crear relacion
+                        <i class="fa fa-dot-circle-o"></i> Crear relación
                     </button>
                     </div>
                     <div class="card-footer">

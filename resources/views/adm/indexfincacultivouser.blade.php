@@ -63,7 +63,7 @@
                                                 </td>
                                                 <td>
                                                 {!! Form::open(['method' => 'DELETE','route' => ['fincas.destroy', $item->id]]) !!}
-                                                    {!! Form::submit('Borrar finca?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta finca?')"])!!}
+                                                    {!! Form::submit('¿Borrar finca?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta finca?')"])!!}
                                                 {!! Form::close() !!}</td>
                                             </tr>
                                             @endforeach
@@ -116,7 +116,7 @@
                                                 </td>
                                                 <td>
                                                 {!! Form::open(['method' => 'DELETE','route' => ['cultivos.destroy', $item->id]]) !!}
-                                                    {!! Form::submit('Borrar este Cultivo?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar este cultivo?')"])!!}
+                                                    {!! Form::submit('¿Borrar este Cultivo?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar este cultivo?')"])!!}
                                                 {!! Form::close() !!}</td>
                                             </tr>
                                             @endforeach
@@ -139,7 +139,7 @@
                                         <div class="card">
                                             <div class="card-header">
                                                 <div style="text-align: center;"><strong class="card-title">Relaciones entre fincas y cultivos</strong></div>
-                                                <a href="{{ route('cultivosfincas.create') }}" class="btn btn-secondary mb-1">Crear relacion</a>
+                                                <a href="{{ route('cultivosfincas.create') }}" class="btn btn-secondary mb-1">Crear relación</a>
                                             </div>
                                         <div class="card-body">
                                         <table id="bootstrap-data-table3" class="table table-striped table-bordered">
@@ -171,7 +171,7 @@
                                                 </td>
                                                 <td>
                                                 {!! Form::open(['method' => 'DELETE','route' => ['cultivosfincas.destroy', $item->id]]) !!}
-                                                    {!! Form::submit('Borrar esta relacion?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta relacion entre la finca y el cultivo?')"])!!}
+                                                    {!! Form::submit('¿Borrar esta relacion?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta relacion entre la finca y el cultivo?')"])!!}
                                                 {!! Form::close() !!}</td>
                                             </tr>
                                             @endforeach
@@ -194,7 +194,7 @@
                                         <div class="card">
                                             <div class="card-header">
                                                 <div style="text-align: center;"><strong class="card-title">Relaciones entre fincas y usuarios</strong></div>
-                                                <a href="{{ route('fincasusers.create') }}" class="btn btn-secondary mb-1">Crear relacion</a>
+                                                <a href="{{ route('fincasusers.create') }}" class="btn btn-secondary mb-1">Crear relación</a>
                                             </div>
                                         <div class="card-body">
                                         <table id="bootstrap-data-table4" class="table table-striped table-bordered">
@@ -228,7 +228,7 @@
                                                 </td>
                                                 <td>
                                                 {!! Form::open(['method' => 'DELETE','route' => ['fincasusers.destroy', $item->id], 'id' => 'frmMain1']  ) !!}
-                                                    {!! Form::submit('Borrar esta relacion?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta relacion entre la finca y usuario?')"])!!}
+                                                    {!! Form::submit('¿Borrar esta relación?', ['class' => 'btn btn-danger', 'onclick' => "return confirm('¿Seguro que desea eliminar esta relación entre la finca y usuario?')"])!!}
                                                 {!! Form::close() !!}</td>
                                             </tr>
                                             @endforeach

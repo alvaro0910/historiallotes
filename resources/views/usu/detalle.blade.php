@@ -28,15 +28,15 @@
                     
                     <div class="weather-category twt-category">
                         <ul>
-                            <li class="active">
+                            <li class="active" style="color:black;">
                                 <h5>{{ $infolote['0']->area }}</h5>
                                 Hectareas
                             </li>
-                            <li>
+                            <li style="color:black;">
                                 <h5>{{ $infolote['0']->poblacion }}</h5>
                                 Arboles
                             </li>
-                            <li>
+                            <li style="color:black;">
                                 <h5>{{ round($otrosdatoslote['1']) }} @/ha</h5>
                                 Prom. produccion anual
                             </li>
@@ -47,15 +47,6 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 <a href="#"> <i class="fa fa-bell-o"></i> Estado actual <span class="badge badge-success pull-right">Zoca Tradicional de 2do Año</span></a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="#"> <i class="fa fa-bell-o"></i> Notification <span class="badge badge-success pull-right">Zoca Tradicional de 2do Año</span></a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="#"> <i class="fa fa-bell-o"></i> Notification <span class="badge badge-success pull-right">Zoca Tradicional de 2do Año</span></a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="#"> <i class="fa fa-bell-o"></i> Notification <span class="badge badge-success pull-right">Zoca Tradicional de 2do Año</span></a>
                             </li>
                         </ul>
                     </div>
@@ -82,7 +73,7 @@
                                 echo "<ul>";
                                     for ($j = 0; $j < 3; $j++){
                                         if (!empty($infopropiedades[$contador])) {
-                                            echo "<li>";
+                                            echo "<li style='color:black;' >";
                                                 echo "<h5>".$infopropiedades[$contador]->cantidad."</h5>";
                                                 echo $infopropiedades[$contador]->material." [".$infopropiedades[$contador]->unidad."]";
                                             echo "</li>";
@@ -108,61 +99,9 @@
         <div class="row">
         
         <div class="col-md-12">
-            
-        <?php
-            $anio = $infopropiedades['0']->cantidad;
-
-            $columnChart = new FusionCharts("column2d", "ex1", "100%", 400, "chart-container", "json", "
-            {
-            'chart': {
-                'caption': 'Produccion cafe cereza año',
-                'subcaption': 'In MMbbl = One Million barrels',
-                'xaxisname': 'Mes',
-                'yaxisname': 'Produccion (CC)',
-                'numbersuffix': 'Kg',
-                'theme': 'fusion'
-            },
-            'data': [
-                {
-                'label': 'Venezuela',
-                'value': '290'
-                },
-                {
-                'label': 'Saudi',
-                'value': '260'
-                },
-                {
-                'label': 'Canada',
-                'value': '180'
-                },
-                {
-                'label': 'Iran',
-                'value': '140'
-                },
-                {
-                'label': 'Russia',
-                'value': '115'
-                },
-                {
-                'label': 'UAE',
-                'value': '100'
-                },
-                {
-                'label': 'US',
-                'value': '30'
-                },
-                {
-                'label': 'China',
-                'value': '30'
-                }
-            ]
-            }");
-
-            $columnChart->render();
-        ?>
-                <div id="chart-container"><!-- Fusion Charts will render here--></div>
                   
-            </div>
+        </div>
+            
         </div>
     </div>
 </div>

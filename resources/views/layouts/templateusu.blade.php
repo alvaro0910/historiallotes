@@ -32,10 +32,6 @@
     
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 
-    <!-- graficos fusioncharts -->
-    <script type="text/javascript" src="{{ asset('fusioncharts/js/fusioncharts.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('fusioncharts/js/fusioncharts.charts.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('fusioncharts/js/themes/fusioncharts.theme.fint.js') }}"></script>
 </head>
 <body class="bg-dark">
         
@@ -60,7 +56,7 @@
                 <ul class="nav navbar-nav">
                 <!-- <ul class="nav nav-pill"> -->
                     <li class="active">
-                        <a href="{{ route('usu') }}"> <i class="menu-icon fa fa-home"></i>Home</a><!-- organizar ruta -->
+                        <a href="{{ route('usu') }}"> <i class="menu-icon fa fa-home"></i>Inicio</a><!-- organizar ruta -->
                     </li>
                     
                     <h3 class="menu-title">Lotes</h3><!-- /.menu-title -->
@@ -155,7 +151,7 @@
                             <a class="nav-link" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                                <i class="fa fa-power -off"></i>Logout</a>
+                                <i class="fa fa-power -off"></i>Cerrar sesión</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>

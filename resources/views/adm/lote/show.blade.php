@@ -19,13 +19,13 @@
 
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <i class="fa fa-envelope-o"></i> <b>Codigo:</b> {{ $data['0']->codigo }} 
+                                    <i class="fa fa-envelope-o"></i> <b>Código:</b> {{ $data['0']->codigo }} 
                                 </li>
                                 <li class="list-group-item">
-                                    <i class="fa fa-envelope-o"></i> <b>Area:</b> {{ $data['0']->area }} 
+                                    <i class="fa fa-envelope-o"></i> <b>Área:</b> {{ $data['0']->area }} 
                                 </li>
                                 <li class="list-group-item">
-                                    <i class="fa fa-tasks"></i> <b>Poblacion:</b> {{ $data['0']->poblacion }}
+                                    <i class="fa fa-tasks"></i> <b>Población:</b> {{ $data['0']->poblacion }}
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fa fa-tasks"></i> <b>Edad:</b> {{ $data['0']->edad }}

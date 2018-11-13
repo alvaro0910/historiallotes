@@ -12,17 +12,17 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <div style="text-align:center;"><strong class="card-title">Produccion lotes</strong></div>
-                                <a href="{{ route('producciones.create') }}" class="btn btn-secondary mb-1">Crear produccion</a>
+                                <div style="text-align:center;"><strong class="card-title">Producción lotes</strong></div>
+                                <a href="{{ route('producciones.create') }}" class="btn btn-secondary mb-1">Crear producción</a>
                             </div>
                         <div class="card-body">
                         <table id="bootstrap-data-table7" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                            <th>Producion ID</th>
+                            <th>Produción ID</th>
                             <th>Lote</th>
                             <th>Cantidad</th>
-                            <th>Mes</th>
+                            <th>Fecha (aaaa/mm/dd)</th>
                             <th>Ver</th>
                             <th>Editar</th>
                             <th>Eliminar</th>

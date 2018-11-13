@@ -24,7 +24,7 @@ class EstadoFisicoRequest extends FormRequest
     public function rules()
     {
         return [
-            'descripcion' => 'string',
+            'descripcion' => 'required | string',
             'periodo' => 'required | date',
             'lote_id' => 'required',
         ];
@@ -38,9 +38,8 @@ class EstadoFisicoRequest extends FormRequest
     public function messages()
     {
         return [
-            'descripcion.string' => 'La descripcion no permite valores numericos.',
-            'periodo.required' => 'La fecha del estado fisico es obligatoria.',
-            'periodo.date' => 'La fecha debe ser de tipo fecha.',
+            'descripcion.string' => 'La descripcion no permite valores nulos o numéricos.',
+            'periodo.required' => 'La fecha del estado físico es obligatoria.',
             'lote_id.required' => 'El identificador(id) del lote es requerido.',
         ];
     }

@@ -12,7 +12,7 @@
                                 <div class="media">
                                     <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="{{ asset('images/cultivo.png') }}">
                                     <div class="media-body">
-                                        <h2 class="text-light display-6">Relacion cultivo - finca: ID: {{ $data{'0'}->id }}</h2>
+                                        <h2 class="text-light display-6">Relación cultivo - finca: ID: {{ $data{'0'}->id }}</h2>
                                     </div>
                                 </div>
                             </div>

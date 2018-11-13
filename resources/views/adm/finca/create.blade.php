@@ -11,7 +11,7 @@
                     <strong>Crear finca</strong>
                     @if ($errors->any())
                     <div class="alert alert-danger" role="alert">
-                    <p>Los siguientes errores fueron encontrados al validar el formulario!</p>
+                    <p>¡Los siguientes errores fueron encontrados al validar el formulario!</p>
                     <ul>
                         @foreach ($errors->all() as $error)
                         <li>    
@@ -26,20 +26,20 @@
                     {{ Form::open(['route' => 'fincas.store', 'method' => 'POST']) }}
                     @method('post')
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombre</label></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombre *</label></div>
                         <div class="col-12 col-md-9"><input type="text" id="nombre" name="nombre" placeholder="Nombre" class="form-control"><small class="form-text text-muted">Ingrese el nombre de la finca</small></div>
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="select" class="form-control-label">Departamento</label></div>
-                        {!! Form::select('departamento', $departamentos, null, ['id'=>'departamento'], ['class'=>'standardSelect']) !!}
+                        <div class="col col-md-9">{!! Form::select('departamento', $departamentos, null, ['id'=>'departamento'], ['class'=>'standardSelect']) !!}</div>
                     </div>   
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="select" class="form-control-label">Municipio</label></div>
-                        {!! Form::select('municipio', ['placeholder'=>'Seleccione municipio...'], null, ['id'=>'municipio']) !!}
+                        <div class="col-12 col-md-9">{!! Form::select('municipio', ['placeholder'=>'Seleccione municipio...'], null, ['id'=>'municipio']) !!}</div>
                     </div>        
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Direccion</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="direccion" name="direccion" placeholder="Direccion" class="form-control"><small class="help-block text-muted">Ingrese la direccion de la finca</small></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Dirección</label></div>
+                        <div class="col col-md-9"><input type="text" id="direccion" name="direccion" placeholder="Dirección" class="form-control"><small class="help-block text-muted">Ingrese la dirección de la finca</small></div>
                     </div>   
                 </div>
                 <div class="card-footer">

@@ -8,10 +8,10 @@
             <div class="col-lg-8" style="">
             <div class="card">
                 <div class="card-header">
-                    <strong>Datos Relacion</strong>
+                    <strong>Datos Relación</strong>
                     @if ($errors->any())
                     <div class="alert alert-danger" role="alert">
-                    <p>Los siguientes errores fueron encontrados al validar el formulario!</p>
+                    <p>¡Los siguientes errores fueron encontrados al validar el formulario!</p>
                     <ul>
                         @foreach ($errors->all() as $error)
                         <li>    
@@ -35,16 +35,18 @@
                             @endforeach
                         </select>
                         <div class="col col-md-3"><label for="select" class="form-control-label">User</label></div>
-                        <select data-placeholder="Seleccione usuario..." class="standardSelect" tabindex="1" id="user_id" name="user_id">
-                            @foreach ($listusers as $e)
-                                <option value="{{ $e->id }}">{{ $e->name }}</option>
-                            @endforeach
-                        </select>
+                        <div class="col col-md-9">
+                            <select data-placeholder="Seleccione usuario..." class="standardSelect" tabindex="1" id="user_id" name="user_id">
+                                @foreach ($listusers as $e)
+                                    <option value="{{ $e->id }}">{{ $e->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="card-footer">
                 <button type="submit" class="btn btn-primary btn-sm">
-                    <i class="fa fa-dot-circle-o"></i> Actualizar relacion
+                    <i class="fa fa-dot-circle-o"></i> Actualizar relación
                 </button>
                 </div>
                 <div class="card-footer">

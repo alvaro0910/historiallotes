@@ -12,7 +12,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <div style="text-align:center;"><strong class="card-title">Estados fisicos registrados</strong></div>
+                                <div style="text-align:center;"><strong class="card-title">Estados físicos registrados</strong></div>
                                 <a href="{{ route('estados.create') }}" class="btn btn-secondary mb-1">Crear Estado</a>
                             </div>
                         <div class="card-body">
@@ -20,8 +20,8 @@
                         <thead>
                             <tr>
                             <th>Estado ID</th>
-                            <th>Descripcion</th>
-                            <th>Periodo</th>
+                            <th>Descripción</th>
+                            <th>Fecha (aaaa/mm/dd)</th>
                             <th>Lote</th>
                             <th>Ver</th>
                             <th>Editar</th>

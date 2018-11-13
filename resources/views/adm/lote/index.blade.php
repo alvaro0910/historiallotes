@@ -28,7 +28,7 @@
                             <tr>
                             <th>Lote ID</th>
                             <th>Nombre</th>
-                            <th>Codigo</th>
+                            <th>Código</th>
                             <th>Cultivo</th>
                             <th>Ver</th>
                             <th>Editar</th>
