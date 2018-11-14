@@ -28,12 +28,12 @@
                         'route' => ['producciones.update', $data->id]
                     ]) !!}
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Cantidad *</label></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Cantidad <font color="red">*</font></label></div>
                         <div class="col-12 col-md-9"><input type="text" id="cantidad" name="cantidad" placeholder="Cantidad" class="form-control" value="{{ $data->cantidad }}">
                         <small class="form-text text-muted">Ingrese la cantidad producida por el lote</small></div>
                     </div>
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class="form-control-label">Fecha (aaaa/mm/dd) *</label></div>
+                        <div class="col col-md-3"><label for="text-input" class="form-control-label">Fecha (aaaa/mm/dd) <font color="red">*</font></label></div>
                         <div class="col-12 col-md-9"><input type="date" id="periodo" name="periodo" placeholder="Fecha" class="form-control" value="{{ $data->periodo }}">
                         <small class="form-text text-muted">Ingrese la fecha de producción</small></div>
                     </div>

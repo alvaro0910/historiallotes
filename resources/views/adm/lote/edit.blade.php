@@ -28,17 +28,17 @@
                         'route' => ['lotes.update', $data->id]
                     ]) !!}
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombre *</label></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombre <font color="red">*</font></label></div>
                         <div class="col-12 col-md-9"><input type="text" id="nombre" name="nombre" placeholder="Nombre" class="form-control" value="{{ $data->nombre }}">
                         <small class="form-text text-muted">Ingrese el nombre del lote</small></div>
                     </div>
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Código *</label></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Código <font color="red">*</font></label></div>
                         <div class="col-12 col-md-9"><input type="text" id="codigo" name="codigo" placeholder="Código" class="form-control" value="{{ $data->codigo }}">
                         <small class="form-text text-muted">Ingrese el código del lote</small></div>
                     </div>
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Área *</label></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Área <font color="red">*</font></label></div>
                         <div class="col-12 col-md-9"><input type="text" id="area" name="area" placeholder="Área" class="form-control" value="{{ $data->area }}">
                         <small class="form-text text-muted">Ingrese el área del lote</small></div>
                     </div>
@@ -58,18 +58,34 @@
                         <small class="help-block text-muted">Ingrese la altura sobre el nivel de mar del lote</small></div>
                     </div>
                     <div class="row form-group">
+                        <div class="col col-md-3"><label for="select" class="form-control-label">Finca</label></div>
+                        <div class="col col-md-9">
+                            <select data-placeholder="Seleccione Finca..." class="standardSelect" tabindex="1" id="finca_id" name="finca_id">
+                                @foreach ($listfincas as $e)
+                                    <option value="{{ $e->id }}">{{ $e->nombre }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
                         <div class="col col-md-3"><label for="select" class="form-control-label">Cultivo</label></div>
-                        <select data-placeholder="Seleccione cultivo..." class="standardSelect" tabindex="1" id="cultivo_id" name="cultivo_id">
-                            @foreach ($listcultivos as $e)
-                                <option value="{{ $e->id }}">{{ $e->cultivo }}</option>
-                            @endforeach
-                        </select>
+                        <div class="col col-md-9">
+                            <select data-placeholder="Seleccione cultivo..." class="standardSelect" tabindex="1" id="cultivo_id" name="cultivo_id">
+                                @foreach ($listcultivos as $e)
+                                    <option value="{{ $e->id }}">{{ $e->cultivo }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
                         <div class="col col-md-3"><label for="select" class="form-control-label">Variedad</label></div>
-                        <select data-placeholder="Seleccione variedad..." class="standardSelect" tabindex="1" id="variedad_id" name="variedad_id">
-                            @foreach ($listvariedades as $e)
-                                <option value="{{ $e->id }}">{{ $e->variedad }}</option>
-                            @endforeach
-                        </select>
+                        <div class="col col-md-9">
+                            <select data-placeholder="Seleccione variedad..." class="standardSelect" tabindex="1" id="variedad_id" name="variedad_id">
+                                @foreach ($listvariedades as $e)
+                                    <option value="{{ $e->id }}">{{ $e->variedad }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                         <!--<select id="prioridadForm" name="prioridadForm">  no olvidar poner el < ? de php
                             <option value="baja" php if($estado=="baja") echo "selected";?>>Baja</option> 

@@ -34,7 +34,8 @@ class LoteController extends Controller
     {
         $cultivos = DB::table('cultivos')->get();
         $variedades = DB::table('variedades')->get();
-        return view('adm.lote.create', ['listcultivos' => $cultivos, 'listvariedades' => $variedades]);
+        $fincas = DB::table('fincas')->get();
+        return view('adm.lote.create', ['listcultivos' => $cultivos, 'listvariedades' => $variedades, 'listfincas' => $fincas]);
     }
 
     /**
@@ -45,14 +46,23 @@ class LoteController extends Controller
      */
     public function store(LoteRequest $request)
     {
-        $lote = new Lote($request->all());
-        $lote->save();
+        $existe = Lote::where(['codigo' => $request->codigo], ['finca_id' => $request->finca_id])->count();
+        if ($existe > 0) {
+            $notificacion = array(
+                'message' => '¡El codigo del lote ya esta asignado a uno de los lotes de la finca seleccionada!',
+                'alert-type' => 'warning'
+            );
+            return redirect()->back()->with($notificacion);
+        } else {
+            $lote = new Lote($request->all());
+            $lote->save();
 
-        $notificacion = array(
-            'message' => 'Lote agregado con exito.',
-            'alert-type' => 'success'
-        );
-        return redirect()->back()->with($notificacion);
+            $notificacion = array(
+                'message' => '¡Lote agregado con éxito!',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notificacion);
+        }
     }
 
     /**
@@ -65,10 +75,10 @@ class LoteController extends Controller
     {
         //$lote = Lote::where('id', $id)->findOrFail($id);
         $lotes = DB::select(
-            "SELECT lotes.id, lotes.codigo, lotes.nombre, lotes.area, lotes.poblacion, lotes.edad, lotes.alturasnm, lotes.created_at, lotes.updated_at, cultivos.cultivo, variedades.variedad
+            "SELECT lotes.id, lotes.codigo, lotes.nombre, lotes.area, lotes.poblacion, lotes.edad, lotes.alturasnm, lotes.created_at, lotes.updated_at, cultivos.cultivo, variedades.variedad, fincas.nombre AS nomfinca
             FROM lotes
-            INNER JOIN cultivos, variedades
-            WHERE cultivos.id = lotes.cultivo_id AND variedades.id = lotes.variedad_id AND lotes.id ='".$id."';");
+            INNER JOIN cultivos, variedades, fincas
+            WHERE cultivos.id = lotes.cultivo_id AND variedades.id = lotes.variedad_id AND fincas.id = lotes.finca_id AND lotes.id ='".$id."';");
         return view('adm.lote.show')->withData($lotes);
     }
 
@@ -83,7 +93,8 @@ class LoteController extends Controller
         $lote = Lote::where('id', $id)->findOrFail($id);
         $cultivos = DB::table('cultivos')->get();
         $variedades = DB::table('variedades')->get();
-        return view('adm.lote.edit', ['data' => $lote, 'listcultivos' => $cultivos, 'listvariedades' => $variedades]);
+        $fincas = DB::table('fincas')->get();
+        return view('adm.lote.edit', ['data' => $lote, 'listcultivos' => $cultivos, 'listvariedades' => $variedades, 'listfincas' => $fincas ]);
     }
 
     /**
@@ -95,16 +106,25 @@ class LoteController extends Controller
      */
     public function update(LoteRequest $request, $id)
     {
-        $lote = Lote::where('id', $id)->findOrFail($id);
+        $existe = Lote::where(['codigo' => $request->codigo], ['finca_id' => $request->finca_id])->count();
+        if ($existe > 0) {
+            $notificacion = array(
+                'message' => '¡El codigo del lote ya esta asignado a uno de los lotes de la finca seleccionada!',
+                'alert-type' => 'warning'
+            );
+            return redirect()->back()->with($notificacion);
+        } else {
+            $lote = Lote::where('id', $id)->findOrFail($id);
         
-        $input = $request->all();
-        $lote->update($input);
+            $input = $request->all();
+            $lote->update($input);
 
-        $notificacion = array(
-                'message' => 'Lote Actualizado Con Exito!',
-                'alert-type' => 'success'
-        );
-        return redirect()->back()->with($notificacion);
+            $notificacion = array(
+                    'message' => 'Lote actualizado con éxito!',
+                    'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notificacion);
+        }
     }
 
     /**
@@ -115,13 +135,36 @@ class LoteController extends Controller
      */
     public function destroy($id)
     {
-        $lote = Lote::where('id', $id)->findOrFail($id);
-        $lote->delete();
+        $existe = Self::existeRelacion($id);
+        if ($existe) {
+            $notificacion = array(
+                'message' => '¡No se puede eliminar el lote, existen registros de costos y producciones asociados al lote!',
+                'alert-type' => 'info'
+            );
+            return redirect()->back()->with($notificacion);
+        }
+        else{
+            $lote = Lote::where('id', $id)->findOrFail($id);
+            $lote->delete();
 
-        $notificacion = array(
-            'message' => 'Lote Eliminado Con Exito.',
-            'alert-type' => 'info'
-        );
-        return redirect()->back()->with($notificacion);
+            $notificacion = array(
+                'message' => '¡Lote eliminado con éxito!',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notificacion);
+        }   
+    }
+
+    public function existeRelacion($id){
+        $result1 = DB::table('labores')->where('lote_id', "=", $id)->first();
+        $result2 = DB::table('insumos')->where('lote_id', "=", $id)->first();
+        $result3 = DB::table('producciones')->where('lote_id', "=", $id)->first();
+
+        if($result1 == NULL && $result2 == NULL && $result3 == NULL){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 }

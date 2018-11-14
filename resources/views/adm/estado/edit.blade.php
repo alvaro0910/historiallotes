@@ -28,11 +28,11 @@
                         'route' => ['estados.update', $data->id]
                     ]) !!}
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Estado fisico *</label></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Estado fisico <font color="red">*</font></label></div>
                         <div class="col-12 col-md-9"><input type="text" id="descripcion" name="descripcion" placeholder="Estado Fisico" class="form-control" value="{{ $data->descripcion }}"><small class="form-text text-muted">Ingrese el estado físico lote</small></div>
                     </div>
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Fecha (aaaa/mm/dd) *</label></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Fecha (aaaa/mm/dd) <font color="red">*</font></label></div>
                         <div class="col-12 col-md-9"><input type="text" id="periodo" name="periodo" placeholder="Año" class="form-control" value="{{ $data->periodo }}"><small class="form-text text-muted">Ingrese el año del estado físico del lote</small></div>
                     </div>
                     <div class="row form-group">

@@ -28,7 +28,7 @@
                         'route' => ['cultivos.update', $data->id]
                     ]) !!}
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombre *</label></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombre <font color="red">*</font></label></div>
                         <div class="col-12 col-md-9"><input type="text" id="cultivo" name="cultivo" placeholder="Cultivo" class="form-control" value="{{ $data->cultivo }}"><small class="form-text text-muted">Ingrese el nombre deñ cultivo</small></div>
                     </div>
                     <div class="row form-group">

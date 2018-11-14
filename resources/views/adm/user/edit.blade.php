@@ -28,17 +28,17 @@
                         'route' => ['users.update', $data->id]
                     ]) !!}
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombre *</label></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombre <font color="red">*</font></label></div>
                         <div class="col-12 col-md-9"><input type="text" id="name" name="name" placeholder="Nombre" class="form-control" value="{{ $data->name }}">
                         <small class="form-text text-muted">Ingrese el nombre del usuario</small></div>
                     </div>
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="email-input" class=" form-control-label">Correo *</label></div>
+                        <div class="col col-md-3"><label for="email-input" class=" form-control-label">Correo <font color="red">*</font></label></div>
                         <div class="col-12 col-md-9"><input type="email" id="email" name="email" placeholder="Correo" class="form-control" value="{{ $data->email }}">
                         <small class="help-block text-muted">Ingrese el correo del usuario</small></div>
                     </div>
                     <div class="row form-group">
-                        <div class="col col-md-3"><label class=" form-control-label">Tipo *</label></div>
+                        <div class="col col-md-3"><label class=" form-control-label">Tipo <font color="red">*</font></label></div>
                         <div class="col col-md-9">
                             <div class="form-check">
                             <div class="radio">

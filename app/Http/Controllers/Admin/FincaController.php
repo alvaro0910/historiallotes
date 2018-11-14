@@ -49,6 +49,12 @@ class FincaController extends Controller
         return view('adm.finca.create', compact('departamentos'));
     }
 
+    public function getMunicipios(Request $request, $id){
+        if ($request->ajax()) {
+            $municipios = Municipio::municipios($id);
+            return response()->json($municipios);
+        }
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -122,20 +128,36 @@ class FincaController extends Controller
      */
     public function destroy($id)
     {
-        $finca = Finca::where('id', $id)->findOrFail($id);
-        $finca->delete();
-
-        $notificacion = array(
-            'message' => 'Finca Eliminada Con Exito.',
-            'alert-type' => 'info'
-        );
-        return redirect()->back()->with($notificacion);
+        $existe = Self::existeRelacion($id);
+        if ($existe) {
+            $notificacion = array(
+                'message' => '¡No se puede eliminar la finca, está asociada a un usuario, cultivo o lote!',
+                'alert-type' => 'info'
+            );
+            return redirect()->back()->with($notificacion);
+        }
+        else{
+            $finca = Finca::where('id', $id)->findOrFail($id);
+            $finca->delete();
+    
+            $notificacion = array(
+                'message' => '¡Finca eliminada con éxito!',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notificacion);
+        }   
     }
 
-    public function getMunicipios(Request $request, $id){
-        if ($request->ajax()) {
-            $municipios = Municipio::municipios($id);
-            return response()->json($municipios);
+    public function existeRelacion($id){
+        $result1 = DB::table('finca_user')->where('finca_id', "=", $id)->first();
+        $result2 = DB::table('cultivo_finca')->where('finca_id', "=", $id)->first();
+        $result3 = DB::table('lotes')->where('finca_id', "=", $id)->first();
+
+        if($result1 == NULL && $result2 == NULL && $result3 == NULL){
+            return false;
+        }
+        else{
+            return true;
         }
     }
 }

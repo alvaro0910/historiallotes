@@ -26,7 +26,7 @@
                     {{ Form::open(['route' => 'cultivos.store', 'method' => 'POST']) }}
                     @method('post')
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombre *</label></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombre <font color="red">*</font></label></div>
                         <div class="col-12 col-md-9"><input type="text" id="cultivo" name="cultivo" placeholder="Cultivo" class="form-control">
                             <small class="form-text text-muted">Ingrese el nombre del cultivo</small></div>
                     </div>

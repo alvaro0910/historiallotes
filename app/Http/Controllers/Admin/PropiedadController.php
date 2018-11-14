@@ -108,13 +108,34 @@ class PropiedadController extends Controller
      */
     public function destroy($id)
     {
-        $propiedad = Propiedad::where('id', $id)->findOrFail($id);
-        $propiedad->delete();
+        $existe = Self::existeRelacion($id);
+        if ($existe) {
+            $notificacion = array(
+                'message' => '¡No se puede eliminar la propiedad, está asociada a uno o varios lotes!',
+                'alert-type' => 'info'
+            );
+            return redirect()->back()->with($notificacion);
+        }
+        else{
+            $propiedad = Propiedad::where('id', $id)->findOrFail($id);
+            $propiedad->delete();
 
-        $notificacion = array(
-            'message' => 'Propiedad eliminada con exito.',
-            'alert-type' => 'info'
-        );
-        return redirect()->back()->with($notificacion);
+            $notificacion = array(
+                'message' => '¡Propiedad eliminada con éxito!',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notificacion);
+        }
+    }
+
+    public function existeRelacion($id){
+        $result = DB::table('lote_propiedad')->where('propiedad_id', "=", $id)->first();
+
+        if($result == NULL){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Lote extends Model
 {
     protected $fillable = [
-        'codigo', 'nombre', 'area', 'poblacion', 'edad', 'alturasnm', 'cultivo_id', 'variedad_id',
+        'codigo', 'nombre', 'area', 'poblacion', 'edad', 'alturasnm', 'cultivo_id', 'variedad_id', 'finca_id',
     ];
 
     public function cultivo(){
@@ -16,6 +16,10 @@ class Lote extends Model
 
     public function variedad(){
         return $this->belongTo('App\Variedad');
+    }
+
+    public function finca(){
+        return $this->belongTo('App\Finca');
     }
 
     public function estadosFisicos(){

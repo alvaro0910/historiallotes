@@ -26,7 +26,7 @@
                     {{ Form::open(['route' => 'propiedad.store', 'method' => 'POST']) }}
                     @method('post')
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Material *</label></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Material <font color="red">*</font></label></div>
                         <div class="col-12 col-md-9"><input type="text" id="material" name="material" placeholder="Material" class="form-control">
                         <small class="form-text text-muted">Ingrese el material</small></div>
                     </div>

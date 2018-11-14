@@ -26,12 +26,12 @@
                         {{ Form::open(['route' => 'propiedadlote.store', 'method' => 'POST']) }}
                         @method('post')
                         <div class="row form-group">
-                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Cantidad *</label></div>
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Cantidad <font color="red">*</font></label></div>
                             <div class="col-12 col-md-9"><input type="text" id="cantidad" name="cantidad" placeholder="Cantidad Material" class="form-control">
                             <small class="form-text text-muted">Ingrese la cantidad del material analizado</small></div>
                         </div>
                         <div class="row form-group">
-                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Fecha (aaaa/mm/dd) *</label></div>
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Fecha (aaaa/mm/dd) <font color="red">*</font></label></div>
                             <div class="col-12 col-md-9"><input type="date" id="periodo" name="periodo" class="form-control">
                             <small class="form-text text-muted">Ingrese la fecha del análisis</small></div>
                         </div>

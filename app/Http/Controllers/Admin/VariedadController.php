@@ -101,13 +101,34 @@ class VariedadController extends Controller
      */
     public function destroy($id)
     {
-        $variedad = Variedad::where('id', $id)->findOrFail($id);
-        $variedad->delete();
+        $existe = Self::existeRelacion($id);
+        if ($existe) {
+            $notificacion = array(
+                'message' => '¡No se puede eliminar la variedad, está asociada a un lote!',
+                'alert-type' => 'info'
+            );
+            return redirect()->back()->with($notificacion);
+        }
+        else{
+            $variedad = Variedad::where('id', $id)->findOrFail($id);
+            $variedad->delete();
 
-        $notificacion = array(
-            'message' => 'Variedad Eliminada Con Exito.',
-            'alert-type' => 'info'
-        );
-        return redirect()->back()->with($notificacion);
+            $notificacion = array(
+                'message' => '¡Variedad eliminada con éxito!',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notificacion);
+        }   
+    }
+
+    public function existeRelacion($id){
+        $result = DB::table('lotes')->where('variedad_id', "=", $id)->first();
+
+        if($result == NULL){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 }

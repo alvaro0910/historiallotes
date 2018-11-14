@@ -43,7 +43,7 @@ class UserController extends Controller
         $user->save();
 
         $notificacion = array(
-            'message' => 'Usuario creado con exito.',
+            'message' => 'Usuario creado con éxito.',
             'alert-type' => 'success'
         );
         return redirect()->back()->with($notificacion);
@@ -88,7 +88,7 @@ class UserController extends Controller
         $user->update($input);
 
         $notificacion = array(
-            'message' => 'Usuario Actualizado Con Exito!',
+            'message' => '¡Usuario actualizado con éxito!',
             'alert-type' => 'success'
         );
         return redirect()->back()->with($notificacion);
@@ -102,13 +102,34 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::where('id', $id)->findOrFail($id);
-        $user->delete();
+        $existe = Self::existeRelacion($id);
+        if ($existe) {
+            $notificacion = array(
+                'message' => '¡No se puede eliminar el usuario, está asociado a una finca!',
+                'alert-type' => 'info'
+            );
+            return redirect()->back()->with($notificacion);
+        }
+        else{
+            $user = User::where('id', $id)->findOrFail($id);
+            $user->delete();
 
-        $notificacion = array(
-            'message' => 'Usuario Eliminado Con Exito.',
-            'alert-type' => 'info'
-        );
-        return redirect()->back()->with($notificacion);
+            $notificacion = array(
+                'message' => '¡Usuario eliminado con éxito!',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notificacion);
+        }
+    }
+
+    public function existeRelacion($id){
+        $result = DB::table('finca_user')->where('user_id', "=", $id)->first();
+
+        if($result == NULL){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 }

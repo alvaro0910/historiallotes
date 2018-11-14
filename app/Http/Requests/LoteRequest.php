@@ -32,6 +32,7 @@ class LoteRequest extends FormRequest
             //'alturasnm' => 'integer',
             'cultivo_id' => 'required | integer',
             'variedad_id' => 'required | integer',
+            'finca_id' => 'required | integer',
         ];
     }
 
@@ -57,6 +58,7 @@ class LoteRequest extends FormRequest
             //'alturasnm.integer' => 'La altura sobre el nivel del mar debe ser un numero positivo.(Este campo no es obligatorio)',
             'cultivo_id.required' => 'El identificador(id) del cultivo es requerido.',
             'variedad_id.required' => 'El identificador(id) de la variedad es requerido.',
+            'finca_id.required' => 'El identificador(id) de la finca es requerido.',
         ];
     }
 }

@@ -49,7 +49,7 @@ class ProduccionController extends Controller
         $produccion->save();
 
         $notificacion = array(
-            'message' => 'Produccion agregada con exito.',
+            'message' => 'Produccion agregada con éxito.',
             'alert-type' => 'success'
         );
         return redirect()->back()->with($notificacion);
@@ -99,7 +99,7 @@ class ProduccionController extends Controller
         $produccion->update($input);
 
         $notificacion = array(
-                'message' => 'Produccion Actualizada Con Exito!',
+                'message' => 'Produccion actualizada con éxito!',
                 'alert-type' => 'success'
         );
         return redirect()->back()->with($notificacion);
@@ -117,7 +117,7 @@ class ProduccionController extends Controller
         $produccion->delete();
 
         $notificacion = array(
-            'message' => 'Produccion Eliminado Con Exito.',
+            'message' => '¡Produccion eliminada con éxito!',
             'alert-type' => 'info'
         );
         return redirect()->back()->with($notificacion);

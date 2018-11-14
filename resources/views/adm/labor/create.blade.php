@@ -31,17 +31,17 @@
                     <small class="form-text text-muted">Ingrese la descripción de labores</small></div>
                 </div>
                 <div class="row form-group">
-                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Costo *</label></div>
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Costo <font color="red">*</font></label></div>
                     <div class="col-12 col-md-9"><input type="text" id="costo" name="costo" placeholder="Costo" class="form-control">
                     <small class="form-text text-muted">Ingrese el costo de las labores</small></div>
                 </div>
                 <div class="row form-group">
-                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Fecha (aaaa/mm/dd) *</label></div>
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Fecha (aaaa/mm/dd) <font color="red">*</font></label></div>
                     <div class="col-12 col-md-9"><input type="date" id="periodo" name="periodo" placeholder="Fecha" class="form-control">
                     <small class="form-text text-muted">Ingrese la fecha del costo de labores</small></div>
                 </div>
                 <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Cantidad MO *</label></div>
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Cantidad mano de obra <font color="red">*</font></label></div>
                         <div class="col-12 col-md-9"><input type="text" id="cantidadmo" name="cantidadmo" placeholder="Cantidad MO" class="form-control">
                         <small class="form-text text-muted">Ingrese la cantidad de mano de obra</small></div>
                     </div>

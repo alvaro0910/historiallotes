@@ -53,14 +53,24 @@ class CultivoController extends Controller
      */
     public function store(CultivoRequest $request)
     {
-        $cultivo = new Cultivo($request->all());
-        $cultivo->save();
+        $existe = Cultivo::where('cultivo', $request->cultivo)->count();
 
-        $notificacion = array(
-            'message' => 'Cultivo agregado con exito.',
-            'alert-type' => 'success'
-        );
-        return redirect()->back()->with($notificacion);
+        if ($existe > 0) {
+            $notificacion = array(
+                'message' => '¡El cultivo ya existe!',
+                'alert-type' => 'warning'
+            );
+            return redirect()->back()->with($notificacion);
+        } else {
+            $cultivo = new Cultivo($request->all());
+            $cultivo->save();
+
+            $notificacion = array(
+                'message' => '¡Cultivo agregado con éxito!',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notificacion);
+        }
     }
 
     /**
@@ -96,16 +106,26 @@ class CultivoController extends Controller
      */
     public function update(CultivoRequest $request, $id)
     {
-        $cultivo = Cultivo::where('id', $id)->findOrFail($id);
-        
-        $input = $request->all();
-        $cultivo->update($input);
+        $existe = Cultivo::where('cultivo', $request->cultivo)->count();
 
-        $notificacion = array(
-                'message' => 'Cultivo Actualizado Con Exito!',
-                'alert-type' => 'success'
-        );
-        return redirect()->back()->with($notificacion);
+        if ($existe > 0) {
+            $notificacion = array(
+                'message' => '¡El cultivo ya existe!',
+                'alert-type' => 'warning'
+            );
+            return redirect()->back()->with($notificacion);
+        } else {
+            $cultivo = Cultivo::where('id', $id)->findOrFail($id);
+        
+            $input = $request->all();
+            $cultivo->update($input);
+
+            $notificacion = array(
+                    'message' => '¡Cultivo actualizado con éxito!',
+                    'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notificacion);
+        }
     }
 
     /**
@@ -116,13 +136,35 @@ class CultivoController extends Controller
      */
     public function destroy($id)
     {
-        $cultivo = Finca::where('id', $id)->findOrFail($id);
-        $cultivo->delete();
+        $existe = Self::existeRelacion($id);
+        if ($existe) {
+            $notificacion = array(
+                'message' => '¡No se puede eliminar el cultivo, está asociado a una finca o lote!',
+                'alert-type' => 'info'
+            );
+            return redirect()->back()->with($notificacion);
+        }
+        else{
+            $cultivo = Cultivo::where('id', $id)->findOrFail($id);
+            $cultivo->delete();
 
-        $notificacion = array(
-            'message' => 'Cultivo Eliminado Con Exito.',
-            'alert-type' => 'info'
-        );
-        return redirect()->back()->with($notificacion);
+            $notificacion = array(
+                'message' => '¡Cultivo eliminado con éxito!',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notificacion);
+        }   
+    }
+
+    public function existeRelacion($id){
+        $result1 = DB::table('lotes')->where('cultivo_id', "=", $id)->first();
+        $result2 = DB::table('cultivo_finca')->where('cultivo_id', "=", $id)->first();
+
+        if($result1 == NULL && $result2 == NULL){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 }

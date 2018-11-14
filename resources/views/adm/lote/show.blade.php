@@ -34,6 +34,9 @@
                                     <i class="fa fa-tasks"></i> <b>Altura SNM:</b> {{ $data['0']->alturasnm }}
                                 </li>
                                 <li class="list-group-item">
+                                    <i class="fa fa-tasks"></i> <b>Finca: </b> {{ $data['0']->nomfinca }}
+                                </li>
+                                <li class="list-group-item">
                                     <i class="fa fa-tasks"></i> <b>Cultivo: </b> {{ $data['0']->cultivo }}
                                 </li>
                                 <li class="list-group-item">
