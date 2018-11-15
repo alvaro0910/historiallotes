@@ -16,9 +16,10 @@ class InfoController extends Controller
      */
     public function index()
     {
-        $lotes = DB::table('cultivos')
-            ->join('lotes', 'cultivos.id', '=', 'lotes.cultivo_id')
-            ->select('cultivos.cultivo', 'lotes.codigo', 'lotes.nombre', 'lotes.id' )
+        $lotes = DB::table('lotes')
+            ->join('cultivos', 'cultivos.id', '=', 'lotes.cultivo_id')
+            ->join('fincas', 'fincas.id', '=', 'lotes.finca_id')
+            ->select('cultivos.cultivo', 'lotes.codigo', 'lotes.nombre', 'lotes.id', 'fincas.nombre as name')
             ->get();
         return view('usu.info', ['data'=>$lotes]);
     }

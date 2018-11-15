@@ -14,29 +14,31 @@
                 </div>
             <div class="card-body">
                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                <thead>
-                <tr>
-                    <th>Codigo</th>
-                    <th>Nombre lote</th>
-                    <th>Cultivo</th>
-                    <th>Detallar</th>
-                </tr>
-                </thead>
-                <tbody>
-                @php 
-                    $anio = 2009;       
-                @endphp 
-                
-                @foreach ($data as $e)
-                <tr>
-                    <td>{{ $e->codigo }}</td>
-                    <td>{{ $e->nombre }}</td>
-                    <td>{{ $e->cultivo }}</td>
-                    <td><a href="{{ route('detalles', [$e->id, $anio]) }}">ver</a></td>
-                </tr>
-                @endforeach
-                </tbody>
-            </table>
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre lote</th>
+                            <th>Cultivo</th>
+                            <th>Finca</th>
+                            <th>Detallar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @php 
+                            $anio = 2009;       
+                        @endphp 
+                        
+                        @foreach ($data as $e)
+                        <tr>
+                            <td>{{ $e->codigo }}</td>
+                            <td>{{ $e->nombre }}</td>
+                            <td>{{ $e->cultivo }}</td>
+                            <td>{{ $e->name }}</td>
+                            <td><a href="{{ route('detalles', [$e->id, $anio]) }}">ver</a></td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
             </div>
         </div>
