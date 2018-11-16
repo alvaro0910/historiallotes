@@ -17,8 +17,8 @@ class CreateFincasTable extends Migration
             $table->engine='InnoDB';
             $table->increments('id')->unsigned();
             $table->string('nombre', 50);
-            $table->string('departamento', 50);
-            $table->string('municipio', 50);
+            $table->int('departamento');
+            $table->int('municipio');
             $table->string('direccion', 250)->nullable();
             $table->timestamps();
         });

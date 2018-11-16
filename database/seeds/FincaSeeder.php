@@ -14,14 +14,5 @@ class FincaSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-    
-        DB::table('fincas')->insert([array(
-            'nombre' => 'Venecia',
-            'ciudad' => 'Manizales',
-            'departamento' => 'Caldas',
-            'direccion' => 'San Peregrino',
-            'created_at' => date('Y-m-d H:m:s'),
-            'updated_at' => date('Y-m-d H:m:s')
-        )]);
     }
 }

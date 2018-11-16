@@ -30,10 +30,14 @@
     <link rel="stylesheet" href="{{ asset('assets/scss/style.css') }}">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     
+    @yield('style-Hightcharts')
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
-
 </head>
 <body class="bg-dark">
+    <script src="{{ asset('highcharts/code/highcharts.js') }}"></script>
+    <script src="{{ asset('highcharts/code/modules/series-label.js') }}"></script>
+    <script src="{{ asset('highcharts/code/modules/exporting.js') }}"></script>
+    <script src="{{ asset('highcharts/code/modules/export-data.js') }}"></script>
         
     <!-- Left Panel -->
     @if (session('status'))
