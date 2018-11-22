@@ -129,15 +129,36 @@ class EstadoFisicoController extends Controller
      * @param  \App\EstadoFisico  $estadoFisico
      * @return \Illuminate\Http\Response
      */
-    public function destroy(EstadoFisico $estadoFisico)
+    public function destroy($id)
     {
-        $estado = EstadoFisico::where('id', $id)->findOrFail($id);
-        $estado->delete();
+        $existe = Self::existeRelacion($id);
+        if ($existe) {
+            $notificacion = array(
+                'message' => '¡No se puede eliminar el estado, está asociado a un lote!',
+                'alert-type' => 'info'
+            );
+            return redirect()->back()->with($notificacion);
+        }
+        else{
+            $estado = EstadoFisico::where('id', $id)->findOrFail($id);
+            $estado->delete();
 
-        $notificacion = array(
-            'message' => 'Estado Fisico Eliminado Con Exito.',
-            'alert-type' => 'info'
-        );
-        return redirect()->back()->with($notificacion);
+            $notificacion = array(
+                'message' => 'Estado Fisico Eliminado Con Exito.',
+                'alert-type' => 'info'
+            );
+            return redirect()->back()->with($notificacion);
+        } 
+    }
+
+    public function existeRelacion($id){
+        $result1 = DB::table('estados_fisicos')->where('lote_id', "=", $id)->first();
+
+        if($result1 == NULL){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 }

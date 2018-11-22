@@ -69,9 +69,6 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Datos generales</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-bars"></i><a href="{{ route('info') }}">Datos lotes</a></li>
-                            <li><i class="fa fa-bars"></i><a href="{{ route('costolabores') }}">Costo labores</a></li>
-                            <li><i class="fa fa-bars"></i><a href="{{ route('costoinsumos') }}">Costo insumos</a></li>
-                            <li><i class="fa fa-bars"></i><a href="{{ route('producciones') }}">Producciones</a></li>
                             <li><i class="fa fa-bars"></i><a href="{{ route('rendimientos') }}">Rendimientos</a></li>
                         </ul>
                     </li>

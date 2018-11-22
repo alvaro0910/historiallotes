@@ -11,6 +11,15 @@
             margin: 0 auto;
         }
     </style>
+
+    <style type="text/css">
+        #container1 {
+            min-width: 310px;
+            max-width: 800px;
+            height: 400px;
+            margin: 0 auto;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -113,16 +122,16 @@
             <script type="text/javascript">
                 Highcharts.chart('container', {
                     title: {
-                        text: 'Solar Employment Growth by Sector, 2010-2016'
+                        text: 'Produccion mensual historica'
                     },
 
                     subtitle: {
-                        text: 'Source: thesolarfoundation.com'
+                        text: 'Lote 102'
                     },
 
                     yAxis: {
                         title: {
-                            text: 'Number of Employees'
+                            text: 'Numero de KG'
                         }
                     },
 
@@ -142,19 +151,19 @@
                     },
                     
                     series: [{
-                        name: 'Installation',
+                        name: '2008',
                         data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
                     }, {
-                        name: 'Manufacturing',
+                        name: '2009',
                         data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
                     }, {
-                        name: 'Sales & Distribution',
+                        name: '2010',
                         data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
                     }, {
-                        name: 'Project Development',
+                        name: '2011',
                         data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
                     }, {
-                        name: 'Other',
+                        name: '2012',
                         data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
                     }],
         
@@ -179,4 +188,19 @@
         </div>
     </div>
 </div>
+
+<div class="content mt-2">
+    <div class="animated fadeIn">
+        <div class="row">
+        
+        <div class="col-md-12">
+            <div id="container1"></div>
+
+
+        </div>    
+            
+        </div>
+    </div>
+</div>
+
 @endsection            
