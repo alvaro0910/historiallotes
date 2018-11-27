@@ -5,19 +5,16 @@
 @section('style-Hightcharts')
     <style type="text/css">
         #container {
-            min-width: 310px;
-            max-width: 800px;
-            height: 400px;
-            margin: 0 auto;
+            min-width: 400px; 
+            max-width: 600px; 
+            height: 400px; 
+            margin: 0 auto
         }
-    </style>
 
-    <style type="text/css">
         #container1 {
-            min-width: 310px;
-            max-width: 800px;
-            height: 400px;
-            margin: 0 auto;
+            min-width: 310px; 
+            height: 400px; 
+            margin: 0 auto
         }
     </style>
 @endsection
@@ -121,66 +118,64 @@
             <div id="container"></div>
             <script type="text/javascript">
                 Highcharts.chart('container', {
-                    title: {
-                        text: 'Produccion mensual historica'
+                    chart: {
+                        polar: true,
+                        type: 'line'
                     },
 
-                    subtitle: {
-                        text: 'Lote 102'
+                    title: {
+                        text: 'Esperado vs resultado',
+                        x: -80
+                    },
+
+                    pane: {
+                        size: '80%'
+                    },
+
+                    xAxis: {
+                        categories: ['Ph', 'MOrg', 'K', 'Ca','Mg', 'P', 'Al'],
+                        tickmarkPlacement: 'on',
+                        lineWidth: 0
                     },
 
                     yAxis: {
-                        title: {
-                            text: 'Numero de KG'
-                        }
+                        gridLineInterpolation: 'polygon',
+                        lineWidth: 0,
+                        min: 0
+                    },
+
+                    tooltip: {
+                        shared: true,
+                        pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
                     },
 
                     legend: {
-                        layout: 'vertical',
                         align: 'right',
-                        verticalAlign: 'middle'
+                        verticalAlign: 'top',
+                        y: 70,
+                        layout: 'vertical'
                     },
 
-                    plotOptions: {
-                        series: {
-                            label: {
-                                connectorAllowed: false
-                            },
-                            pointStart: 2010
-                        }
-                    },
-                    
                     series: [{
-                        name: '2008',
-                        data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+                        name: 'Análisis esperado',
+                        data: [2.2, 1.4, 1.8, 2, 1, 1.4, 2.5],
+                        pointPlacement: 'on'
                     }, {
-                        name: '2009',
-                        data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
-                    }, {
-                        name: '2010',
-                        data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
-                    }, {
-                        name: '2011',
-                        data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
-                    }, {
-                        name: '2012',
-                        data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
-                    }],
-        
-                    responsive: {
-                        rules: [{
-                            condition: {
-                                maxWidth: 500
-                            },
-                            chartOptions: {
-                                legend: {
-                                    layout: 'horizontal',
-                                    align: 'center',
-                                    verticalAlign: 'bottom'
-                                }
+                        name: 'Resultado actual',
+                        data: [
+                            @php
+                            foreach($infopropiedades as $cantidad => $item)
+                            {
+                            @endphp
+                                @php 
+                                    echo ($item->cantidad); 
+                                @endphp,
+                            @php  
                             }
-                        }]
-                    }
+                            @endphp
+                        ],
+                        pointPlacement: 'on'
+                    }]
                 });
             </script>     
         </div>
@@ -195,8 +190,51 @@
         
         <div class="col-md-12">
             <div id="container1"></div>
+            <script type="text/javascript">
 
-
+            Highcharts.chart('container1', {
+                chart: {
+                    type: 'line'
+                },
+                title: {
+                    text: 'Producción mensual'
+                },
+                subtitle: {
+                    text: '{{ $infolote['0']->codigo }}'
+                },
+                xAxis: {
+                    categories: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Producción (kg)'
+                    }
+                },
+                plotOptions: {
+                    line: {
+                        dataLabels: {
+                            enabled: true
+                        },
+                        enableMouseTracking: false
+                    }
+                },
+                series: [{
+                    name: '{{ $infolote['0']->codigo }}',
+                    data: [
+                        @php
+                        foreach($produccionlote as $cantidad => $item)
+                        {
+                        @endphp
+                            @php 
+                                echo ($item->cantidad); 
+                            @endphp,
+                        @php  
+                        }
+                        @endphp
+                    ]
+                }]
+            });
+		    </script>
         </div>    
             
         </div>
