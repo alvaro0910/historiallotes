@@ -153,12 +153,13 @@
                         align: 'right',
                         verticalAlign: 'top',
                         y: 70,
-                        layout: 'vertical'
+                        layout: 'vertical',
+                        floating: true
                     },
 
                     series: [{
                         name: 'Análisis esperado',
-                        data: [2.2, 1.4, 1.8, 2, 1, 1.4, 2.5],
+                        data: [2.2, 1.4, 1.8, 2, 1, 0.4, 2.5],
                         pointPlacement: 'on'
                     }, {
                         name: 'Resultado actual',
