@@ -25,7 +25,6 @@ class PropiedadRequest extends FormRequest
     {
         return [
             'material' => 'required | string | min:1 | max:255',
-            'unidad' => 'required | string | min:1 | max:255',
         ];
     }
 
@@ -38,9 +37,7 @@ class PropiedadRequest extends FormRequest
     {
         return [
             'material.required' => 'El material es obligatorio.',
-            'material.string' => 'El material no permite valores numericos.',
-            'unidad.required' => 'La unidad es obligatoria.',
-            'unidad.string' => 'La unidad no permite valores numericos.',
+            'material.string' => 'El material no permite valores numéricos.',
         ];
     }
 }

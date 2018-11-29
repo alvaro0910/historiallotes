@@ -45,14 +45,24 @@ class PropiedadController extends Controller
      */
     public function store(PropiedadRequest $request)
     {
-        $propiedad = new Propiedad($request->all());
-        $propiedad->save();
+        $existe = Propiedad::where(['material' => $request->material])->count();
+        
+        if ($existe > 0) {
+            $notificacion = array(
+                'message' => '¡El material ya éxiste!',
+                'alert-type' => 'warning'
+            );
+            return redirect()->back()->with($notificacion);
+        } else {
+            $propiedad = new Propiedad($request->all());
+            $propiedad->save();
 
-        $notificacion = array(
-            'message' => 'Propiedad agregada con exito.',
-            'alert-type' => 'success'
-        );
-        return redirect()->back()->with($notificacion);
+            $notificacion = array(
+                'message' => '¡Propiedad agregada con éxito!',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notificacion);
+        }
     }
 
     /**
@@ -88,16 +98,26 @@ class PropiedadController extends Controller
      */
     public function update(PropiedadRequest $request, $id)
     {
-        $propiedad = Propiedad::where('id', $id)->findOrFail($id);
+        $existe = Propiedad::where(['material' => $request->material])->count();
         
-        $input = $request->all();
-        $propiedad->update($input);
+        if ($existe > 0) {
+            $notificacion = array(
+                'message' => '¡El material ya éxiste!',
+                'alert-type' => 'warning'
+            );
+            return redirect()->back()->with($notificacion);
+        } else {
+            $propiedad = Propiedad::where('id', $id)->findOrFail($id);
+        
+            $input = $request->all();
+            $propiedad->update($input);
 
-        $notificacion = array(
-                'message' => 'Propiedad Actualizada Con Exito!',
-                'alert-type' => 'success'
-        );
-        return redirect()->back()->with($notificacion);
+            $notificacion = array(
+                    'message' => 'Propiedad actualizada con éxito!',
+                    'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notificacion);
+        }
     }
 
     /**

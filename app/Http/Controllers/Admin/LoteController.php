@@ -47,6 +47,7 @@ class LoteController extends Controller
     public function store(LoteRequest $request)
     {
         $existe = Lote::where(['codigo' => $request->codigo], ['finca_id' => $request->finca_id])->count();
+        
         if ($existe > 0) {
             $notificacion = array(
                 'message' => '¡El codigo del lote ya esta asignado a uno de los lotes de la finca seleccionada!',
@@ -107,9 +108,10 @@ class LoteController extends Controller
     public function update(LoteRequest $request, $id)
     {
         $existe = Lote::where(['codigo' => $request->codigo], ['finca_id' => $request->finca_id])->count();
+        
         if ($existe > 0) {
             $notificacion = array(
-                'message' => '¡El codigo del lote ya esta asignado a uno de los lotes de la finca seleccionada!',
+                'message' => '¡El código del lote ya está asignado a uno de los lotes de la finca seleccionada!',
                 'alert-type' => 'warning'
             );
             return redirect()->back()->with($notificacion);

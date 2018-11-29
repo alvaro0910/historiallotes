@@ -49,7 +49,7 @@ class InsumoController extends Controller
         $insumo->save();
 
         $notificacion = array(
-            'message' => 'Costo de insumo agregado con exito.',
+            'message' => '¡Costo de insumo agregado con éxito!',
             'alert-type' => 'success'
         );
         return redirect()->back()->with($notificacion);
@@ -114,11 +114,8 @@ class InsumoController extends Controller
      */
     public function destroy($id)
     {
-        $insumo = Insumo::where('id', $id)->findOrFail($id);
-        $insumo->delete();
-
         $notificacion = array(
-            'message' => 'Costo Insumo Eliminado Con Exito.',
+            'message' => '¡No se puede eliminar el costo, está asociado a un lote!',
             'alert-type' => 'info'
         );
         return redirect()->back()->with($notificacion);

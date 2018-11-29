@@ -39,14 +39,24 @@ class VariedadController extends Controller
      */
     public function store(VariedadRequest $request)
     {
-        $variedad = new Variedad($request->all());
-        $variedad->save();
-
-        $notificacion = array(
-            'message' => 'Variedad Agregada Con Exito.',
-            'alert-type' => 'success'
-        );
-        return redirect()->back()->with($notificacion);
+        $existe = Variedad::where(['variedad' => $request->variedad])->count();
+        
+        if ($existe > 0) {
+            $notificacion = array(
+                'message' => '¡La variedad ya éxiste!',
+                'alert-type' => 'warning'
+            );
+            return redirect()->back()->with($notificacion);
+        } else {
+            $variedad = new Variedad($request->all());
+            $variedad->save();
+    
+            $notificacion = array(
+                'message' => 'Variedad Agregada Con Exito.',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notificacion);
+        }
     }
 
     /**
@@ -82,15 +92,25 @@ class VariedadController extends Controller
      */
     public function update(VariedadRequest $request, $id)
     {
-        $variedad = Variedad::where('id', $id)->findOrFail($id);
-        $input = $request->all();
-        $variedad->update($input);
+        $existe = Variedad::where(['variedad' => $request->variedad])->count();
+        
+        if ($existe > 0) {
+            $notificacion = array(
+                'message' => '¡La variedad ya éxiste!',
+                'alert-type' => 'warning'
+            );
+            return redirect()->back()->with($notificacion);
+        } else {
+            $variedad = Variedad::where('id', $id)->findOrFail($id);
+            $input = $request->all();
+            $variedad->update($input);
 
-        $notificacion = array(
-            'message' => 'Variedad Actualizada Con Exito!',
-            'alert-type' => 'success'
-        );
-        return redirect()->back()->with($notificacion);
+            $notificacion = array(
+                'message' => 'Variedad actualizada con éxito!',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notificacion);
+        }
     }
 
     /**
@@ -102,6 +122,7 @@ class VariedadController extends Controller
     public function destroy($id)
     {
         $existe = Self::existeRelacion($id);
+        
         if ($existe) {
             $notificacion = array(
                 'message' => '¡No se puede eliminar la variedad, está asociada a un lote!',

@@ -114,11 +114,8 @@ class LaborController extends Controller
      */
     public function destroy($id)
     {
-        $labor = Labor::where('id', $id)->findOrFail($id);
-        $labor->delete();
-
         $notificacion = array(
-            'message' => 'Costo Labor Eliminado Con Exito.',
+            'message' => '¡No se puede eliminar el costo de la labor, está asociado a un lote!',
             'alert-type' => 'info'
         );
         return redirect()->back()->with($notificacion);

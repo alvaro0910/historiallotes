@@ -59,7 +59,7 @@ class EstadoFisicoController extends Controller
             $estado->save();
 
             $notificacion = array(
-                'message' => 'Estado fisico agregado con exito.',
+                'message' => 'Estado físico agregado con éxito.',
                 'alert-type' => 'success'
             );
             return redirect()->back()->with($notificacion);
@@ -99,7 +99,7 @@ class EstadoFisicoController extends Controller
     {
         $estado = EstadoFisico::where('id', $id)->findOrFail($id);
         $lotes = DB::table('lotes')->get();
-        return view('adm.estado.edit', ['data' => $estado, 'lotes' => $lotes ]);
+        return view('adm.estado.edit', ['data' => $estado, 'lotes' => $lotes]);
     }
 
     /**
@@ -117,7 +117,7 @@ class EstadoFisicoController extends Controller
         $estado->update($input);
 
         $notificacion = array(
-                'message' => 'Estado Fisico Actualizado Con Exito!',
+                'message' => 'Estado físico actualizado con éxito!',
                 'alert-type' => 'success'
         );
         return redirect()->back()->with($notificacion);
